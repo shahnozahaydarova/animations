@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://olivier3lanc.github.io/folio-dark/css/cinematics.css">
+    <title>Gif</title>
+</head>
+<body>
+<!-- Commands -->
+    <input type="radio" name="cmd-play-pause" id="cmd-play" class="u-d-none" checked>
+    <input type="radio" name="cmd-play-pause" id="cmd-pause" class="u-d-none">
+    <input type="radio" name="cmd-direction" id="cmd-normal" class="u-d-none">
+    <input type="radio" name="cmd-direction" id="cmd-reverse" class="u-d-none">
+    <input type="radio" name="cmd-direction" id="cmd-alternate" class="u-d-none" checked>
+    <input type="radio" name="cmd-direction" id="cmd-alternate-reverse" class="u-d-none">
+
+<!-- Animation container -->
+    <figure id="the_scene" class="scene u-p-none u-m-none"></figure>
+
+<!-- Title -->
+    <h1 class="c-position m-fixed m-middle-center m-anchor-middle-center c-grid m-nowrap u-m-none u-ff-lead u-fw-100 u-fs-xl u-tt-uppercase u-c-primary-max">
+        <span class="u-inline-block u-ml-xs u-mr-xs" id="special-letter">
+            <span class="u-inline-block">S</span>
+        </span>
+        <span class="u-inline-block u-ml-xs u-mr-xs" id="special-letter">
+            <span class="u-inline-block">U</span>
+        </span>
+        <span class="u-inline-block u-ml-xs u-mr-xs" id="special-letter">
+            <span class="u-inline-block">S</span>
+        </span>
+        <span class="u-inline-block u-ml-xs u-mr-xs" id="special-letter">
+            <span class="u-inline-block">Y</span>
+        </span>
+        <span class="u-inline-block u-ml-xs u-mr-xs" id="special-letter">
+            <span class="u-inline-block">S</span>
+        </span>
+    </h1>
+
+<!-- Commands -->
+    <nav class="c-position m-fixed m-bottom-0 m-left-0 u-p-sm u-w-100 u-bg-gradient-vertical" u-fs-xs="sm">
+        <ul class="c-grid m-nowrap u-ls-none u-p-none u-m-none">
+            <li>
+                <label for="cmd-play" class="u-p-sm u-cur-pointer" u-p-xs="sm">
+                    play
+                </label>
+                <label for="cmd-pause" class="u-p-sm u-cur-pointer" u-p-xxs="sm">
+                    pause
+                </label>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>
