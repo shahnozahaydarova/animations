@@ -1,0 +1,49 @@
+/* give it some perspective */
+.container {
+	perspective: 30px;
+}
+.layer,
+.layer1,
+.layer2 {
+	transform-style: preserve-3d;
+	width: 100vw;
+	height: 100vh;
+}
+.layer {
+	position: relative;
+	top: 0;
+	background-image: linear-gradient(to right, transparent 5px, gold 10px);
+	background-size: 12px;
+}
+
+.layer1 {
+	position: absolute;
+	top: 40%;
+	left: 35%;
+	transform: translateX(-50%) translateY(-50%) translateZ(100px);
+	background-image: linear-gradient(to right, transparent 2px, rgb(72, 12, 112) 10px);
+	background-size: 20px 100%;
+}
+
+.layer2 {
+	position: absolute;
+	top: 60%;
+	left: 65%;
+	transform: translateX(-50%) translateY(-50%) translateZ(250px);
+	background-image: linear-gradient(to right, transparent 2px, rgb(42, 172, 42) 10px);
+	background-size: 15px 100%;
+}
+
+/* body styling and reset */
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+body {
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+	background: radial-gradient(circle at 30% 40%, #000, #333);
+	overflow: hidden;
+}
