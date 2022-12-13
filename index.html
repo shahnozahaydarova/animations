@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Looping Animation </title>
+</head>
+<body>
+    
+    <canvas id="canvas"></canvas>
+<!-- VertexShader code here -->
+<script id="vertexShader" type="x-shader/x-vertex">#version 300 es
+precision highp float;
+  in vec4 position;
+
+  void main() {
+    gl_Position = vec4( position );
+  }
+</script>
+
+<!-- FragmentShader code here -->
+<script id="fragmentShader" type="x-shader/x-fragment">#version 300 es
+#if __VERSION__ < 130
+#define TEXTURE2D texture2D
+#else
+#define TEXTURE2D texture
+#endif
+precision highp float;
+out vec4 fragColor;
+uniform vec2 u_resolution;
+uniform float u_time;
+uniform sampler2D iChannel0;
+  
+#define R           u_resolution
+#define T           u_time
+#define M           u_mouse
+
+#define PI    3.14159265358
+#define PI2   6.28318530718
+
+mat2 rot(float a) {return mat2(cos(a),sin(a),-sin(a),cos(a));}
+float hash21(vec2 a){ return fract(sin(dot(a,vec2(22.34,35.34)))*483434.);}
+vec2 hash22(vec2 uv) {return fract(sin(uv*425.215+uv.yx*714.388)*vec2(522.877));}
+
+//@iq
+float opx(in float d, in float z, in float h){
+    vec2 w = vec2( d, abs(z) - h );
+  	return min(max(w.x, w.y), 0.) + length(max(w, 0.));
+}
+
+vec3 hp,hitpoint;
+
+float glow=0.,t12=0.;
+
+const float size = 5.25;
+const float hlf =size/2.;
+
+void sep(inout vec3 p){
+	if (p.x + p.y<0.) p.xy = -p.yx;
+	if (p.x + p.z<0.) p.xz = -p.zx;
+	if (p.y + p.z<0.) p.zy = -p.yz;
+}
+
+vec2 map(vec3 p, float sq) {
+    vec2 res = vec2(1e5,0.);
+    p.y+=3.;
+    p.z-=t12;
+    vec3 o=p;
+    o.y+= .5*sin(T*.21+o.z*.15)+.7*cos(T*.12+o.x*.3);
+    
+    vec2 id = floor((p.xz+hlf)/size);
+    p.xz=mod(p.xz+hlf,size)-hlf;
+
+    float hs = 2.50*sin(id.x+id.y*2.+T*.3);
+    float ht = 2.25*sin(id.x*2.+id.y*1.3+T*1.3);
+    
+    float ss = hash21(id);
+    p.y+= ht;
+    vec3 q=p;
+    
+    p.zy*=rot(hs*PI2+(T*.04));
+    p.xy*=rot(hs*PI2-(T*.05));
+    
+    if(ss>.25) sep(p);
+    float fs = hash21(id+vec2(22.));
+    if(fs>.5) { p=abs(p.zyx); } else if(fs>.75) p=abs(p.yzx);
+    
+    float r = length(p.xy)-1.45;
+    r=abs(r)-.1;
+    float d = opx(r,abs(p.z)-.25,.05)/1.25;
+    if(d<res.x) res=vec2(d,1.);
+
+
+    float d2 = length(q)-(1.15-ss);    
+    if(d2<res.x) res=vec2(d2,2.);
+
+    
+    float ms=hash21(id+floor(T*1.5));
+    if(sq==1.&&ms>.875) glow+=.002/(.0025+d2*d2);
+
+    return res;
+}
+
+vec3 normal(vec3 p, float t){
+    vec2 e=vec2(t*1e-3,0.);
+    float d = map(p,0.).x;
+    vec3 n = d-vec3(
+        map(p-e.xyy,0.).x,
+        map(p-e.yxy,0.).x,
+        map(p-e.yyx,0.).x
+    );
+    return normalize(n);
+}
+
+vec3 shade(vec3 p, vec3 n, vec3 ro, float m) {
+    vec3 l = normalize(vec3(-2,15,-10)-p);
+    float diff = clamp(dot(n,l),.1,1.);
+
+    float shdw = 1.;
+    for( float t=.01;t<18.; ) {
+        float h = map(p + l*t,0.).x;
+        if( h<1e-4 ) { shdw = 0.; break; }
+        shdw = min(shdw, 18.*h/t);
+        t += h;
+        if( shdw<1e-4 || t>18. ) break;
+    }
+    diff = mix(diff,diff*shdw,.85);
+
+    float spec = .15 * pow(max(dot(normalize(p-ro),reflect(l,n)),0.),24.);
+        
+    vec3 h = vec3(0);
+    if(m==1.) h = vec3(.05);
+    if(m==2.) h = vec3(.75);
+        
+    return h * diff+spec;   
+}
+void main() {
+    vec2 F = gl_FragCoord.xy; 
+    t12=(T*11.);
+	  vec2 uv = (2.*F.xy - R.xy)/max(R.x,R.y);
+
+	  vec3 C = vec3(0);
+    vec3 ro = vec3(0,-1.,12),rd = normalize(vec3(uv, -1.0));
+
+    float dof = 0.001;
+    float dofdist = 1.0/10.;
+    
+    vec2 off=vec2(-.05,.05);
+    ro.xy+=off*dof*smoothstep(0.,1.,length(uv))*.01;
+    
+    mat2 rx =rot(-.60-.46*sin(T*.4));
+    mat2 ry =rot(-.178*sin(T*.2)+pow(1.95,cos(T*.2)*PI));
+    ro.zy*=rx;ro.xz*=ry;
+    rd.zy*=rx;rd.xz*=ry;
+   
+    float fa=0.,sglow=0.;
+    for(int k=0;k<2;k++){
+    
+        vec3 p = ro;
+        float d = 0., m = 0.;
+
+
+        vec3 RC = vec3(0);
+        for(int i=0;i<100;i++){
+
+            //modified jitter/dof 
+            //inspiration @Nusan https://www.shadertoy.com/view/3sXyRN
+            if(mod(float(i),2.)<1.){
+                off= texture(iChannel0,F.xy/1024.).rg*2.-1.;
+                ro.xz+= off*dof*(d)*.01;
+                rd.xy+= off*dof*(d*d)*dofdist*.012;
+            }
+            
+            p=ro+d*rd;
+
+            vec2 ray = map(p,1.);
+            m=ray.y;
+            d+=i<26?ray.x*.5:ray.x*.8;
+            if(ray.x<d*1e-3||d>50.)break;
+        }
+
+        if(k==0) {fa=d;sglow=glow;}
+        
+        if(d<50.) {
+            vec3 n = normal(p,d);
+            RC += shade(p, n, ro, m);
+            ro = p+n*.001;
+            rd = reflect(rd,n);
+        }
+
+        if(k>0) RC *=.25;
+
+        C = clamp(C+RC,vec3(0),vec3(1));
+
+    }
+
+    C=mix(C,vec3(.1),1.-exp(-.00003*fa*fa*fa));
+    C = mix(C,vec3(sglow,sglow*.5,sglow*.3), clamp(sglow,0.,1.));
+    C=pow(C,vec3(.4545));
+	 fragColor = vec4(C,1.);
+}
+
+</script>
+    <script src="https://jhancock532.github.io/twgl.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
