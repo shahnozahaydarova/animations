@@ -1,0 +1,50 @@
+html,
+body {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1e313f;
+}
+
+button {
+  width: 242px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.ear-left-outer, .ear-right-outer {fill:#919191;}
+.ear-left-inner, .ear-right-inner {fill:#6D6D6D;}
+.eye-right-outer, .eye-left-outer, .nostril-right-outer, .nostril-left-outer, .body {fill:#AAAAAA;}
+.eye-right-inner, .eye-left-inner {fill:#FFFFFF;}
+.nostril-right-inner, .nostril-left-inner{fill:#8C8C8C;}
+.freckle {fill:#7C7C7C;}
+.tongue {fill:#FF4848;}
+.tooth-left, .tooth-right {fill:#FFFFE1;}
+
+.link {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: #ffffe3;
+  text-decoration: none;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  border: 2px solid #335067;
+  padding: 10px 14px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.link:hover {
+  background: #243a4a;
+}
