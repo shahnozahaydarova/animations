@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>House</title>
+</head>
+<body>
+    <div class="house" id="house" data-rooms="6">
+        <div class="house-wings" data-flip-key="wings">
+          <div class="house-left-wing">
+            <div class="house-window"></div>
+            <div class="house-window"></div>
+            <div class="house-sparkle">
+              <div class="house-sparkle-dots"></div>
+            </div>
+          </div>
+          <div class="house-right-wing">      
+            <div class="house-window"></div>
+            <div class="house-window"></div>
+            <div class="house-sparkle">
+              <div class="house-sparkle-dots"></div>
+            </div>
+          </div>
+          <div class="house-roof">
+            <div class="house-ledge"></div>
+          </div>
+        </div>
+        <div class="house-front" data-flip-key="front">
+          <div class="house-chimney"></div>
+          <div class="house-facade"></div>
+          <div class="house-window">
+            <div class="house-sparkle">
+              <div class="house-sparkle-dots"></div>
+            </div>
+          </div>
+          <div class="house-doorway">
+            <div class="house-stairs"></div>
+            <div class="house-door"></div>
+          </div>
+          <div class="house-gable">      
+            <div class="house-roof">
+              <div class="house-ledge"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <label class="house-label" for="range" id="label">Rooms</label>
+      <input type="range" min="3" max="6" step="1" value="6" id="range">
+      <script src="https://unpkg.com/flipping@0.5.3/dist/flipping.animationFrame.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.5.3/rxjs.umd.min.js"></script>
+      <script src="main.js"></script>
+</body>
+</html>
