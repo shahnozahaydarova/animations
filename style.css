@@ -94,7 +94,7 @@ body .circle_title h2, body .circle_title h3 {
   margin: 0;
   transition: all 0.2s 0.04s;
   position: relative;
-  top: -10px;
+  top:  -10px;
 }
 body .circle_title h3 {
   transition: all 0.2s;
