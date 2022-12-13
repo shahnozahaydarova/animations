@@ -1,0 +1,673 @@
+html {
+    height: 100%;
+  }
+  
+  body {
+    background-color: #424242;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    font-family: Arial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    filter: drop-shadow(5px 10px 20px rgba(0, 0, 0, 0.5));
+  }
+  
+  #pumpkin {
+    min-width: 300px;
+    width: 300px;
+    min-height: 300px;
+    height: 300px;
+    background-size: contain;
+    background-position: center;
+    position: relative;
+    transition: 0.2s ease;
+    will-change: transform;
+  }
+  #pumpkin:hover {
+    transform: rotate(30deg) scale(1.5);
+  }
+  #pumpkin:hover #body .eye .ball {
+    --red-start: 0%;
+    --red-stop: 60%;
+  }
+  #pumpkin * {
+    position: absolute;
+  }
+  #pumpkin #stem {
+    width: 16%;
+    height: 18%;
+    top: 0;
+    left: 43%;
+    clip-path: polygon(4.45% 11.85%, 2.76% 19.74%, 5.29% 27.68%, 10.87% 31.3%, 20.6% 38.39%, 29.14% 46.93%, 33.12% 57.82%, 35.42% 69.76%, 35.91% 79.08%, 35.97% 87.41%, 64.3% 101.73%, 94.78% 92.12%, 94.04% 83.13%, 91.18% 70.31%, 86.92% 58.48%, 81.64% 45.06%, 73.97% 32.78%, 67.7% 24.37%, 58.46% 14.91%, 49.95% 8.96%, 41.66% 4.35%, 29.87% 2.77%, 21.56% 3.6%, 12.44% 5.42%);
+    --light: #388e3c;
+    --dark: #1b5e20;
+    background: linear-gradient(130deg, transparent 10%, rgba(0, 0, 0, 0.7) 80%), radial-gradient(circle at -34% 97%, var(--dark) 45%, var(--light) 50%, var(--dark) 65%, var(--light) 75% 100%);
+  }
+  #pumpkin #body {
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.5)), radial-gradient(circle at 20%, #e26700 40%, #e65100 60%);
+    top: 15%;
+    left: 7%;
+    right: 7%;
+    bottom: 0%;
+    border-radius: 100%;
+    clip-path: polygon(1.15% 30.06%, 13.52% 11.61%, 25.89% 3.3%, 37.84% 1.51%, 44.83% 0.89%, 48.38% 0.73%, 53.87% 2.5%, 55.73% 1.31%, 59.7% 1.78%, 63.11% 2.29%, 65.9% 3.17%, 78.74% 6.37%, 92.44% 16.92%, 99.99% 35.28%, 100.12% 57.39%, 97.44% 66.3%, 93.38% 72.87%, 89.04% 79.83%, 84.94% 84.02%, 79.68% 87.19%, 75.7% 89.25%, 72.98% 90.22%, 69.89% 92.65%, 65.37% 93.49%, 63.01% 94.54%, 60.83% 95.1%, 59.8% 95.51%, 56.57% 98.36%, 54.15% 99%, 52.63% 99.66%, 49.57% 99.83%, 45.86% 99.35%, 44.89% 98.56%, 39.56% 97.34%, 34% 97.22%, 30.26% 95.96%, 26.92% 94.45%, 23.34% 91.79%, 19.53% 89.43%, 10.68% 82.78%, 1.33% 70.87%, 0.22% 57.48%, -0.11% 45.78%, 0.48% 43.56%);
+  }
+  #pumpkin #body .stitches {
+    width: 100%;
+    height: 100%;
+  }
+  #pumpkin #body .stitches .stitch {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    z-index: 2;
+    background: repeating-linear-gradient(45deg, #5d4037, #795548 2px);
+    border-radius: 2px;
+    height: 1.5px;
+  }
+  #pumpkin #body .stitches .stitch:nth-child(1) {
+    transform: rotate(92deg);
+    left: 13%;
+    top: 26.5%;
+    width: 9%;
+  }
+  #pumpkin #body .stitches .stitch:nth-child(2) {
+    transform: rotate(140deg);
+    left: 13%;
+    top: 26%;
+    width: 9.4%;
+  }
+  #pumpkin #body .stitches .stitch:nth-child(3) {
+    transform: rotate(135deg);
+    left: 11%;
+    top: 25%;
+    width: 8%;
+  }
+  #pumpkin #body .stitches .stitch:nth-child(4) {
+    transform: rotate(89deg);
+    left: 10.6%;
+    top: 25%;
+    width: 7.3%;
+  }
+  #pumpkin #body .stitches .stitch:nth-child(5) {
+    transform: rotate(127deg);
+    left: 9%;
+    top: 24%;
+    width: 6.7%;
+  }
+  #pumpkin #body .stitches .stitch:nth-child(6) {
+    transform: rotate(82deg);
+    left: 8.7%;
+    top: 24.5%;
+    width: 6.4%;
+  }
+  #pumpkin #body .eye {
+    width: 100%;
+    height: 100%;
+  }
+  #pumpkin #body .eye .ball {
+    --red-start: 40%;
+    --red-stop: 80%;
+    transition: 0.1s ease;
+    background-size: cover;
+    border-radius: 100%;
+    width: 22%;
+    height: 22%;
+    overflow: hidden;
+    background: radial-gradient(transparent 50%, black 80%), radial-gradient(transparent var(--red-start), #9e1010 var(--red-stop)), url(https://assets.codepen.io/3730071/noise.png), white;
+  }
+  #pumpkin #body .eye .ball:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(#9e1010 50%, rgba(158, 16, 16, 0.3));
+    opacity: 1;
+  }
+  #pumpkin #body .eye .ball .iris {
+    border-radius: 100%;
+    overflow: hidden;
+    border: solid 2px var(--dark);
+    box-sizing: border-box;
+    background: radial-gradient(transparent 40%, var(--dark) 80%) var(--light);
+  }
+  #pumpkin #body .eye .ball .iris:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: conic-gradient(transparent 0deg 10deg, var(--dark) 20deg, transparent 30deg 40deg, var(--dark) 50deg, transparent 60deg 70deg, var(--dark) 80deg, transparent 90deg 100deg, var(--dark) 110deg, transparent 120deg 130deg, var(--dark) 140deg, transparent 150deg 160deg, var(--dark) 170deg, transparent 180deg 190deg, var(--dark) 200deg, transparent 210deg 220deg, var(--dark) 230deg, transparent 240deg 250deg, var(--dark) 260deg, transparent 270deg 280deg, var(--dark) 290deg, transparent 300deg 310deg, var(--dark) 320deg, transparent 330deg 340deg, var(--dark) 350deg, transparent 360deg 370deg);
+  }
+  #pumpkin #body .eye .ball .iris .pupil {
+    background-color: black;
+    border-radius: 100%;
+  }
+  #pumpkin #body .eye.left {
+    background: radial-gradient(circle at 29% 38%, black 11%, #b71c1c 38%);
+    clip-path: polygon(9% 24%, 11.22% 22.87%, 15.04% 23.04%, 18.07% 23.99%, 22.74% 24.55%, 29% 27%, 33.84% 32.04%, 41% 37%, 46% 44%, 32% 42%, 25.49% 39.37%, 19.99% 33.95%, 17.85% 29.44%, 10.82% 25.78%);
+  }
+  #pumpkin #body .eye.left .ball {
+    left: 21%;
+    top: 27%;
+  }
+  #pumpkin #body .eye.left .ball:before {
+    clip-path: polygon(130.16% -10.32%, -18.21% -11.78%, 4.5% 24.6%, 8.73% 25.42%, 9.8% 27.43%, 10.15% 32.06%, 12.56% 36.51%, 11% 31.86%, 10.95% 27.73%, 15.39% 27.57%, 15.05% 31.03%, 14.5% 35.19%, 16.09% 31.17%, 16.06% 27.2%, 19.18% 25.47%, 21.4% 27.89%, 18.21% 30.37%, 22.15% 27.81%, 19.39% 24.19%, 15.95% 25.9%, 11.94% 26.36%, 9.62% 24.35%, 6.01% 23.45%, 8.06% 18.53%, 12.89% 19.02%, 13.35% 21.78%, 11.73% 23.75%, 14.15% 21.29%, 13.07% 17.72%, 9.81% 17.41%, 13.77% 13.12%, 17.01% 15.89%, 16.6% 17.03%, 15.39% 19.35%, 17.62% 16.96%, 18.98% 15.6%, 17.14% 14.63%, 15.26% 13.35%, 17% 11.02%, 18.36% 12.02%, 21.85% 11.04%, 25.7% 9.47%, 28.56% 8.1%, 31.05% 9.54%, 32.43% 10.95%, 34.38% 12.31%, 36.56% 13.43%, 37.1% 15.99%, 36.15% 20.6%, 37.86% 17.74%, 40.15% 18.43%, 39.9% 21.26%, 41.45% 17.72%, 38.45% 16.31%, 37.02% 11.67%, 36.06% 8.47%, 34.89% 6.01%, 31.69% 5.95%, 30% 1.22%, 46.9% -4.47%, 93.08% 5.21%, 102.02% 44.82%, 90.25% 43.77%, 87.05% 49.05%, 83.42% 47.49%, 81.18% 45.45%, 83.02% 48.35%, 79.39% 50.64%, 84.03% 48.81%, 86.54% 49.93%, 83.4% 51.5%, 87.08% 50.54%, 89.65% 49.96%, 91.58% 45.49%, 96.08% 52.11%, 92.46% 54.18%, 89.48% 52.99%, 91.98% 55.15%, 95.02% 53.66%, 97.85% 52.42%, 98.27% 60.26%, 95.34% 58.79%, 93.17% 58.05%, 94.45% 60.19%, 96.26% 60.88%, 93.88% 61.52%, 92.26% 59.84%, 90.75% 57.7%, 89.3% 58.38%, 88.82% 55.87%, 87.14% 55.13%, 85.64% 52.95%, 83.78% 53.35%, 80.72% 55.17%, 77.81% 52.35%, 76.37% 52.8%, 75% 54.34%, 77.65% 54.04%, 79.21% 56.13%, 77.75% 57.02%, 76.69% 57.58%, 74.77% 56.23%, 73.86% 57.01%, 73.19% 59.18%, 74.98% 57.85%, 76.69% 59.12%, 79.6% 57.15%, 83.36% 55.1%, 85.5% 56.55%, 87.13% 58.01%, 87.35% 60.88%, 85.37% 60.81%, 83.65% 61.4%, 81.91% 60.69%, 79.35% 61.8%, 82.42% 61.8%, 83.53% 65.03%, 84.29% 62.87%, 88.96% 62.87%, 90.7% 61.22%, 93.13% 63.01%, 94.97% 64.81%, 91.93% 66.29%, 90.18% 64.07%, 86.38% 64.08%, 85.56% 65.54%, 83.59% 67.28%, 81.64% 64.71%, 73.83% 64.54%, 71.7% 59.33%, 68.49% 58.66%, 71.29% 60.14%, 72.55% 64.15%, 74.33% 66.28%, 80.4% 66.94%, 85.12% 69.33%, 88.68% 66.51%, 89.57% 70.1%, 92.76% 76.92%, 90.51% 83.61%, 123.09% 100.98%);
+  }
+  #pumpkin #body .eye.left .ball .iris {
+    top: 24%;
+    left: 26%;
+    width: 40%;
+    height: 40%;
+    --light: #64b5f6;
+    --dark: #0d47a1;
+  }
+  #pumpkin #body .eye.left .ball .iris .pupil {
+    top: 23%;
+    left: 24%;
+    width: 54%;
+    height: 54%;
+  }
+  #pumpkin #body .eye.right {
+    background: radial-gradient(circle at 71% 36%, black 10%, #b71c1c 36%);
+    clip-path: polygon(56.98% 36.16%, 54.05% 42.03%, 57.6% 40.64%, 61.43% 41.16%, 65.04% 43.34%, 71.62% 45.05%, 75.98% 44.75%, 78.57% 43.08%, 84.92% 37.86%, 86.67% 32%, 88.5% 29.54%, 88.48% 23.89%, 84.85% 22.94%, 81.16% 22.22%, 78.57% 21.55%, 75.52% 21.7%, 72.83% 21.54%, 71.42% 22.55%, 68.52% 25.68%, 64.81% 28.4%, 60.49% 31.67%);
+  }
+  #pumpkin #body .eye .ball {
+    right: 19%;
+    top: 25%;
+  }
+  #pumpkin #body .eye .ball:before {
+    clip-path: polygon(130.16% -10.32%, -18.21% -11.78%, 21.68% 15.99%, 30.7% 17.79%, 31.35% 21.08%, 27.03% 21.64%, 25.11% 22.87%, 31.14% 22.67%, 37.78% 28.79%, 33.77% 21.08%, 38.9% 19.28%, 33.67% 20.36%, 32.93% 17.16%, 27.31% 11.88%, 47.49% -5.35%, 61.59% -1.96%, 56.73% -0.05%, 58.49% 3.51%, 53.41% 6.26%, 52.49% 9.8%, 51.05% 15.03%, 53.66% 16.54%, 52.93% 14.66%, 53.37% 12.11%, 55.78% 12.71%, 57.11% 11.37%, 60.72% 12.72%, 57.4% 10.1%, 55.78% 9.89%, 55.11% 11.44%, 54.35% 10.13%, 55.15% 7.68%, 59.2% 7.36%, 66.73% 1.81%, 65.93% 6.54%, 63.01% 8.2%, 66.05% 12.91%, 63.1% 13.46%, 64.36% 16.16%, 65.08% 20.96%, 66.7% 23.55%, 65.93% 27.98%, 63.38% 32.75%, 66.56% 28.61%, 67.92% 23.76%, 66.48% 20.56%, 67.07% 18.61%, 69.82% 21.31%, 69.52% 19.58%, 67.63% 17.57%, 66.18% 16.79%, 65.9% 15.15%, 68.37% 14.83%, 71.89% 16.95%, 71.07% 13.87%, 70.38% 14.55%, 67.68% 13.44%, 67.38% 11.45%, 66.54% 8.94%, 70.78% 10.05%, 74.83% 10.91%, 75.38% 16.37%, 76.42% 16.13%, 76.09% 12.24%, 79.75% 17.19%, 77.89% 13.02%, 84.99% 10.39%, 97.14% 30.23%, 94.81% 31.52%, 91.29% 28.3%, 87.46% 30.51%, 85.24% 33.23%, 80.37% 35.37%, 84.69% 35.17%, 86.33% 38.9%, 89.93% 38.45%, 86.89% 37.29%, 85.93% 34.62%, 88.23% 31.66%, 91.44% 32.67%, 94.32% 38.66%, 95.45% 34.68%, 100.21% 37.68%, 100.57% 50.79%, 97.6% 50.21%, 94.97% 44.12%, 94.21% 42.03%, 91.11% 43%, 93.71% 44.73%, 95.71% 49.94%, 93.13% 49.44%, 95.02% 51.5%, 93.12% 53.93%, 90.46% 50.11%, 88.99% 45.68%, 88.28% 43.41%, 85.3% 43.49%, 79.78% 45.1%, 83.63% 45.87%, 86.67% 45.67%, 88.5% 50.56%, 92.95% 55.76%, 89.1% 56.45%, 90.32% 61.38%, 90.68% 57.66%, 95.31% 56.79%, 100.56% 62.88%, 93.82% 87.73%, 47.11% 95.55%, 3.99% 76.42%, 0.72% 72.09%, 5.09% 68.71%, 10.9% 65.36%, 14.84% 63.46%, 16.21% 62.04%, 18.97% 62.52%, 20.64% 61.41%, 25.34% 61.04%, 21.36% 59.45%, 17.61% 60.16%, 14.09% 60.18%, 13.36% 62.82%, 10.07% 62.38%, 10.46% 57.99%, 14.08% 55.61%, 14.07% 52.19%, 12.61% 54.84%, 8.77% 57.78%, 8.53% 62.51%, 5.56% 63.81%, 2.18% 60.93%, 3.84% 53.14%, 7.15% 48.48%, 3.55% 52.27%, -0.73% 58.35%, -29.82% -16.5%, -32.13% 107.71%, 125.17% 102.2%);
+  }
+  #pumpkin #body .eye .ball .iris {
+    top: 40%;
+    left: 41%;
+    width: 28%;
+    height: 28%;
+    --light: #37c352;
+    --dark: #04793c;
+  }
+  #pumpkin #body .eye .ball .iris .pupil {
+    top: 34%;
+    left: 34%;
+    width: 35%;
+    height: 35%;
+  }
+  #pumpkin #body .mouth {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    clip-path: polygon(6% 40.79%, 5.49% 39.44%, 5.29% 37.35%, 4.66% 35.4%, 4.6% 33.32%, 4.84% 31.98%, 5.07% 33.41%, 5.41% 35.18%, 5.5% 36.68%, 5.86% 38.62%, 6.45% 40.38%, 7.29% 41.98%, 8.37% 43.85%, 9.51% 47.45%, 12.4% 50.32%, 14.64% 54.07%, 17.77% 54.7%, 20.97% 54.96%, 23.52% 54.78%, 24.94% 54.51%, 28.07% 55.3%, 30.26% 55.92%, 32.07% 57.42%, 34.1% 58.82%, 36.23% 60.12%, 39.96% 60.07%, 43.42% 59.3%, 46.12% 59.16%, 48.94% 58.92%, 52.65% 59.17%, 55.86% 59.66%, 59.65% 60.36%, 63.9% 61.12%, 66.05% 59.72%, 68.22% 58.81%, 70.86% 57.95%, 73.33% 57.84%, 75.15% 57.54%, 78.54% 57.96%, 80.67% 56.32%, 81.8% 53.72%, 84.49% 51.58%, 85.77% 51.28%, 86.67% 49.63%, 88.28% 49.32%, 89.92% 48.16%, 91.47% 46.8%, 92.2% 45.85%, 92.39% 44.73%, 92.62% 43.36%, 92.67% 41.8%, 93.14% 40.5%, 93.67% 37.89%, 94.11% 35.61%, 94.3% 37.14%, 94.33% 40.38%, 93.44% 42.8%, 93.03% 44.13%, 92.84% 46.94%, 92.47% 49.35%, 92.25% 51.9%, 91.41% 54.06%, 90.16% 56.51%, 89.49% 58.61%, 88.48% 60.27%, 87.28% 62.14%, 86.41% 64.41%, 85.51% 66.77%, 84.65% 67.73%, 83.38% 70.59%, 64.36% 79.01%, 62.28% 79.1%, 59.67% 77.78%, 58.41% 78.05%, 56.03% 77.76%, 53% 77.51%, 48.68% 77.5%, 46.5% 78.36%, 41.73% 78.93%, 38.24% 79.57%, 33.33% 76.41%, 28.67% 74.71%, 25.31% 73.39%, 22.45% 72.87%, 19.23% 71.92%, 17.06% 72.19%, 16.41% 69.15%, 14.35% 66.02%, 8.83% 60.89%, 7.14% 49.92%, 7.47% 49.29%, 6.88% 42.49%);
+  }
+  #pumpkin #body .mouth .teeth {
+    width: 100%;
+    height: 100%;
+    --light: #ccc1b1;
+    --dark: #e07115;
+  }
+  #pumpkin #body .mouth .teeth .tooth {
+    background: linear-gradient(180deg, black 0%, transparent 30%), linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, transparent 40%, transparent 60%, rgba(0, 0, 0, 0.8) 100%), linear-gradient(180deg, var(--dark) 0%, var(--light) 60%);
+  }
+  #pumpkin #body .mouth .teeth .tooth.bottom {
+    background: linear-gradient(0deg, black 0%, transparent 30%), linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, transparent 40%, transparent 60%, rgba(0, 0, 0, 0.8) 100%), linear-gradient(0deg, var(--dark) 0%, var(--light) 60%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(1) {
+    width: 1.7%;
+    height: 3.9%;
+    top: 46.9%;
+    left: 9.2%;
+    clip-path: polygon(14.66% 17.24%, 25.58% -8.62%, 90.23% 25.86%, 70.82% 69.36%, 56.03% 97.84%, 39.09% 82.75%, 29.2% 69.65%, 19.82% 49.39%, 15.67% 32.21%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(2) {
+    width: 2.1%;
+    height: 11.7%;
+    top: 50%;
+    left: 12.3%;
+    clip-path: polygon(7.91% -7.85%, 100% 0%, 94.9% 25.38%, 72.3% 47.38%, 54.31% 70.1%, 46.77% 80.25%, 39.55% 98.43%, 30.22% 95.31%, 9.82% 70.69%, 1.28% 53.73%, -2.13% 29.24%, 4.34% 14.57%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(3) {
+    width: 2.6%;
+    height: 10.2%;
+    top: 53.9%;
+    left: 15%;
+    clip-path: polygon(0% -0.82%, 96.81% 0%, 54.31% 97.53%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(4) {
+    width: 2.6%;
+    height: 11.4%;
+    top: 54.7%;
+    left: 18.3%;
+    clip-path: polygon(15.98% 8.85%, 34.13% 0%, 94.83% 0%, 100% 12.53%, 90.19% 26.82%, 76.47% 43.19%, 69.82% 65.17%, 61.66% 87.47%, 57.51% 99.26%, 27.52% 83.26%, 15.71% 67.1%, 9.33% 46.59%, 8.27% 25.07%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(5) {
+    width: 2.1%;
+    height: 5.9%;
+    top: 54.6%;
+    left: 20.9%;
+    clip-path: polygon(19.78% 0%, 60.45% 1.42%, 71.89% 21.43%, 81.36% 44.8%, 76.54% 71.59%, 68.98% 100.31%, 29.39% 66.91%, 18.71% 48.3%, 15.83% 37.32%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(6) {
+    width: 3%;
+    height: 11.2%;
+    top: 54.1%;
+    left: 23.6%;
+    clip-path: polygon(11.08% 1.5%, 97.23% 0%, 93.28% 23.97%, 75.08% 60.98%, 57.7% 95.55%, 46.65% 97.73%, 35.54% 96.15%, 30.46% 91.75%, 8.96% 47.99%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(7) {
+    width: 1.2%;
+    height: 3.3%;
+    top: 54.7%;
+    left: 26.4%;
+    clip-path: polygon(0% 0%, 100% 2.55%, 79.21% 89.81%, 48.5% 89.81%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(8) {
+    width: 3%;
+    height: 13.3%;
+    top: 54.8%;
+    left: 27.9%;
+    clip-path: polygon(30.46% 1.27%, 100% 1.26%, 94.68% 29.17%, 78.01% 61.4%, 36.32% 93.68%, 19.78% 97.51%, 8.36% 69.37%, 5.54% 63.35%, 6.24% 27.86%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(9) {
+    width: 2.1%;
+    height: 6.4%;
+    top: 57.2%;
+    left: 32.3%;
+    clip-path: polygon(39.55% 5.25%, 107.91% 9.19%, 77.08% 38.25%, 60.2% 62.46%, 47.98% 79.21%, 36.72% 97.37%, 15.82% 85.55%, 7.93% 69.84%, 15.1% 52.56%, 22.79% 30.39%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(10) {
+    width: 4.5%;
+    height: 14.6%;
+    top: 58.9%;
+    left: 35.7%;
+    clip-path: polygon(9.23% 1.15%, 100% 0%, 84.02% 23.3%, 62.2% 50.3%, 41.83% 73.87%, 24.3% 92.52%, 11.07% 100.58%, 9.67% 89.9%, 12.53% 74.03%, 12.33% 53.14%, 9.92% 33.3%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(11) {
+    width: 2.6%;
+    height: 12.8%;
+    top: 59.2%;
+    left: 41.3%;
+    clip-path: polygon(22.36% -0.66%, 100% 0%, 93.61% 20.7%, 76.32% 45.35%, 60.7% 68.28%, 54.11% 83.44%, 52.08% 98.68%, 44.73% 98.69%, 28.86% 62.31%, 24.91% 32.44%, 21.25% 15.2%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(12) {
+    width: 2.8%;
+    height: 8.8%;
+    top: 58.8%;
+    left: 43.9%;
+    transform: rotate(-8deg);
+    clip-path: polygon(22.94% 0.92%, 97.91% 1.85%, 83.95% 52.54%, 66.63% 99.07%, 56.31% 100%, 36.8% 44.98%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(13) {
+    width: 1.6%;
+    height: 3.8%;
+    top: 58.5%;
+    left: 46.7%;
+    clip-path: polygon(20.78% 0%, 100% 0%, 53.25% 91.15%, 35.04% 92.2%, 20.78% 86.73%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(14) {
+    width: 1.8%;
+    height: 7.2%;
+    top: 58.6%;
+    left: 49.3%;
+    clip-path: polygon(4.62% 0%, 100% 1.17%, 78.25% 62.84%, 58.46% 95.33%, 38.86% 97.29%, 24.85% 93.91%, 16.42% 79.01%, 9.23% 54.47%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(15) {
+    width: 1.7%;
+    height: 6.4%;
+    top: 58.8%;
+    left: 50.7%;
+    clip-path: polygon(43.97% 0%, 100% 0%, 54.48% 65.69%, 31.59% 82.93%, 15.06% 88.62%, 5.4% 67.94%, 4.89% 48.78%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(16) {
+    width: 2.1%;
+    height: 6.9%;
+    top: 59%;
+    left: 52.6%;
+    clip-path: polygon(3.96% -1.22%, 84.18% 0%, 79.13% 32.96%, 79.31% 75.78%, 67.86% 98.8%, 55.37% 100%, 32.18% 71.63%, 19.4% 27.48%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(17) {
+    width: 2.8%;
+    height: 13.6%;
+    top: 59.3%;
+    left: 55.8%;
+    transform: rotate(-4deg);
+    clip-path: polygon(0% 0%, 68.82% 0.61%, 69.68% 21.81%, 72.66% 34.26%, 68.44% 55.5%, 66.09% 75.46%, 57.69% 98.17%, 40.08% 98.78%, 41.18% 84.42%, 37.13% 63.33%, 29.86% 52.5%, 32.88% 34.93%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(18) {
+    width: 1.4%;
+    height: 5%;
+    top: 59.5%;
+    left: 57.6%;
+    clip-path: polygon(17.8% 5.04%, 90.48% 3.94%, 76.26% 28.57%, 58.46% 56.3%, 23.74% 101.68%, 5.8% 47.5%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(19) {
+    width: 4%;
+    height: 13.7%;
+    top: 59.9%;
+    left: 59.2%;
+    clip-path: polygon(4.15% 0.61%, 102.08% 3.07%, 85.52% 40.56%, 66.02% 81.96%, 54.31% 99.39%, 49.84% 100%, 23.44% 54.05%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(20) {
+    width: 3.5%;
+    height: 11.6%;
+    top: 58.8%;
+    left: 64.1%;
+    clip-path: polygon(11.87% 5.07%, 100% 0%, 70.47% 73.86%, 54.91% 97.1%, 49.84% 97.83%, 44.22% 97.25%, 35.4% 64.92%, 29.9% 51.1%, 16.63% 25.49%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(21) {
+    width: 3.1%;
+    height: 9.7%;
+    top: 57.8%;
+    left: 68.5%;
+    clip-path: polygon(13.4% 0%, 89.28% -1.73%, 87.43% 29.2%, 85.45% 60.65%, 85.26% 98.63%, 75.88% 96.53%, 26.8% 36.75%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(22) {
+    width: 1.9%;
+    height: 8.5%;
+    top: 57.5%;
+    left: 71.8%;
+    clip-path: polygon(0% 0%, 100% 0%, 85.01% 65.88%, 73.76% 98.02%, 30.61% 56.5%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(23) {
+    width: 3.6%;
+    height: 14.2%;
+    top: 57%;
+    left: 73.6%;
+    clip-path: polygon(0% 0%, 100% 1.18%, 82.77% 42.09%, 66.55% 92.93%, 58.46% 98.82%, 45.85% 99.6%, 38.66% 98.29%, 27.69% 76.33%, 19.91% 61.26%, 11.54% 44.21%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(24) {
+    width: 1.4%;
+    height: 3.7%;
+    top: 57.5%;
+    left: 77.7%;
+    clip-path: polygon(23.74% 0%, 100% -4.54%, 81.42% 49.77%, 78.4% 77.24%, 88.13% 88.64%, 68.25% 97.72%, 47.48% 86.37%, 29.42% 68.52%, 20.84% 39.48%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(25) {
+    width: 3.1%;
+    height: 9.9%;
+    top: 53.9%;
+    left: 79.1%;
+    clip-path: polygon(5.36% 25.47%, 70.52% 3.4%, 81.89% 24.2%, 84.66% 48.44%, 88.14% 73.15%, 83.43% 92.7%, 75.88% 99.15%, 68.71% 94.81%, 52.42% 84.23%, 38.54% 71.52%, 26.34% 59.95%, 16.08% 48.22%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(26) {
+    width: 1.4%;
+    height: 3.7%;
+    top: 52.5%;
+    left: 82.1%;
+    clip-path: polygon(17.8% 13.63%, 94.07% -6.82%, 75.58% 58.17%, 46.59% 86.37%, 17.8% 93.19%, 23.73% 50.55%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(27) {
+    width: 2.8%;
+    height: 9.9%;
+    top: 50.9%;
+    left: 82.6%;
+    clip-path: polygon(8.9% 7.64%, 85.16% 1.7%, 85.9% 26.37%, 94.92% 42.61%, 95.93% 74.03%, 86.14% 95.55%, 61.42% 84.72%, 41.54% 64.35%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(28) {
+    width: 3.1%;
+    height: 11.1%;
+    top: 48.4%;
+    left: 86.2%;
+    clip-path: polygon(0% 0%, 59.8% 0.76%, 71.99% 31.12%, 78.79% 49.94%, 83.92% 76.53%, 91.56% 96.22%, 80.39% 96.97%, 60.8% 76.88%, 38.4% 56.9%, 18.76% 30.32%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(29) {
+    width: 1.6%;
+    height: 4.3%;
+    top: 48%;
+    left: 88.8%;
+    clip-path: polygon(5.19% 0%, 62.5% 0.11%, 68.83% 41.04%, 62.33% 100%, 33.66% 48.72%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(30) {
+    width: 1.6%;
+    height: 7.3%;
+    top: 55.1%;
+    left: 85.1%;
+    transform: rotate(10deg);
+    clip-path: polygon(82.25% 3.37%, 100% 0%, 75.04% 92.4%, 64.75% 96.63%, 8.81% 95.5%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(31) {
+    width: 1.3%;
+    height: 5.8%;
+    top: 62.5%;
+    left: 81.5%;
+    clip-path: polygon(44.73% 14.49%, 68.05% 5.8%, 87.22% 92.76%, 0% 97.1%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(32) {
+    width: 1.3%;
+    height: 5%;
+    top: 64.5%;
+    left: 80.4%;
+    transform: rotate(8deg);
+    clip-path: polygon(67.29% 1.64%, 100% 0%, 95.79% 47.87%, 93.25% 69.62%, 83.18% 91.81%, 13.29% 89.87%, 8.41% 86.9%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(33) {
+    width: 3%;
+    height: 7.3%;
+    top: 63.9%;
+    left: 77.1%;
+    clip-path: polygon(66.45% 0%, 84.52% 47.79%, 85.65% 72.29%, 83.17% 88.85%, 75.08% 97.7%, 21.27% 94.84%, 13.13% 91.15%, 11.08% 87.34%, 26.2% 55.46%, 54.67% 21.47%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(34) {
+    width: 1.4%;
+    height: 4.4%;
+    top: 69.3%;
+    left: 71.9%;
+    transform: rotate(20deg);
+    clip-path: polygon(62.24% 0%, 88.14% 1.82%, 92.81% 39.45%, 91.11% 79.98%, 24.08% 87.98%, 5.93% 83.62%, 29.46% 38.05%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(35) {
+    width: 1.9%;
+    height: 7.2%;
+    top: 67.4%;
+    left: 68.4%;
+    transform: rotate(10deg);
+    clip-path: polygon(69.53% -3.4%, 86.63% 1.13%, 97.33% 71.7%, 92.57% 85.32%, 82.08% 92.5%, 23.36% 97.87%, 0% 95.47%, 9.87% 74.96%, 38.18% 44.69%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(36) {
+    width: 3.4%;
+    height: 10.7%;
+    top: 65.4%;
+    left: 64.8%;
+    clip-path: polygon(68.4% 3.14%, 78.01% 3.14%, 89.62% 50.59%, 95.11% 94.5%, 4.89% 92.93%, 19.14% 62.04%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(37) {
+    width: 1.7%;
+    height: 4.1%;
+    top: 73.8%;
+    left: 61.6%;
+    clip-path: polygon(24.43% 53.3%, 41.38% 38.25%, 51.14% 59.45%, 45.87% 87.71%, 21.82% 89.75%, 0% 81.55%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(38) {
+    width: 3.2%;
+    height: 10.2%;
+    top: 66.6%;
+    left: 61%;
+    clip-path: polygon(103.85% 4.12%, 92.21% 10.71%, 91.1% 18%, 93.2% 30%, 76.87% 38.54%, 82.67% 44.55%, 89.43% 60.35%, 87.02% 98.35%, 58.58% 100.19%, 22.28% 96.35%, 2.6% 92.58%, 37.01% 51.37%, 50.68% 33.1%, 53.35% 21.7%, 69.03% 17.8%, 79.41% 8.36%, 92.35% 4.67%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(39) {
+    width: 2.5%;
+    height: 6.4%;
+    top: 71%;
+    left: 57.6%;
+    clip-path: polygon(56.48% 28.89%, 86.71% 5.25%, 76.74% 81.62%, 67.94% 91.36%, 47.69% 95.2%, 20.57% 91.76%, 9.97% 85.55%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(40) {
+    width: 2.8%;
+    height: 9.5%;
+    top: 67.4%;
+    left: 53.8%;
+    clip-path: polygon(59.35% 3.54%, 71.6% 4.33%, 85.16% 37.15%, 97.03% 91.15%, 71.93% 98.66%, 39.33% 97.1%, 0% 89.39%, 27.87% 54.22%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(41) {
+    width: 1.6%;
+    height: 5.2%;
+    top: 71.4%;
+    left: 51.3%;
+    clip-path: polygon(62.33% 12.93%, 79.22% 6.47%, 80.57% 49.03%, 76.84% 81.64%, 63.64% 98.38%, 17.26% 95.47%, 5.19% 88.69%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(42) {
+    width: 2.1%;
+    height: 8.1%;
+    top: 68.7%;
+    left: 48.3%;
+    clip-path: polygon(55.37% 5.19%, 56.49% 18.68%, 71.59% 31.9%, 74.19% 51.39%, 89.35% 64.16%, 92.08% 87.54%, 53.31% 94.35%, 25.6% 94.16%, 11.87% 88.59%, 10.6% 78.76%, 13.32% 57.42%, 29.95% 45.79%, 28.92% 26.15%, 38.21% 7.6%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(43) {
+    width: 1.9%;
+    height: 6.4%;
+    top: 71%;
+    left: 44.8%;
+    clip-path: polygon(43.73% 6.57%, 63.4% 29.35%, 78.13% 57.78%, 95.63% 86.87%, 64.06% 93.11%, 17.49% 98.69%, 23.42% 51.54%, 24.54% 28.37%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(44) {
+    width: 1.7%;
+    height: 5%;
+    top: 72.5%;
+    left: 43%;
+    clip-path: polygon(53.75% 11.76%, 56.02% 31.93%, 73.37% 54.24%, 90.22% 79.83%, 51.06% 90.38%, 25.65% 86.88%, 24.43% 71.43%, 23.42% 53.25%, 31.98% 19.3%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(45) {
+    width: 1.6%;
+    height: 8.5%;
+    top: 69.7%;
+    left: 40.4%;
+    transform: rotate(10deg);
+    clip-path: polygon(60.24% 2.91%, 80.83% 3.99%, 83.57% 57.26%, 95.98% 85.95%, 82.19% 93.64%, 47.23% 97.07%, 8.21% 93.2%, 33.2% 37.2%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(46) {
+    width: 1.3%;
+    height: 3.7%;
+    top: 75.1%;
+    left: 37.7%;
+    clip-path: polygon(31.95% 54.53%, 23.22% 10.97%, 42.49% 9.09%, 87.22% 48.43%, 100% 93.18%, 58.15% 93.18%, 38.34% 81.82%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(47) {
+    width: 1.8%;
+    height: 6.9%;
+    top: 70.3%;
+    left: 35.7%;
+    clip-path: polygon(27.69% 6.09%, 58.46% 15.84%, 86.65% 61.14%, 100% 100%, 13.85% 81.73%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(48) {
+    width: 2.2%;
+    height: 12.3%;
+    top: 63.2%;
+    left: 31.3%;
+    clip-path: polygon(37.76% 3.42%, 56.73% 3.25%, 80.35% 23.7%, 77.89% 45.56%, 84.9% 69%, 92.45% 89.75%, 83.52% 96.36%, 49.66% 97.95%, 4.35% 93.85%, 0% 74.04%, 8.42% 58.8%, 19.54% 36.2%, 27.08% 21.06%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(49) {
+    width: 1.4%;
+    height: 6.5%;
+    top: 67.5%;
+    left: 30%;
+    transform: rotate(10deg);
+    clip-path: polygon(33.3% 12.64%, 63.36% 2.53%, 81.25% 10.9%, 83.35% 48.17%, 90.8% 73.45%, 87.68% 89.84%, 67.8% 96%, 24.61% 95.55%, 9.99% 88.62%, 2.78% 68.49%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(50) {
+    width: 2.9%;
+    height: 11%;
+    top: 62.4%;
+    left: 27.5%;
+    clip-path: polygon(45.84% 25.21%, 100% 1.53%, 96.04% 36.01%, 68.9% 87.84%, 48.42% 97.71%, 22.89% 98.4%, 8.55% 96.18%, 2.86% 91.6%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(51) {
+    width: 1.6%;
+    height: 8.4%;
+    top: 64.1%;
+    left: 25.7%;
+    clip-path: polygon(31.17% 1%, 58.44% 0%, 74.12% 35.09%, 103.21% 86.01%, 74.03% 94%, 0% 100%, 24.79% 55.12%, 23.27% 36.07%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(52) {
+    width: 2.5%;
+    height: 10.8%;
+    top: 60.8%;
+    left: 21.6%;
+    transform: rotate(-9deg);
+    clip-path: polygon(40.13% 3.04%, 51.84% 0.76%, 66.2% 18.86%, 100% 100%, 57.84% 100.91%, 7.31% 93.46%, 10.03% 78.73%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(53) {
+    width: 1.7%;
+    height: 7.1%;
+    top: 64.3%;
+    left: 19.9%;
+    transform: rotate(-15deg);
+    clip-path: polygon(14.41% -3.45%, 37.55% 8.06%, 57.43% 30.91%, 76.9% 53.55%, 87.99% 102.3%, 4.81% 97.7%, -0.4% 78.69%, 14.09% 50.29%, 19.33% 31.14%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(54) {
+    width: 1.9%;
+    height: 8.8%;
+    top: 62.4%;
+    left: 17.4%;
+    transform: rotate(-13deg);
+    clip-path: polygon(43.63% -4.67%, 56.37% -0.93%, 81.79% 39.38%, 89.86% 60.55%, 84.73% 98.13%, 26.18% 99.07%, 8.47% 64.06%, 30.27% 44.37%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(55) {
+    width: 1.9%;
+    height: 4.7%;
+    top: 60.1%;
+    left: 13.2%;
+    clip-path: polygon(26.24% 0%, 47.52% 16.1%, 68.8% 38.23%, 82.82% 63.11%, 95.63% 89.27%, 70.08% 93.93%, 48.1% 91.05%, 29.06% 70.43%, 11.35% 45.26%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(56) {
+    width: 0.9%;
+    height: 8.8%;
+    top: 52.8%;
+    left: 11.6%;
+    clip-path: polygon(73.85% 4.77%, 118.46% -0.95%, 89.24% 90.32%, 72.31% 97.14%, 2.96% 91.03%, -8.42% 80.9%, 18.46% 49.39%);
+  }
+  #pumpkin #body .mouth .teeth .tooth:nth-of-type(57) {
+    width: 1.3%;
+    height: 3.8%;
+    top: 53%;
+    left: 8.9%;
+    clip-path: polygon(12.78% 26.54%, 51.11% 17.09%, 68.18% 43.06%, 87.22% 61.92%, 80.83% 84.52%, 31.95% 73.46%, 11.32% 51.79%);
+  }
+  
+  @media only screen and (min-width: 400px) and (min-height: 400px) {
+    #pumpkin {
+      width: 350px;
+      height: 350px;
+    }
+    #pumpkin #body .eye .ball .iris {
+      border: solid 3px var(--dark);
+    }
+  }
+  @media only screen and (min-width: 600px) and (min-height: 600px) {
+    #pumpkin {
+      width: 550px;
+      height: 550px;
+    }
+    #pumpkin #body .eye .ball .iris {
+      border: solid 4px var(--dark);
+    }
+    #pumpkin #body .stitches .stitch {
+      height: 3px;
+    }
+  }
+  @media only screen and (min-width: 800px) and (min-height: 800px) {
+    #pumpkin {
+      width: 750px;
+      height: 750px;
+    }
+    #pumpkin #body .eye .ball .iris {
+      border: solid 5px var(--dark);
+    }
+    #pumpkin #body .stitches .stitch {
+      height: 4px;
+    }
+  }
+  @media only screen and (min-width: 1000px) and (min-height: 1000px) {
+    #pumpkin {
+      width: 950px;
+      height: 950px;
+    }
+    #pumpkin #body .eye .ball .iris {
+      border: solid 5px var(--dark);
+    }
+    #pumpkin #body .stitches .stitch {
+      height: 4px;
+    }
+  }
