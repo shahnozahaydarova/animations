@@ -1,0 +1,229 @@
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);
+body {
+  background-color: #3c3c3c;
+  padding: 50px 0;
+  font-family: "Noto Sans", sans-serif;
+  text-align: center;
+}
+
+.container {
+  background-color: #222222;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 320px;
+  min-height: 568px;
+  margin: 0 auto;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 9px 13px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 9px 13px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 9px 13px 0px rgba(0, 0, 0, 0.3);
+  -webkit-transform: scale(1);
+}
+
+.menu-trigger, .close-trigger {
+  position: absolute;
+  top: 32px;
+  right: 20px;
+  display: block;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  z-index: 333;
+}
+.menu-trigger:hover .menu-trigger-bar:before, .close-trigger:hover .menu-trigger-bar:before {
+  width: 100%;
+}
+.menu-trigger:hover .close-trigger-bar:before, .close-trigger:hover .close-trigger-bar:before {
+  width: 100%;
+}
+
+.close-trigger {
+  z-index: 5;
+  top: 42px;
+}
+
+.menu-trigger-bar {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  margin-bottom: 6px;
+  transform: rotate(-45deg);
+  position: relative;
+}
+.menu-trigger-bar:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 0%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+}
+.menu-trigger-bar.top {
+  width: 50%;
+}
+.menu-trigger-bar.middle:before {
+  left: auto;
+  right: 0;
+}
+.menu-trigger-bar.bottom {
+  width: 50%;
+  margin-left: 50%;
+}
+
+.close-trigger-bar {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #222222;
+  position: relative;
+}
+.close-trigger-bar:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 0%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+}
+.close-trigger-bar.left {
+  transform: translateX(100px) translateY(-100px) rotate(-45deg);
+}
+.close-trigger-bar.right {
+  transform: translateX(-100px) translateY(-100px) rotate(45deg);
+  top: -3px;
+}
+
+.logo {
+  display: block;
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -52px;
+  margin-left: -32px;
+  text-align: center;
+  z-index: 10;
+}
+.logo span {
+  display: block;
+  text-align: center;
+  line-height: 62px;
+  font-size: 72px;
+  color: white;
+}
+
+.inner-container, .menu-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.inner-container {
+  z-index: 20;
+}
+
+.menu-container {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: block;
+  width: 100%;
+  padding: 20%;
+}
+.menu li {
+  text-align: left;
+  display: block;
+  padding: 15px 0;
+}
+.menu a {
+  text-decoration: none;
+  color: #222222;
+  display: inline-block;
+  padding: 10px 0;
+  position: relative;
+}
+.menu a:hover:before {
+  opacity: 1;
+  transform: translateX(0px);
+}
+.menu a:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 18px;
+  height: 4px;
+  opacity: 0;
+  background-color: #222222;
+  transform: translateX(100px);
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.menu-bg {
+  position: absolute;
+  display: block;
+  width: 200%;
+  left: -53%;
+  top: -25%;
+  height: 40%;
+  background-color: white;
+}
+.menu-bg.middle {
+  top: 29%;
+  left: -53%;
+  transform: rotate(-45deg) scaleY(0);
+}
+.menu-bg.top {
+  left: -34%;
+  top: 0;
+  transform: rotate(-45deg) translateY(-152%);
+}
+.menu-bg.bottom {
+  top: 105%;
+  transform: rotate(-45deg) translateY(25%);
+  left: -20%;
+}
+
+#links {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 50px;
+  font-size: 13px;
+  font-family: tahoma;
+  color: #fff;
+}
+
+#links a {
+  text-decoration: none;
+  font-size: 2.3em;
+  color: #fff;
+}
+
+#twitter {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+}
+
+#pens {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+}
