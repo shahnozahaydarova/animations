@@ -1,0 +1,407 @@
+body {
+    background: #005f99;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: Arial;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    --width: 8vw;
+    height: 90vh;
+    gap: 10px;
+  }
+  
+  /* Cloud */
+  .cloud {
+    --color1: #fff;
+    --color2: #84848f;
+    position: relative;
+    display: inline-block;
+    width: calc(var(--width) * 1.5);
+    height: calc(var(--width) * 0.6);
+    background: var(--color1);
+    border-radius: var(--width);
+    opacity: 0.95;
+    text-align: center;
+    animation-name: opacity;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  
+  @keyframes opacity {
+    0% {
+      opacity: 0.95;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 0.95;
+    }
+  }
+  .cloud::after,
+  .cloud::before {
+    content: "";
+    position: absolute;
+    background-color: var(--color1);
+    width: calc(var(--width) * 0.6);
+    height: calc(var(--width) * 0.6);
+    border-radius: var(--width);
+    top: calc(var(--width) * -0.2);
+    left: calc(var(--width) * 0.3);
+    animation-name: moving;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  
+  .cloud::before {
+    left: calc(var(--width) * 0.7);
+    animation-delay: 1s;
+  }
+  
+  @keyframes moving {
+    0% {
+      top: calc(var(--width) * -0.2);
+    }
+    50% {
+      top: calc(var(--width) * -0.25);
+    }
+    100% {
+      top: calc(var(--width) * -0.2);
+    }
+  }
+  .dark,
+  .dark::before,
+  .dark::after {
+    background: var(--color2);
+  }
+  
+  .rain {
+    --color1: #00cdff;
+    height: calc(var(--width) * 0.5);
+    display: inline-block;
+    width: calc(var(--width) * 0.7);
+    opacity: 0.7;
+    clip-path: polygon(20% 0%, 10% 50%, 20% 50%, 30% 0%, 35% 50%, 25% 100%, 35% 100%, 45% 50%, 65% 0%, 55% 50%, 65% 50%, 75% 50%, 65% 100%, 75% 100%, 85% 50%, 65% 50%, 75% 0%, 65% 0%, 45% 50%, 35% 50%, 30% 0%);
+    animation-name: dropping;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+  }
+  
+  .cloud > .rain {
+    margin-top: calc(var(--width) * 0.3);
+  }
+  
+  @keyframes dropping {
+    0% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(0% + 0%), var(--color1) calc(0% + 0.1%), var(--color1) calc(0% + 20%), transparent calc(0% + 20.1%), transparent 100%);
+    }
+    1% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(1% + 0%), var(--color1) calc(1% + 0.1%), var(--color1) calc(1% + 20%), transparent calc(1% + 20.1%), transparent 100%);
+    }
+    2% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(2% + 0%), var(--color1) calc(2% + 0.1%), var(--color1) calc(2% + 20%), transparent calc(2% + 20.1%), transparent 100%);
+    }
+    3% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(3% + 0%), var(--color1) calc(3% + 0.1%), var(--color1) calc(3% + 20%), transparent calc(3% + 20.1%), transparent 100%);
+    }
+    4% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(4% + 0%), var(--color1) calc(4% + 0.1%), var(--color1) calc(4% + 20%), transparent calc(4% + 20.1%), transparent 100%);
+    }
+    5% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(5% + 0%), var(--color1) calc(5% + 0.1%), var(--color1) calc(5% + 20%), transparent calc(5% + 20.1%), transparent 100%);
+    }
+    6% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(6% + 0%), var(--color1) calc(6% + 0.1%), var(--color1) calc(6% + 20%), transparent calc(6% + 20.1%), transparent 100%);
+    }
+    7% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(7% + 0%), var(--color1) calc(7% + 0.1%), var(--color1) calc(7% + 20%), transparent calc(7% + 20.1%), transparent 100%);
+    }
+    8% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(8% + 0%), var(--color1) calc(8% + 0.1%), var(--color1) calc(8% + 20%), transparent calc(8% + 20.1%), transparent 100%);
+    }
+    9% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(9% + 0%), var(--color1) calc(9% + 0.1%), var(--color1) calc(9% + 20%), transparent calc(9% + 20.1%), transparent 100%);
+    }
+    10% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(10% + 0%), var(--color1) calc(10% + 0.1%), var(--color1) calc(10% + 20%), transparent calc(10% + 20.1%), transparent 100%);
+    }
+    11% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(11% + 0%), var(--color1) calc(11% + 0.1%), var(--color1) calc(11% + 20%), transparent calc(11% + 20.1%), transparent 100%);
+    }
+    12% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(12% + 0%), var(--color1) calc(12% + 0.1%), var(--color1) calc(12% + 20%), transparent calc(12% + 20.1%), transparent 100%);
+    }
+    13% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(13% + 0%), var(--color1) calc(13% + 0.1%), var(--color1) calc(13% + 20%), transparent calc(13% + 20.1%), transparent 100%);
+    }
+    14% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(14% + 0%), var(--color1) calc(14% + 0.1%), var(--color1) calc(14% + 20%), transparent calc(14% + 20.1%), transparent 100%);
+    }
+    15% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(15% + 0%), var(--color1) calc(15% + 0.1%), var(--color1) calc(15% + 20%), transparent calc(15% + 20.1%), transparent 100%);
+    }
+    16% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(16% + 0%), var(--color1) calc(16% + 0.1%), var(--color1) calc(16% + 20%), transparent calc(16% + 20.1%), transparent 100%);
+    }
+    17% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(17% + 0%), var(--color1) calc(17% + 0.1%), var(--color1) calc(17% + 20%), transparent calc(17% + 20.1%), transparent 100%);
+    }
+    18% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(18% + 0%), var(--color1) calc(18% + 0.1%), var(--color1) calc(18% + 20%), transparent calc(18% + 20.1%), transparent 100%);
+    }
+    19% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(19% + 0%), var(--color1) calc(19% + 0.1%), var(--color1) calc(19% + 20%), transparent calc(19% + 20.1%), transparent 100%);
+    }
+    20% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(20% + 0%), var(--color1) calc(20% + 0.1%), var(--color1) calc(20% + 20%), transparent calc(20% + 20.1%), transparent 100%);
+    }
+    21% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(21% + 0%), var(--color1) calc(21% + 0.1%), var(--color1) calc(21% + 20%), transparent calc(21% + 20.1%), transparent calc(21% + 50%), var(--color1) calc(21% + 50.1%), var(--color1) calc(21% + 70%), transparent calc(21% + 70.1%), transparent 100%);
+    }
+    22% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(22% + 0%), var(--color1) calc(22% + 0.1%), var(--color1) calc(22% + 20%), transparent calc(22% + 20.1%), transparent calc(22% + 50%), var(--color1) calc(22% + 50.1%), var(--color1) calc(22% + 70%), transparent calc(22% + 70.1%), transparent 100%);
+    }
+    23% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(23% + 0%), var(--color1) calc(23% + 0.1%), var(--color1) calc(23% + 20%), transparent calc(23% + 20.1%), transparent calc(23% + 50%), var(--color1) calc(23% + 50.1%), var(--color1) calc(23% + 70%), transparent calc(23% + 70.1%), transparent 100%);
+    }
+    24% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(24% + 0%), var(--color1) calc(24% + 0.1%), var(--color1) calc(24% + 20%), transparent calc(24% + 20.1%), transparent calc(24% + 50%), var(--color1) calc(24% + 50.1%), var(--color1) calc(24% + 70%), transparent calc(24% + 70.1%), transparent 100%);
+    }
+    25% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(25% + 0%), var(--color1) calc(25% + 0.1%), var(--color1) calc(25% + 20%), transparent calc(25% + 20.1%), transparent calc(25% + 50%), var(--color1) calc(25% + 50.1%), var(--color1) calc(25% + 70%), transparent calc(25% + 70.1%), transparent 100%);
+    }
+    26% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(26% + 0%), var(--color1) calc(26% + 0.1%), var(--color1) calc(26% + 20%), transparent calc(26% + 20.1%), transparent calc(26% + 50%), var(--color1) calc(26% + 50.1%), var(--color1) calc(26% + 70%), transparent calc(26% + 70.1%), transparent 100%);
+    }
+    27% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(27% + 0%), var(--color1) calc(27% + 0.1%), var(--color1) calc(27% + 20%), transparent calc(27% + 20.1%), transparent calc(27% + 50%), var(--color1) calc(27% + 50.1%), var(--color1) calc(27% + 70%), transparent calc(27% + 70.1%), transparent 100%);
+    }
+    28% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(28% + 0%), var(--color1) calc(28% + 0.1%), var(--color1) calc(28% + 20%), transparent calc(28% + 20.1%), transparent calc(28% + 50%), var(--color1) calc(28% + 50.1%), var(--color1) calc(28% + 70%), transparent calc(28% + 70.1%), transparent 100%);
+    }
+    29% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(29% + 0%), var(--color1) calc(29% + 0.1%), var(--color1) calc(29% + 20%), transparent calc(29% + 20.1%), transparent calc(29% + 50%), var(--color1) calc(29% + 50.1%), var(--color1) calc(29% + 70%), transparent calc(29% + 70.1%), transparent 100%);
+    }
+    30% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(30% + 0%), var(--color1) calc(30% + 0.1%), var(--color1) calc(30% + 20%), transparent calc(30% + 20.1%), transparent calc(30% + 50%), var(--color1) calc(30% + 50.1%), var(--color1) calc(30% + 70%), transparent calc(30% + 70.1%), transparent 100%);
+    }
+    31% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(31% + 0%), var(--color1) calc(31% + 0.1%), var(--color1) calc(31% + 20%), transparent calc(31% + 20.1%), transparent calc(31% + 50%), var(--color1) calc(31% + 50.1%), var(--color1) calc(31% + 70%), transparent calc(31% + 70.1%), transparent 100%);
+    }
+    32% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(32% + 0%), var(--color1) calc(32% + 0.1%), var(--color1) calc(32% + 20%), transparent calc(32% + 20.1%), transparent calc(32% + 50%), var(--color1) calc(32% + 50.1%), var(--color1) calc(32% + 70%), transparent calc(32% + 70.1%), transparent 100%);
+    }
+    33% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(33% + 0%), var(--color1) calc(33% + 0.1%), var(--color1) calc(33% + 20%), transparent calc(33% + 20.1%), transparent calc(33% + 50%), var(--color1) calc(33% + 50.1%), var(--color1) calc(33% + 70%), transparent calc(33% + 70.1%), transparent 100%);
+    }
+    34% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(34% + 0%), var(--color1) calc(34% + 0.1%), var(--color1) calc(34% + 20%), transparent calc(34% + 20.1%), transparent calc(34% + 50%), var(--color1) calc(34% + 50.1%), var(--color1) calc(34% + 70%), transparent calc(34% + 70.1%), transparent 100%);
+    }
+    35% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(35% + 0%), var(--color1) calc(35% + 0.1%), var(--color1) calc(35% + 20%), transparent calc(35% + 20.1%), transparent calc(35% + 50%), var(--color1) calc(35% + 50.1%), var(--color1) calc(35% + 70%), transparent calc(35% + 70.1%), transparent 100%);
+    }
+    36% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(36% + 0%), var(--color1) calc(36% + 0.1%), var(--color1) calc(36% + 20%), transparent calc(36% + 20.1%), transparent calc(36% + 50%), var(--color1) calc(36% + 50.1%), var(--color1) calc(36% + 70%), transparent calc(36% + 70.1%), transparent 100%);
+    }
+    37% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(37% + 0%), var(--color1) calc(37% + 0.1%), var(--color1) calc(37% + 20%), transparent calc(37% + 20.1%), transparent calc(37% + 50%), var(--color1) calc(37% + 50.1%), var(--color1) calc(37% + 70%), transparent calc(37% + 70.1%), transparent 100%);
+    }
+    38% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(38% + 0%), var(--color1) calc(38% + 0.1%), var(--color1) calc(38% + 20%), transparent calc(38% + 20.1%), transparent calc(38% + 50%), var(--color1) calc(38% + 50.1%), var(--color1) calc(38% + 70%), transparent calc(38% + 70.1%), transparent 100%);
+    }
+    39% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(39% + 0%), var(--color1) calc(39% + 0.1%), var(--color1) calc(39% + 20%), transparent calc(39% + 20.1%), transparent calc(39% + 50%), var(--color1) calc(39% + 50.1%), var(--color1) calc(39% + 70%), transparent calc(39% + 70.1%), transparent 100%);
+    }
+    40% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(40% + 0%), var(--color1) calc(40% + 0.1%), var(--color1) calc(40% + 20%), transparent calc(40% + 20.1%), transparent calc(40% + 50%), var(--color1) calc(40% + 50.1%), var(--color1) calc(40% + 70%), transparent calc(40% + 70.1%), transparent 100%);
+    }
+    41% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(41% + 0%), var(--color1) calc(41% + 0.1%), var(--color1) calc(41% + 20%), transparent calc(41% + 20.1%), transparent calc(41% + 50%), var(--color1) calc(41% + 50.1%), var(--color1) calc(41% + 70%), transparent calc(41% + 70.1%), transparent 100%);
+    }
+    42% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(42% + 0%), var(--color1) calc(42% + 0.1%), var(--color1) calc(42% + 20%), transparent calc(42% + 20.1%), transparent calc(42% + 50%), var(--color1) calc(42% + 50.1%), var(--color1) calc(42% + 70%), transparent calc(42% + 70.1%), transparent 100%);
+    }
+    43% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(43% + 0%), var(--color1) calc(43% + 0.1%), var(--color1) calc(43% + 20%), transparent calc(43% + 20.1%), transparent calc(43% + 50%), var(--color1) calc(43% + 50.1%), var(--color1) calc(43% + 70%), transparent calc(43% + 70.1%), transparent 100%);
+    }
+    44% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(44% + 0%), var(--color1) calc(44% + 0.1%), var(--color1) calc(44% + 20%), transparent calc(44% + 20.1%), transparent calc(44% + 50%), var(--color1) calc(44% + 50.1%), var(--color1) calc(44% + 70%), transparent calc(44% + 70.1%), transparent 100%);
+    }
+    45% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(45% + 0%), var(--color1) calc(45% + 0.1%), var(--color1) calc(45% + 20%), transparent calc(45% + 20.1%), transparent calc(45% + 50%), var(--color1) calc(45% + 50.1%), var(--color1) calc(45% + 70%), transparent calc(45% + 70.1%), transparent 100%);
+    }
+    46% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(46% + 0%), var(--color1) calc(46% + 0.1%), var(--color1) calc(46% + 20%), transparent calc(46% + 20.1%), transparent calc(46% + 50%), var(--color1) calc(46% + 50.1%), var(--color1) calc(46% + 70%), transparent calc(46% + 70.1%), transparent 100%);
+    }
+    47% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(47% + 0%), var(--color1) calc(47% + 0.1%), var(--color1) calc(47% + 20%), transparent calc(47% + 20.1%), transparent calc(47% + 50%), var(--color1) calc(47% + 50.1%), var(--color1) calc(47% + 70%), transparent calc(47% + 70.1%), transparent 100%);
+    }
+    48% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(48% + 0%), var(--color1) calc(48% + 0.1%), var(--color1) calc(48% + 20%), transparent calc(48% + 20.1%), transparent calc(48% + 50%), var(--color1) calc(48% + 50.1%), var(--color1) calc(48% + 70%), transparent calc(48% + 70.1%), transparent 100%);
+    }
+    49% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(49% + 0%), var(--color1) calc(49% + 0.1%), var(--color1) calc(49% + 20%), transparent calc(49% + 20.1%), transparent calc(49% + 50%), var(--color1) calc(49% + 50.1%), var(--color1) calc(49% + 70%), transparent calc(49% + 70.1%), transparent 100%);
+    }
+    50% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(50% + 0%), var(--color1) calc(50% + 0.1%), var(--color1) calc(50% + 20%), transparent calc(50% + 20.1%), transparent calc(50% + 50%), var(--color1) calc(50% + 50.1%), var(--color1) calc(50% + 70%), transparent calc(50% + 70.1%), transparent 100%);
+    }
+    51% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(51% + 0%), var(--color1) calc(51% + 0.1%), var(--color1) calc(51% + 20%), transparent calc(51% + 20.1%), transparent calc(51% + 50%), var(--color1) calc(51% + 50.1%), var(--color1) calc(51% + 70%), transparent calc(51% + 70.1%), transparent 100%);
+    }
+    52% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(52% + 0%), var(--color1) calc(52% + 0.1%), var(--color1) calc(52% + 20%), transparent calc(52% + 20.1%), transparent calc(52% + 50%), var(--color1) calc(52% + 50.1%), var(--color1) calc(52% + 70%), transparent calc(52% + 70.1%), transparent 100%);
+    }
+    53% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(53% + 0%), var(--color1) calc(53% + 0.1%), var(--color1) calc(53% + 20%), transparent calc(53% + 20.1%), transparent calc(53% + 50%), var(--color1) calc(53% + 50.1%), var(--color1) calc(53% + 70%), transparent calc(53% + 70.1%), transparent 100%);
+    }
+    54% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(54% + 0%), var(--color1) calc(54% + 0.1%), var(--color1) calc(54% + 20%), transparent calc(54% + 20.1%), transparent calc(54% + 50%), var(--color1) calc(54% + 50.1%), var(--color1) calc(54% + 70%), transparent calc(54% + 70.1%), transparent 100%);
+    }
+    55% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(55% + 0%), var(--color1) calc(55% + 0.1%), var(--color1) calc(55% + 20%), transparent calc(55% + 20.1%), transparent calc(55% + 50%), var(--color1) calc(55% + 50.1%), var(--color1) calc(55% + 70%), transparent calc(55% + 70.1%), transparent 100%);
+    }
+    56% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(56% + 0%), var(--color1) calc(56% + 0.1%), var(--color1) calc(56% + 20%), transparent calc(56% + 20.1%), transparent calc(56% + 50%), var(--color1) calc(56% + 50.1%), var(--color1) calc(56% + 70%), transparent calc(56% + 70.1%), transparent 100%);
+    }
+    57% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(57% + 0%), var(--color1) calc(57% + 0.1%), var(--color1) calc(57% + 20%), transparent calc(57% + 20.1%), transparent calc(57% + 50%), var(--color1) calc(57% + 50.1%), var(--color1) calc(57% + 70%), transparent calc(57% + 70.1%), transparent 100%);
+    }
+    58% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(58% + 0%), var(--color1) calc(58% + 0.1%), var(--color1) calc(58% + 20%), transparent calc(58% + 20.1%), transparent calc(58% + 50%), var(--color1) calc(58% + 50.1%), var(--color1) calc(58% + 70%), transparent calc(58% + 70.1%), transparent 100%);
+    }
+    59% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(59% + 0%), var(--color1) calc(59% + 0.1%), var(--color1) calc(59% + 20%), transparent calc(59% + 20.1%), transparent calc(59% + 50%), var(--color1) calc(59% + 50.1%), var(--color1) calc(59% + 70%), transparent calc(59% + 70.1%), transparent 100%);
+    }
+    60% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(60% + 0%), var(--color1) calc(60% + 0.1%), var(--color1) calc(60% + 20%), transparent calc(60% + 20.1%), transparent calc(60% + 50%), var(--color1) calc(60% + 50.1%), var(--color1) calc(60% + 70%), transparent calc(60% + 70.1%), transparent 100%);
+    }
+    61% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(61% + 0%), var(--color1) calc(61% + 0.1%), var(--color1) calc(61% + 20%), transparent calc(61% + 20.1%), transparent calc(61% + 50%), var(--color1) calc(61% + 50.1%), var(--color1) calc(61% + 70%), transparent calc(61% + 70.1%), transparent 100%);
+    }
+    62% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(62% + 0%), var(--color1) calc(62% + 0.1%), var(--color1) calc(62% + 20%), transparent calc(62% + 20.1%), transparent calc(62% + 50%), var(--color1) calc(62% + 50.1%), var(--color1) calc(62% + 70%), transparent calc(62% + 70.1%), transparent 100%);
+    }
+    63% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(63% + 0%), var(--color1) calc(63% + 0.1%), var(--color1) calc(63% + 20%), transparent calc(63% + 20.1%), transparent calc(63% + 50%), var(--color1) calc(63% + 50.1%), var(--color1) calc(63% + 70%), transparent calc(63% + 70.1%), transparent 100%);
+    }
+    64% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(64% + 0%), var(--color1) calc(64% + 0.1%), var(--color1) calc(64% + 20%), transparent calc(64% + 20.1%), transparent calc(64% + 50%), var(--color1) calc(64% + 50.1%), var(--color1) calc(64% + 70%), transparent calc(64% + 70.1%), transparent 100%);
+    }
+    65% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(65% + 0%), var(--color1) calc(65% + 0.1%), var(--color1) calc(65% + 20%), transparent calc(65% + 20.1%), transparent calc(65% + 50%), var(--color1) calc(65% + 50.1%), var(--color1) calc(65% + 70%), transparent calc(65% + 70.1%), transparent 100%);
+    }
+    66% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(66% + 0%), var(--color1) calc(66% + 0.1%), var(--color1) calc(66% + 20%), transparent calc(66% + 20.1%), transparent calc(66% + 50%), var(--color1) calc(66% + 50.1%), var(--color1) calc(66% + 70%), transparent calc(66% + 70.1%), transparent 100%);
+    }
+    67% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(67% + 0%), var(--color1) calc(67% + 0.1%), var(--color1) calc(67% + 20%), transparent calc(67% + 20.1%), transparent calc(67% + 50%), var(--color1) calc(67% + 50.1%), var(--color1) calc(67% + 70%), transparent calc(67% + 70.1%), transparent 100%);
+    }
+    68% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(68% + 0%), var(--color1) calc(68% + 0.1%), var(--color1) calc(68% + 20%), transparent calc(68% + 20.1%), transparent calc(68% + 50%), var(--color1) calc(68% + 50.1%), var(--color1) calc(68% + 70%), transparent calc(68% + 70.1%), transparent 100%);
+    }
+    69% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(69% + 0%), var(--color1) calc(69% + 0.1%), var(--color1) calc(69% + 20%), transparent calc(69% + 20.1%), transparent calc(69% + 50%), var(--color1) calc(69% + 50.1%), var(--color1) calc(69% + 70%), transparent calc(69% + 70.1%), transparent 100%);
+    }
+    70% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(70% + 0%), var(--color1) calc(70% + 0.1%), var(--color1) calc(70% + 20%), transparent calc(70% + 20.1%), transparent calc(70% + 50%), var(--color1) calc(70% + 50.1%), var(--color1) calc(70% + 70%), transparent calc(70% + 70.1%), transparent 100%);
+    }
+    71% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(71% + 0%), var(--color1) calc(71% + 0.1%), var(--color1) calc(71% + 20%), transparent calc(71% + 20.1%), transparent calc(71% + 50%), var(--color1) calc(71% + 50.1%), var(--color1) calc(71% + 70%), transparent calc(71% + 70.1%), transparent 100%);
+    }
+    72% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(72% + 0%), var(--color1) calc(72% + 0.1%), var(--color1) calc(72% + 20%), transparent calc(72% + 20.1%), transparent calc(72% + 50%), var(--color1) calc(72% + 50.1%), var(--color1) calc(72% + 70%), transparent calc(72% + 70.1%), transparent 100%);
+    }
+    73% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(73% + 0%), var(--color1) calc(73% + 0.1%), var(--color1) calc(73% + 20%), transparent calc(73% + 20.1%), transparent calc(73% + 50%), var(--color1) calc(73% + 50.1%), var(--color1) calc(73% + 70%), transparent calc(73% + 70.1%), transparent 100%);
+    }
+    74% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(74% + 0%), var(--color1) calc(74% + 0.1%), var(--color1) calc(74% + 20%), transparent calc(74% + 20.1%), transparent calc(74% + 50%), var(--color1) calc(74% + 50.1%), var(--color1) calc(74% + 70%), transparent calc(74% + 70.1%), transparent 100%);
+    }
+    75% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(75% + 0%), var(--color1) calc(75% + 0.1%), var(--color1) calc(75% + 20%), transparent calc(75% + 20.1%), transparent calc(75% + 50%), var(--color1) calc(75% + 50.1%), var(--color1) calc(75% + 70%), transparent calc(75% + 70.1%), transparent 100%);
+    }
+    76% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(76% + 0%), var(--color1) calc(76% + 0.1%), var(--color1) calc(76% + 20%), transparent calc(76% + 20.1%), transparent calc(76% + 50%), var(--color1) calc(76% + 50.1%), var(--color1) calc(76% + 70%), transparent calc(76% + 70.1%), transparent 100%);
+    }
+    77% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(77% + 0%), var(--color1) calc(77% + 0.1%), var(--color1) calc(77% + 20%), transparent calc(77% + 20.1%), transparent calc(77% + 50%), var(--color1) calc(77% + 50.1%), var(--color1) calc(77% + 70%), transparent calc(77% + 70.1%), transparent 100%);
+    }
+    78% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(78% + 0%), var(--color1) calc(78% + 0.1%), var(--color1) calc(78% + 20%), transparent calc(78% + 20.1%), transparent calc(78% + 50%), var(--color1) calc(78% + 50.1%), var(--color1) calc(78% + 70%), transparent calc(78% + 70.1%), transparent 100%);
+    }
+    79% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(79% + 0%), var(--color1) calc(79% + 0.1%), var(--color1) calc(79% + 20%), transparent calc(79% + 20.1%), transparent calc(79% + 50%), var(--color1) calc(79% + 50.1%), var(--color1) calc(79% + 70%), transparent calc(79% + 70.1%), transparent 100%);
+    }
+    80% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(80% + 0%), var(--color1) calc(80% + 0.1%), var(--color1) calc(80% + 20%), transparent calc(80% + 20.1%), transparent calc(80% + 50%), var(--color1) calc(80% + 50.1%), var(--color1) calc(80% + 70%), transparent calc(80% + 70.1%), transparent 100%);
+    }
+    81% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(81% + 0%), var(--color1) calc(81% + 0.1%), var(--color1) calc(81% + 20%), transparent calc(81% + 20.1%), transparent calc(81% + 50%), var(--color1) calc(81% + 50.1%), var(--color1) calc(81% + 70%), transparent calc(81% + 70.1%), transparent 100%);
+    }
+    82% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(82% + 0%), var(--color1) calc(82% + 0.1%), var(--color1) calc(82% + 20%), transparent calc(82% + 20.1%), transparent calc(82% + 50%), var(--color1) calc(82% + 50.1%), var(--color1) calc(82% + 70%), transparent calc(82% + 70.1%), transparent 100%);
+    }
+    83% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(83% + 0%), var(--color1) calc(83% + 0.1%), var(--color1) calc(83% + 20%), transparent calc(83% + 20.1%), transparent calc(83% + 50%), var(--color1) calc(83% + 50.1%), var(--color1) calc(83% + 70%), transparent calc(83% + 70.1%), transparent 100%);
+    }
+    84% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(84% + 0%), var(--color1) calc(84% + 0.1%), var(--color1) calc(84% + 20%), transparent calc(84% + 20.1%), transparent calc(84% + 50%), var(--color1) calc(84% + 50.1%), var(--color1) calc(84% + 70%), transparent calc(84% + 70.1%), transparent 100%);
+    }
+    85% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(85% + 0%), var(--color1) calc(85% + 0.1%), var(--color1) calc(85% + 20%), transparent calc(85% + 20.1%), transparent calc(85% + 50%), var(--color1) calc(85% + 50.1%), var(--color1) calc(85% + 70%), transparent calc(85% + 70.1%), transparent 100%);
+    }
+    86% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(86% + 0%), var(--color1) calc(86% + 0.1%), var(--color1) calc(86% + 20%), transparent calc(86% + 20.1%), transparent calc(86% + 50%), var(--color1) calc(86% + 50.1%), var(--color1) calc(86% + 70%), transparent calc(86% + 70.1%), transparent 100%);
+    }
+    87% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(87% + 0%), var(--color1) calc(87% + 0.1%), var(--color1) calc(87% + 20%), transparent calc(87% + 20.1%), transparent calc(87% + 50%), var(--color1) calc(87% + 50.1%), var(--color1) calc(87% + 70%), transparent calc(87% + 70.1%), transparent 100%);
+    }
+    88% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(88% + 0%), var(--color1) calc(88% + 0.1%), var(--color1) calc(88% + 20%), transparent calc(88% + 20.1%), transparent calc(88% + 50%), var(--color1) calc(88% + 50.1%), var(--color1) calc(88% + 70%), transparent calc(88% + 70.1%), transparent 100%);
+    }
+    89% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(89% + 0%), var(--color1) calc(89% + 0.1%), var(--color1) calc(89% + 20%), transparent calc(89% + 20.1%), transparent calc(89% + 50%), var(--color1) calc(89% + 50.1%), var(--color1) calc(89% + 70%), transparent calc(89% + 70.1%), transparent 100%);
+    }
+    90% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(90% + 0%), var(--color1) calc(90% + 0.1%), var(--color1) calc(90% + 20%), transparent calc(90% + 20.1%), transparent calc(90% + 50%), var(--color1) calc(90% + 50.1%), var(--color1) calc(90% + 70%), transparent calc(90% + 70.1%), transparent 100%);
+    }
+    91% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(91% + 0%), var(--color1) calc(91% + 0.1%), var(--color1) calc(91% + 20%), transparent calc(91% + 20.1%), transparent calc(91% + 50%), var(--color1) calc(91% + 50.1%), var(--color1) calc(91% + 70%), transparent calc(91% + 70.1%), transparent 100%);
+    }
+    92% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(92% + 0%), var(--color1) calc(92% + 0.1%), var(--color1) calc(92% + 20%), transparent calc(92% + 20.1%), transparent calc(92% + 50%), var(--color1) calc(92% + 50.1%), var(--color1) calc(92% + 70%), transparent calc(92% + 70.1%), transparent 100%);
+    }
+    93% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(93% + 0%), var(--color1) calc(93% + 0.1%), var(--color1) calc(93% + 20%), transparent calc(93% + 20.1%), transparent calc(93% + 50%), var(--color1) calc(93% + 50.1%), var(--color1) calc(93% + 70%), transparent calc(93% + 70.1%), transparent 100%);
+    }
+    94% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(94% + 0%), var(--color1) calc(94% + 0.1%), var(--color1) calc(94% + 20%), transparent calc(94% + 20.1%), transparent calc(94% + 50%), var(--color1) calc(94% + 50.1%), var(--color1) calc(94% + 70%), transparent calc(94% + 70.1%), transparent 100%);
+    }
+    95% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(95% + 0%), var(--color1) calc(95% + 0.1%), var(--color1) calc(95% + 20%), transparent calc(95% + 20.1%), transparent calc(95% + 50%), var(--color1) calc(95% + 50.1%), var(--color1) calc(95% + 70%), transparent calc(95% + 70.1%), transparent 100%);
+    }
+    96% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(96% + 0%), var(--color1) calc(96% + 0.1%), var(--color1) calc(96% + 20%), transparent calc(96% + 20.1%), transparent calc(96% + 50%), var(--color1) calc(96% + 50.1%), var(--color1) calc(96% + 70%), transparent calc(96% + 70.1%), transparent 100%);
+    }
+    97% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(97% + 0%), var(--color1) calc(97% + 0.1%), var(--color1) calc(97% + 20%), transparent calc(97% + 20.1%), transparent calc(97% + 50%), var(--color1) calc(97% + 50.1%), var(--color1) calc(97% + 70%), transparent calc(97% + 70.1%), transparent 100%);
+    }
+    98% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(98% + 0%), var(--color1) calc(98% + 0.1%), var(--color1) calc(98% + 20%), transparent calc(98% + 20.1%), transparent calc(98% + 50%), var(--color1) calc(98% + 50.1%), var(--color1) calc(98% + 70%), transparent calc(98% + 70.1%), transparent 100%);
+    }
+    99% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(99% + 0%), var(--color1) calc(99% + 0.1%), var(--color1) calc(99% + 20%), transparent calc(99% + 20.1%), transparent calc(99% + 50%), var(--color1) calc(99% + 50.1%), var(--color1) calc(99% + 70%), transparent calc(99% + 70.1%), transparent 100%);
+    }
+    100% {
+      background: linear-gradient(180deg, transparent 0%, transparent calc(100% + 0%), var(--color1) calc(100% + 0.1%), var(--color1) calc(100% + 20%), transparent calc(100% + 20.1%), transparent calc(100% + 50%), var(--color1) calc(100% + 50.1%), var(--color1) calc(100% + 70%), transparent calc(100% + 70.1%), transparent 100%);
+    }
+  }
