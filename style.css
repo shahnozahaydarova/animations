@@ -1,0 +1,106 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+}
+.header-img {
+    position: fixed;
+    margin: 0;
+    height: 645px;
+    width: 1365px;
+    opacity: 0.5;
+}
+header{
+    background-image: url(https://images.unsplash.com/photo-1596486932489-f631d4ccceaa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80);
+    background-size: cover;
+    position: absolute;
+    top: -5%;
+    margin: 10%;
+    width: 1100px;
+    height: 450px;
+}
+
+.icon{
+    position: relative;
+    display: inline-block;
+}
+.icon .bx{
+    color: #333;
+    padding-top: 25px;
+    padding-left: 35px;
+    font-size: 50px;
+}
+.content{
+    position: absolute;
+    display: none;
+    z-index: 1;
+ 
+}
+.icon:hover .content{
+    display: block;
+    background-color: #333;
+    color: #fff;
+    opacity: 0.5;
+    width: 244px;
+    height: 342px;
+}
+ul{
+    position: absolute;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+li{
+    padding: 20px;
+}
+
+li a{
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    font-size: 40px;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+li:hover{
+    width: 200px;
+    background-color: rgb(7, 6, 6);
+}
+.icon1{
+    position: relative;
+    display: inline-block; 
+    left: 870px;
+    font-size: 50px;
+    padding: 22px;
+    color: #333;
+}
+
+.icon1 .bxl{
+    position: relative;
+    font-size: 50px;
+    float: left;
+    color: #fff;
+}
+.content1{
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+.icon1:hover .content1{
+    display: block;
+    width: 101px;
+    height: 342px;
+    background-color: #333;
+    opacity: 0.5;
+    color: #fff;
+}
+i{
+    padding: 18px;
+}
+.icon1 .content1 .bx:hover{
+    width: 65px;
+    background-color: rgb(7, 6, 6);
+    color: #fff;
+} 
+
