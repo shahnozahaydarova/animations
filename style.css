@@ -1,0 +1,93 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color:#333 ;
+}
+
+#menu {
+    height: 100%;
+    position: fixed;
+    background-color: #f78e06;
+    width: 300px;
+    transition: 1000ms all cubic-bezier(0.19, 1, 0.22, 1);
+    transform: translateX(-100%);
+    left: 60px;
+}
+
+#menu.expanded {
+    transform: translateX(0%);
+    left: 0px;
+}
+
+.menu-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#blob {
+    top: 0;
+    z-index: -1;
+    right: 60px;
+    transform: translateX(100%);
+    height: 100%;
+    position: absolute;
+}
+
+#blob-path {
+    height: 100%;
+    fill:  #f78e06;
+}
+
+.hamburger {
+    right: 20px;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;	
+}
+
+.hamburger .line {
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    position: absolute;
+}
+.bx{
+    color: #333;
+    font-size: 30px;
+}
+h1 {
+    position: fixed;
+    right: 0;
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+    width: 80%;
+    margin-left: 10%;
+    position: absolute;
+    top: 10px;
+}
+
+ul li {
+    color: #fff;
+    font-family: sans-serif;
+    padding: 20px 0;
+}
+
+h2 {
+    position: absolute;
+   left: 50%;
+color: #fff;
+    margin: 0;
+font-size: 16px;
+font-family: sans-serif;
+font-weight: 100;
+}
+
+
