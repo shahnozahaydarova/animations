@@ -1,0 +1,876 @@
+:root {
+    /* Fixed colors that don't get transition/animation */
+    --dark-cosmos-color: hsl(290, 34%, 10%);
+    --star-color: hsl(272, 57%, 95%);
+    --t-sun-color: hsl(47, 100%, 88%);
+    --t-moon-color: hsl(274, 93%, 94%);
+    --t-moon-pattern-color: hsl(274, 58%, 89%);
+    --sunsys-color: hsl(41, 99%, 75%);
+    --sunsys-patterns-color: hsl(33, 95%, 73%);
+    --earth-water-color: hsl(202, 62%, 74%);
+    --earth-continent-color: hsl(192, 34%, 64%);
+    /* colorz  that will change on transition */
+    --circle-bg-color: hsl(28, 97%, 70%);
+    --cactus-body-color: hsl(337, 43%, 28%);
+    --cactus-flower-color: hsl(348, 80%, 62%);
+    --mountain-color: hsl(346, 43%, 50%);
+    --sand-01-color: hsl(339, 55%, 30%);
+    --sand-02-color: hsl(335, 62%, 37%);
+    --sand-03-color: hsl(338, 53%, 38%);
+    --sand-04-color: hsl(336, 46%, 50%);
+    /* The poster Illustration colors */
+    --poster: hsl(25, 43%, 79%);
+    --poster-border: min(3vmax, 50px);
+    /* animation and transition timings */
+    --t-slow: 2500ms;
+    --t-med: 1500ms;
+    --t-fast: 1000ms;
+    --t-delay-motionpath: 400ms;
+    --t-delay-colorfades: 200ms;
+    --a-scale-from: scale(1);
+    --a-scale-to: scale(1.05);
+  }
+  
+  /* Sass vars */
+  /* CSS solar system animation */
+  .sun-system-bg,
+  .sun-system-shadow-01,
+  .sun-system-shadow-02 {
+    fill: var(--sunsys-color);
+  }
+  
+  .sun-system-shadow-01,
+  .sun-system-shadow-02 {
+    opacity: 0.1;
+  }
+  
+  .sun-system-patterns {
+    fill: var(--sunsys-patterns-color);
+  }
+  
+  .earth-continent {
+    fill: var(--earth-continent-color);
+  }
+  
+  .earth-water,
+  .earth-shadow-01,
+  .earth-shadow-02 {
+    fill: var(--earth-water-color);
+  }
+  
+  .earth-shadow-01,
+  .earth-shadow-02 {
+    opacity: 0.15;
+  }
+  
+  .astral-paths {
+    fill: none;
+    stroke: var(--star-color);
+    stroke-miterlimit: 10;
+    stroke-width: 2px;
+    stroke-dasharray: 10 10;
+    opacity: 0.5;
+  }
+  
+  /* Solar System Animations */
+  /* moon around the earth */
+  .system-moonlight {
+    offset-path: path("M536.21,257.25a163.79,163.79 0 1,0 327.58,0a163.79,163.79 0 1,0 -327.58,0");
+    /* convert circle to path http://complexdan.com/svg-circleellipse-to-path-converter/ */
+    offset-distance: 100%;
+    transform-origin: 700px 92px;
+  }
+  
+  /* Earth around the sun */
+  .system-earth-moon-container {
+    transform-origin: 700px 700px;
+  }
+  
+  /* animating the sun in the system */
+  .system-sun .sun-system-shadow-01 {
+    transform-origin: 700px 700px;
+  }
+  .system-sun .sun-system-shadow-02 {
+    transform-origin: 700px 700px;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    /* Moon around the earth */
+    .system-moonlight {
+      -webkit-animation: AstralRotation 21s infinite linear;
+              animation: AstralRotation 21s infinite linear;
+    }
+  
+    /* moon path rotation */
+    .moon-path {
+      transform-origin: 700px 257px;
+      -webkit-animation: 21s linear infinite Rotation;
+              animation: 21s linear infinite Rotation;
+    }
+  
+    /* planet rotation */
+    .planet {
+      transform-origin: 700px 255px;
+      -webkit-animation: 3s linear infinite Rotation;
+              animation: 3s linear infinite Rotation;
+    }
+  
+    /* earth rings pulsing */
+    .earth-shadow-01 {
+      transform-origin: 700px 255px;
+      -webkit-animation: 2s linear infinite Pulsing;
+              animation: 2s linear infinite Pulsing;
+    }
+  
+    .earth-shadow-02 {
+      --a-scale-from: scale(1.05);
+      --a-scale-to: scale(1);
+      transform-origin: 700px 255px;
+      -webkit-animation: 2s linear infinite Pulsing;
+              animation: 2s linear infinite Pulsing;
+    }
+  
+    /* Earth around the sun */
+    .system-earth-moon-container {
+      -webkit-animation: 72s linear infinite Rotation;
+              animation: 72s linear infinite Rotation;
+    }
+  
+    /* earth path rotation */
+    .earth-path {
+      transform-origin: 700px 700px;
+      -webkit-animation: 72s linear infinite Rotation;
+              animation: 72s linear infinite Rotation;
+    }
+  
+    /* moon rings animation */
+    .system-earth-moon .moon-shadow-02 {
+      --a-scale-from: scale(1.1);
+      --a-scale-to: scale(1);
+      transform-origin: 700px 92px;
+      -webkit-animation: 2s linear infinite Pulsing;
+              animation: 2s linear infinite Pulsing;
+    }
+    .system-earth-moon .moon-shadow-01 {
+      --a-scale-from: scale(1.1);
+      --a-scale-to: scale(1);
+      transform-origin: 700px 92px;
+      -webkit-animation: 2s linear infinite Pulsing;
+              animation: 2s linear infinite Pulsing;
+    }
+  
+    /* animating the sun in the system */
+    .system-sun .shadow-01-container {
+      transform-origin: 700px 700px;
+      -webkit-animation: 60s linear infinite Rotation;
+              animation: 60s linear infinite Rotation;
+    }
+    .system-sun .shadow-02-container {
+      transform-origin: 700px 700px;
+      -webkit-animation: 80s linear infinite Rotation;
+              animation: 80s linear infinite Rotation;
+    }
+    .system-sun .sun-system-shadow-01 {
+      -webkit-animation: 4s linear infinite OpacityRipple;
+              animation: 4s linear infinite OpacityRipple;
+    }
+    .system-sun .sun-system-shadow-02 {
+      --a-scale-from: scale(1.1);
+      --a-scale-to: scale(1.01);
+      -webkit-animation: 4s linear infinite OpacityRipple;
+              animation: 4s linear infinite OpacityRipple;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .system-moonlight {
+      -webkit-animation: AstralRotation 280s infinite linear;
+              animation: AstralRotation 280s infinite linear;
+    }
+  
+    /* moon path rotation */
+    .moon-path {
+      transform-origin: 700px 257px;
+      -webkit-animation: 280s linear infinite Rotation;
+              animation: 280s linear infinite Rotation;
+    }
+  
+    /* Earth around the sun */
+    .system-earth-moon-container {
+      -webkit-animation: 600s linear infinite Rotation;
+              animation: 600s linear infinite Rotation;
+    }
+  
+    /* animating the sun in the system */
+    .system-sun .sun-system-shadow-01 {
+      --a-scale-from: scale(1);
+      --a-scale-to: scale(1);
+      -webkit-animation: 10s linear infinite OpacityRipple 2s;
+              animation: 10s linear infinite OpacityRipple 2s;
+    }
+    .system-sun .sun-system-shadow-02 {
+      --a-scale-from: scale(1);
+      --a-scale-to: scale(1);
+      -webkit-animation: 10s linear infinite OpacityRipple;
+              animation: 10s linear infinite OpacityRipple;
+    }
+  }
+  /* all the keyframes */
+  @-webkit-keyframes Pulsing {
+    0% {
+      transform: var(--a-scale-from);
+    }
+    50% {
+      transform: var(--a-scale-to);
+    }
+    100% {
+      transform: var(--a-scale-from);
+    }
+  }
+  @keyframes Pulsing {
+    0% {
+      transform: var(--a-scale-from);
+    }
+    50% {
+      transform: var(--a-scale-to);
+    }
+    100% {
+      transform: var(--a-scale-from);
+    }
+  }
+  @-webkit-keyframes OpacityRipple {
+    0% {
+      transform: var(--a-scale-from);
+      opacity: 0.1;
+    }
+    50% {
+      transform: var(--a-scale-to);
+      opacity: 0.18;
+    }
+    100% {
+      transform: var(--a-scale-from);
+      opacity: 0.1;
+    }
+  }
+  @keyframes OpacityRipple {
+    0% {
+      transform: var(--a-scale-from);
+      opacity: 0.1;
+    }
+    50% {
+      transform: var(--a-scale-to);
+      opacity: 0.18;
+    }
+    100% {
+      transform: var(--a-scale-from);
+      opacity: 0.1;
+    }
+  }
+  @-webkit-keyframes Rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes Rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes AstralRotation {
+    to {
+      offset-distance: 0%;
+    }
+  }
+  @keyframes AstralRotation {
+    to {
+      offset-distance: 0%;
+    }
+  }
+  /* This is the code for the CSS transition demo */
+  .svg-mask-transition {
+    -webkit-clip-path: url(#clip-path);
+            clip-path: url(#clip-path);
+  }
+  
+  /* Colors that do not transition */
+  .sun-center,
+  .sun-shadow-01,
+  .sun-shadow-02,
+  .cloud {
+    fill: var(--t-sun-color);
+  }
+  
+  .sun-shadow-01 {
+    opacity: 0.3;
+  }
+  
+  .sun-shadow-02 {
+    opacity: 0.2;
+  }
+  
+  /* for both moons */
+  .moon-center,
+  .moon-shadow-01,
+  .moon-shadow-02 {
+    fill: var(--t-moon-color);
+  }
+  
+  .moon-shadow-01 {
+    opacity: 0.1;
+  }
+  
+  .moon-shadow-02 {
+    opacity: 0.1;
+  }
+  
+  .moon-pattern {
+    fill: var(--t-moon-pattern-color);
+  }
+  
+  /* Colors that will transition */
+  .circle-bg {
+    fill: var(--circle-bg-color);
+  }
+  
+  .cactus-body {
+    fill: var(--cactus-body-color);
+  }
+  
+  .cactus-flower {
+    fill: var(--cactus-flower-color);
+  }
+  
+  .mountain {
+    fill: var(--mountain-color);
+  }
+  
+  .sand-01 {
+    fill: var(--sand-01-color);
+  }
+  
+  .sand-02 {
+    fill: var(--sand-02-color);
+  }
+  
+  .sand-03 {
+    fill: var(--sand-03-color);
+  }
+  
+  .sand-04 {
+    fill: var(--sand-04-color);
+  }
+  
+  .moonlight {
+    opacity: 0;
+  }
+  
+  .rings .shadow-01,
+  .rings .shadow-02 {
+    opacity: 0.08;
+  }
+  
+  /* all the fill transitions */
+  .circle-bg,
+  .color-fade-transition {
+    transition: fill var(--t-slow) ease-in-out var(--t-delay-colorfades);
+  }
+  
+  /* stars transition */
+  .star {
+    fill: var(--star-color);
+    opacity: 0;
+    transition: opacity var(--t-med) ease-in-out var(--t-delay-colorfades);
+  }
+  
+  /* Here we go, transition the scene colors on :hover, using the CSS vars to reset the colors for every one that gets a transition */
+  .transition-scene:hover {
+    /* recolor me tonight */
+    --circle-bg-color: hsl(253, 36%, 51%);
+    --cactus-body-color: hsl(282, 43%, 26%);
+    --cactus-flower-color: hsl(278, 40%, 62%);
+    --mountain-color: hsl(302, 36%, 37%);
+    --sand-01-color: hsl(285, 43%, 28%);
+    --sand-02-color: hsl(285, 45%, 34%);
+    --sand-03-color: hsl(285, 47%, 35%);
+    --sand-04-color: hsl(283, 43%, 42%);
+    /* stars transition */
+  }
+  .transition-scene:hover .color-fade-transition {
+    transition: fill var(--t-fast) ease-in-out var(--t-delay-colorfades);
+  }
+  .transition-scene:hover .star {
+    opacity: 1;
+  }
+  
+  /* Motion transitions for people who did not set reduced motion to reduce  */
+  @media (prefers-reduced-motion: no-preference) {
+    .sun {
+      offset-path: path("M107.35,727.94A304.79,304.79,0,0,1-20,739.51a319.27,319.27,0,0,1-119.14-39.12A340.8,340.8,0,0,1-237,617.77a357.93,357.93,0,0,1-78.3-252.49,339.85,339.85,0,0,1,34-123.49,319.66,319.66,0,0,1,76.1-99.66A305.13,305.13,0,0,1-93.67,79.61,304.64,304.64,0,0,1,33.69,68a319.87,319.87,0,0,1,119.15,39.13,339.85,339.85,0,0,1,97.86,82.61A353.53,353.53,0,0,1,314,308.54a353.48,353.48,0,0,1,15,133.73A339.93,339.93,0,0,1,295,565.75a320.39,320.39,0,0,1-76.11,99.71,305.23,305.23,0,0,1-111.58,62.48m.24.77C277.76,676,370.59,487.7,315,308.25S76.25,26.08-93.91,78.84s-263,241-207.35,420.47,238.69,282.16,408.85,229.4Z");
+      offset-distance: 32%;
+      transform-origin: 208px 103px;
+      transition: offset-distance var(--t-med) cubic-bezier(0.215, 0.61, 0.355, 1) var(--t-delay-motionpath);
+    }
+  
+    .cloud {
+      opacity: 0.7;
+      transition: transform var(--t-med) cubic-bezier(0.215, 0.61, 0.355, 1) var(--t-delay-motionpath);
+    }
+  
+    .moonlight {
+      offset-path: path("M675,101.23a304.55,304.55,0,0,1,98.23,81.88A319.33,319.33,0,0,1,829.83,295a341.1,341.1,0,0,1,10.78,127.62,357.92,357.92,0,0,1-123.18,233.9A339.81,339.81,0,0,1,606.1,719.84,319.59,319.59,0,0,1,481.81,736.5,306.56,306.56,0,0,1,260.48,619.93,319.71,319.71,0,0,1,203.89,508,339.94,339.94,0,0,1,193.11,380.4,358,358,0,0,1,316.29,146.51,340.05,340.05,0,0,1,427.61,83.2,320.47,320.47,0,0,1,551.93,66.51,305.23,305.23,0,0,1,675,101.23m.38-.71C517.75,17.5,319,85,231.45,251.21s-30.74,368.3,126.89,451.32,356.39,15.54,443.94-150.7S833,183.53,675.39,100.52Z");
+      offset-distance: 23%;
+      transform-origin: 260px 430px;
+      transition: all var(--t-fast) cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+  
+    .transition-scene:hover {
+      /* the motion path transitions */
+    }
+    .transition-scene:hover .sun {
+      offset-distance: 43%;
+      transition: offset-distance var(--t-fast) cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+    .transition-scene:hover .cloud {
+      transform: translateX(250px);
+      transition: transform var(--t-fast) cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+    .transition-scene:hover .moonlight {
+      opacity: 1;
+      offset-distance: 39%;
+      transition: offset-distance var(--t-med) cubic-bezier(0.215, 0.61, 0.355, 1) var(--t-delay-motionpath);
+    }
+  }
+  /* Let's have cool color transitions for people who do not want motion instead :) */
+  @media (prefers-reduced-motion: reduce) {
+    .sun {
+      opacity: 1;
+    }
+  
+    .cloud {
+      opacity: 0.7;
+    }
+  
+    .sun,
+  .cloud {
+      transition: opacity var(--t-slow) linear var(--t-delay-motionpath);
+    }
+  
+    .moonlight {
+      transform: translate(-3%, -62%);
+      transition: opacity var(--t-fast) linear;
+    }
+  
+    /* Smooth color transition */
+    .transition-scene:hover .sun,
+  .transition-scene:hover .cloud {
+      opacity: 0;
+    }
+    .transition-scene:hover .sun,
+  .transition-scene:hover .cloud {
+      transition: opacity var(--t-fast) linear;
+    }
+    .transition-scene:hover .moonlight {
+      opacity: 1;
+      transition: opacity var(--t-slow) linear var(--t-delay-motionpath);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sun {
+      opacity: 1;
+    }
+  
+    .cloud {
+      opacity: 0.7;
+    }
+  
+    .sun,
+  .cloud {
+      transition: opacity var(--t-slow) linear var(--t-delay-motionpath);
+    }
+  
+    .moonlight {
+      transform: translate(0, -310px);
+      transition: opacity var(--t-fast) linear;
+    }
+  
+    /* Smooth color transition */
+    .transition-scene:hover .sun,
+  .transition-scene:hover .cloud {
+      opacity: 0;
+    }
+    .transition-scene:hover .sun,
+  .transition-scene:hover .cloud {
+      transition: opacity var(--t-fast) linear;
+    }
+    .transition-scene:hover .moonlight {
+      opacity: 1;
+      transition: opacity var(--t-slow) linear var(--t-delay-motionpath);
+    }
+  }
+  /* Let"s have some comets raining from the sky */
+  .svg-defs {
+    display: none;
+  }
+  
+  .comet-rain {
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+  }
+  
+  .comet-instance {
+    height: auto;
+    position: absolute;
+    left: -10vw;
+    top: -10vh;
+    z-index: -1;
+    transform: scaleX(-1);
+    fill: url(#gradient);
+  }
+  
+  .comet-01,
+  .comet-03,
+  .comet-04,
+  .comet-06 {
+    width: 5vmin;
+  }
+  
+  .comet-02,
+  .comet-05 {
+    width: 6vmin;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .comet-instance {
+      -webkit-animation: MakeItRain 10s infinite;
+              animation: MakeItRain 10s infinite;
+    }
+  
+    .comet-01 {
+      left: 30vw;
+      -webkit-animation-delay: 0ms;
+              animation-delay: 0ms;
+    }
+  
+    .comet-02 {
+      left: 57vw;
+      -webkit-animation-delay: 9s;
+              animation-delay: 9s;
+    }
+  
+    .comet-03 {
+      left: 83vw;
+      -webkit-animation-delay: 6s;
+              animation-delay: 6s;
+    }
+  
+    .comet-04 {
+      top: 13vh;
+      -webkit-animation-delay: 22s;
+              animation-delay: 22s;
+    }
+  
+    .comet-05 {
+      top: 34vh;
+      -webkit-animation-delay: 5s;
+              animation-delay: 5s;
+    }
+  
+    .comet-06 {
+      top: 67vh;
+      -webkit-animation-delay: 14s;
+              animation-delay: 14s;
+    }
+  
+    @-webkit-keyframes MakeItRain {
+      0% {
+        opacity: 0;
+        transform: scaleX(-1) translate(0, 0);
+      }
+      70% {
+        opacity: 0.4;
+        transform: scaleX(-1) translate(0, 0);
+      }
+      100% {
+        opacity: 1;
+        transform: scaleX(-1) translate(-101vw, 101vmax);
+      }
+    }
+  
+    @keyframes MakeItRain {
+      0% {
+        opacity: 0;
+        transform: scaleX(-1) translate(0, 0);
+      }
+      70% {
+        opacity: 0.4;
+        transform: scaleX(-1) translate(0, 0);
+      }
+      100% {
+        opacity: 1;
+        transform: scaleX(-1) translate(-101vw, 101vmax);
+      }
+    }
+  }
+  /* Layout */
+  body {
+    padding: 2em 2em 3em 2em;
+    display: flex;
+    gap: 60px;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  @media (min-width: 650px) {
+    body {
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(2vw, 300px, 5vw);
+      height: 100vh;
+      padding: 0 5vw;
+    }
+  }
+  @media (min-width: 850px) {
+    body {
+      padding: 0 10vw;
+      gap: clamp(5vw, 400px, 10vw);
+    }
+  }
+  
+  .solar-system-animation,
+  .day-night-transition {
+    position: relative;
+    z-index: 100;
+    border: var(--poster-border) solid;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+  }
+  @media (min-width: 650px) {
+    .solar-system-animation,
+  .day-night-transition {
+      height: 50vh;
+      width: 50%;
+    }
+  }
+  @media (min-width: 850px) {
+    .solar-system-animation,
+  .day-night-transition {
+      height: 65vh;
+      width: 50%;
+      max-width: 600px;
+      margin-top: 0;
+    }
+  }
+  @media (min-width: 650px) and (max-height: 650px) {
+    .solar-system-animation,
+  .day-night-transition {
+      --poster-border: 30px;
+      border: var(--poster-border) solid;
+      border-top: 8px solid;
+      height: 80vh;
+      width: 80vw;
+    }
+  }
+  
+  svg.animation-scene,
+  svg.transition-scene {
+    flex-basis: 100%;
+    width: 100%;
+    position: relative;
+    margin: 1px auto;
+    z-index: 1;
+  }
+  
+  .explanation {
+    margin-top: auto;
+  }
+  
+  .day-night-transition,
+  .solar-system-animation {
+    border-color: var(--poster);
+    z-index: 1;
+    position: relative;
+  }
+  .day-night-transition .accent,
+  .solar-system-animation .accent {
+    color: var(--poster);
+  }
+  .day-night-transition .heading,
+  .day-night-transition .explanation,
+  .solar-system-animation .heading,
+  .solar-system-animation .explanation {
+    background: var(--poster);
+    box-shadow: 0 0 0px 1px var(--poster);
+  }
+  .day-night-transition:before, .day-night-transition:after,
+  .solar-system-animation:before,
+  .solar-system-animation:after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    top: calc(10px - var(--poster-border));
+    left: calc(10px - var(--poster-border));
+  }
+  .day-night-transition:before,
+  .solar-system-animation:before {
+    right: calc(0px - var(--poster-border));
+    bottom: calc(0px - var(--poster-border));
+    border-left: 3px solid var(--dark-cosmos-color);
+    border-top: 3px solid var(--dark-cosmos-color);
+    z-index: 2;
+  }
+  @media (min-width: 650px) and (max-height: 650px) {
+    .day-night-transition:before,
+  .solar-system-animation:before {
+      top: calc(30px - var(--poster-border));
+    }
+  }
+  .day-night-transition:after,
+  .solar-system-animation:after {
+    z-index: 1;
+    right: calc(0px - var(--poster-border) - 12px);
+    bottom: calc(0px - var(--poster-border) - 12px);
+    border-right: 3px solid var(--poster);
+    border-bottom: 3px solid var(--poster);
+    border-top: 3px solid var(--poster);
+    border-left: 3px solid var(--poster);
+  }
+  @media (min-width: 650px) and (max-height: 650px) {
+    .day-night-transition:after,
+  .solar-system-animation:after {
+      top: calc(30px - var(--poster-border));
+    }
+  }
+  
+  .solar-system-animation {
+    --poster: hsl(265, 38%, 89%);
+  }
+  
+  .smallnumber {
+    font-size: 0.8em;
+    text-align: right;
+    position: relative;
+    top: calc(0px - var(--poster-border) + 25px);
+    right: calc(0px - var(--poster-border) + 15px);
+  }
+  @media (min-width: 650px) {
+    .smallnumber {
+      font-size: 1em;
+      top: calc(0px - var(--poster-border) + 20px);
+      right: calc(0px - var(--poster-border) + 10px);
+    }
+  }
+  @media (min-width: 850px) {
+    .smallnumber {
+      font-size: 1.3em;
+      top: calc(0px - var(--poster-border) + 30px);
+      right: calc(0px - var(--poster-border) + 20px);
+    }
+  }
+  @media (min-width: 650px) and (max-height: 650px) {
+    .smallnumber {
+      font-size: 1em;
+      top: 7px;
+      right: calc(0px - var(--poster-border) + 10px);
+    }
+  }
+  
+  h1,
+  .smallnumber {
+    font-family: "Archivo Black", sans-serif;
+    margin: 0;
+  }
+  
+  h1 {
+    font-size: clamp(1.8em, 3vw, 3.2em);
+    letter-spacing: -0.03em;
+    margin-bottom: 0;
+    margin-top: -0.3em;
+    position: relative;
+    bottom: -0.22em;
+  }
+  @media (min-width: 650px) {
+    h1 {
+      bottom: -0.2em;
+    }
+  }
+  @media (min-width: 650px) and (max-height: 650px) {
+    h1 {
+      font-size: clamp(1.5em, 8vw, 2em);
+    }
+  }
+  
+  /* Explanation */
+  .explanation {
+    padding: 3vh 0;
+    font-size: 1em;
+    line-height: 1.3;
+    border-bottom: 3px solid var(--dark-cosmos-color);
+    position: relative;
+  }
+  @media (min-width: 850px) {
+    .explanation {
+      font-size: 1.1em;
+      line-height: 1.4;
+      padding: 3vh 0;
+      margin-bottom: -0.9em;
+      border-bottom: 6px solid var(--dark-cosmos-color);
+    }
+    .explanation:before {
+      content: "";
+      position: absolute;
+      top: -6vh;
+      left: -1.2vh;
+      width: 2vh;
+      height: 5vh;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-image: url("data:image/svg+xml;base64,PCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI0LjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluICAtLT4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTYycHgiCgkgaGVpZ2h0PSIzMjYuN3B4IiB2aWV3Qm94PSIwIDAgMTYyIDMyNi43IiBzdHlsZT0ib3ZlcmZsb3c6dmlzaWJsZTtlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDE2MiAzMjYuNzsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOmhzbCgyOTAsIDM0JSwgMTAlKTt9Cjwvc3R5bGU+CjxkZWZzPgo8L2RlZnM+CjxnPgoJPGNpcmNsZSBjbGFzcz0ic3QwIiBjeD0iODMiIGN5PSIyNzIuNCIgcj0iNTQuMyIvPgoJPGNpcmNsZSBjbGFzcz0ic3QwIiBjeD0iMTA3LjgiIGN5PSI1NC4zIiByPSI1NC4zIi8+Cgk8Y2lyY2xlIGNsYXNzPSJzdDAiIGN4PSIxNC40IiBjeT0iMTIzLjgiIHI9IjE0LjQiLz4KPC9nPgo8L3N2Zz4K");
+    }
+    .explanation:before {
+      top: -8vw;
+      left: -1.3vw;
+      width: 2.5vw;
+      height: 16vw;
+    }
+  }
+  @media (min-width: 650px) and (max-height: 650px) {
+    .explanation {
+      font-size: 1em;
+      border-bottom: 2px solid var(--dark-cosmos-color);
+    }
+    .explanation:before {
+      background: none;
+    }
+  }
+  
+  .accent {
+    background: var(--dark-cosmos-color);
+    padding: 0.2em 0.2em;
+  }
+  
+  /* Utilities and pen background */
+  html {
+    background: var(--dark-cosmos-color);
+    color: var(--dark-cosmos-color);
+  }
+  
+  /* collapsing the SVG on the body */
+  body {
+    font-family: "Raleway", sans-serif;
+    position: relative;
+    background-size: 360px;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMTkuNTQgMzE4Ljk2Ij4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjZmFlY2NhOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8Zz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTIyNS41NywxMDAuNThhLjIzLjIzLDAsMCwwLDAsLjQ1QzIyNS44MywxMDEsMjI1LjgzLDEwMC41OCwyMjUuNTcsMTAwLjU4WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjU2LjgyLDU1Ljc4YS4yMy4yMywwLDAsMCwwLC40NUMyNTcuMDgsNTYuMjMsMjU3LjA4LDU1Ljc4LDI1Ni44Miw1NS43OFoiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI0Mi44NSwyMC43NGMtLjI2LDAtLjI2LjQ1LDAsLjQ1QS4yMy4yMywwLDAsMCwyNDIuODUsMjAuNzRaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yOTQuNzIsMTU4YS4yMy4yMywwLDAsMCwwLC40NUMyOTUsMTU4LjQ4LDI5NSwxNTgsMjk0LjcyLDE1OFoiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTMxNS42Niw3Mi43NmMtLjI2LDAtLjI2LjQ1LDAsLjQ1QS4yMy4yMywwLDAsMCwzMTUuNjYsNzIuNzZaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yODYuNzQsMTE5LjczYS4yMy4yMywwLDAsMCwwLC40NUMyODcsMTIwLjE4LDI4NywxMTkuNzMsMjg2Ljc0LDExOS43M1oiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTMxNywuMTRjLS4yNiwwLS4yNi40NSwwLC40NUEuMjMuMjMsMCwwLDAsMzE3LC4xNFoiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE2My43MywxNy4xMmEuMjMuMjMsMCwwLDAsMCwuNDVDMTY0LDE3LjU3LDE2NCwxNy4xMiwxNjMuNzMsMTcuMTJaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik01Ni42OCw4LjQ1YS4yMy4yMywwLDAsMCwwLC40NUM1Ni45NCw4LjksNTYuOTQsOC40NSw1Ni42OCw4LjQ1WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTAwLjU2LDIwLjc0YS4yMy4yMywwLDAsMCwwLC40NUEuMjMuMjMsMCwwLDAsMTAwLjU2LDIwLjc0WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTY2LjA2LDgzLjA5YS4yMy4yMywwLDAsMCwwLC40NUMxNjYuMzIsODMuNTQsMTY2LjMyLDgzLjA5LDE2Ni4wNiw4My4wOVoiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTk5LjQ4LDE3Ny45YS4yMy4yMywwLDAsMCwwLC40NUM5OS43NCwxNzguMzUsOTkuNzQsMTc3LjksOTkuNDgsMTc3LjlaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMjcuNzMsMTM0LjE2YS4yMy4yMywwLDAsMCwwLC40NUEuMjMuMjMsMCwwLDAsMTI3LjczLDEzNC4xNloiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTEwNy43OCw3OS40NmMtLjI2LDAtLjI2LjQ0LDAsLjQ0QS4yMi4yMiwwLDAsMCwxMDcuNzgsNzkuNDZaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yMzUuMzYsMjAwLjQ1Yy0uMjYsMC0uMjYuNDUsMCwuNDVBLjIzLjIzLDAsMCwwLDIzNS4zNiwyMDAuNDVaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yODAuMDksMjEwLjQxYS4yMy4yMywwLDAsMCwwLC40NUEuMjMuMjMsMCwwLDAsMjgwLjA5LDIxMC40MVoiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI0MSwxNTYuNzNhLjIzLjIzLDAsMCwwLDAsLjQ1QzI0MS4yOCwxNTcuMTgsMjQxLjI4LDE1Ni43MywyNDEsMTU2LjczWiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNTMuNjMsMjY3LjgzYS4yMi4yMiwwLDAsMCwwLC40NEM1My44OSwyNjguMjcsNTMuODksMjY3LjgzLDUzLjYzLDI2Ny44M1oiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTS4yLDEzMS42NmEuMjMuMjMsMCwwLDAsMCwuNDVBLjIzLjIzLDAsMCwwLC4yLDEzMS42NloiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTcuODMsMTM2LjVjLS4yNiwwLS4yNi40NCwwLC40NEEuMjIuMjIsMCwwLDAsNy44MywxMzYuNVoiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTcuODMsMTI1LjQ0Yy0uMjYsMC0uMjYuNDUsMCwuNDVBLjIzLjIzLDAsMCwwLDcuODMsMTI1LjQ0WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTUuNDYsMjUuOWMtLjI2LDAtLjI2LjQ1LDAsLjQ1QS4yMy4yMywwLDAsMCwxNS40NiwyNS45WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTI1Ljc5LDIwMC4wOWEuMjMuMjMsMCwwLDAsMCwuNDVBLjIzLjIzLDAsMCwwLDEyNS43OSwyMDAuMDlaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik00MS41NCwxOTYuNjNjLS4yNiwwLS4yNi40NSwwLC40NUEuMjMuMjMsMCwwLDAsNDEuNTQsMTk2LjYzWiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNDYsMTMxYS4yMy4yMywwLDAsMCwwLC40NUM0Ni4yNiwxMzEuNDIsNDYuMjYsMTMxLDQ2LDEzMVoiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTIzNi44MSwyOTguOTNjLS4yNiwwLS4yNi40NSwwLC40NUEuMjMuMjMsMCwwLDAsMjM2LjgxLDI5OC45M1oiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI4NS4xNSwyODAuMjdjLS4yNiwwLS4yNi40NSwwLC40NUEuMjMuMjMsMCwwLDAsMjg1LjE1LDI4MC4yN1oiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTIxOSwyMzAuNWMtLjI2LDAtLjI2LjQ1LDAsLjQ1QS4yMy4yMywwLDAsMCwyMTksMjMwLjVaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xODkuNzQsMzEwLjY4Yy0uMjYsMC0uMjYuNDUsMCwuNDVBLjIzLjIzLDAsMCwwLDE4OS43NCwzMTAuNjhaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMDcuNjksMzE4LjI4Yy0uMjYsMC0uMjYuNDUsMCwuNDVBLjIzLjIzLDAsMCwwLDEwNy42OSwzMTguMjhaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNi45MSwzMTAuNjhjLS4yNiwwLS4yNi40NSwwLC40NUEuMjMuMjMsMCwwLDAsMjYuOTEsMzEwLjY4WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjYuOTEsMjQ1Yy0uMjYsMC0uMjYuNDQsMCwuNDRBLjIyLjIyLDAsMCwwLDI2LjkxLDI0NVoiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTIxMi42NCwxMjUuOWMtLjUzLDAtLjUzLjksMCwuOVMyMTMuMTcsMTI1LjksMjEyLjY0LDEyNS45WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjE1LjE5LDQ5Ljg3YS40NS40NSwwLDAsMCwwLC45QzIxNS43Miw1MC43NywyMTUuNzIsNDkuODcsMjE1LjE5LDQ5Ljg3WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjk1LjMzLDkyLjczYy0uNTMsMC0uNTMuODksMCwuODlTMjk1Ljg2LDkyLjczLDI5NS4zMyw5Mi43M1oiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE5Ny4zOCwyNjMuNTZjLS41MywwLS41NC45LDAsLjlTMTk3LjkxLDI2My41NiwxOTcuMzgsMjYzLjU2WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTY0Ljk0LDIzNi41Yy0uNTMsMC0uNTMuODksMCwuODlTMTY1LjQ3LDIzNi41LDE2NC45NCwyMzYuNVoiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTgyLjI1LDI5My44N2MtLjUzLDAtLjUzLjg5LDAsLjg5UzgyLjc4LDI5My44Nyw4Mi4yNSwyOTMuODdaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMjguMDUsMTcuMzhjLS41MywwLS41NC45LDAsLjlTMTI4LjU4LDE3LjM4LDEyOC4wNSwxNy4zOFoiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI0LjM3LDQ1Yy0uNTMsMC0uNTMuOSwwLC45UzI0LjksNDUsMjQuMzcsNDVaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik03Ni41MywxNTIuMTdhLjQ1LjQ1LDAsMCwwLDAsLjlDNzcuMDYsMTUzLjA3LDc3LjA2LDE1Mi4xNyw3Ni41MywxNTIuMTdaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yMS4xOSwxNzAuODNjLS41MywwLS41My45LDAsLjlTMjEuNzIsMTcwLjgzLDIxLjE5LDE3MC44M1oiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTYxLjksMjI4LjJjLS41MywwLS41NC45LDAsLjlTNjIuNDMsMjI4LjIsNjEuOSwyMjguMloiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTEyLjI4LDI2Ni4yMmMtLjUzLDAtLjUzLjksMCwuOUEuNDUuNDUsMCwwLDAsMTIuMjgsMjY2LjIyWiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjYwLjM1LDMxOC4wNmEuNDUuNDUsMCwwLDAsMCwuOUMyNjAuODgsMzE5LDI2MC44OCwzMTguMDYsMjYwLjM1LDMxOC4wNloiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI1My4zNSwyNjEuMzhjLS41MywwLS41My45LDAsLjlTMjUzLjg4LDI2MS4zOCwyNTMuMzUsMjYxLjM4WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMzEwLjU5LDIzNS4xMWMtLjUzLDAtLjUzLjksMCwuOUEuNDUuNDUsMCwwLDAsMzEwLjU5LDIzNS4xMVoiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTIxOSw3LjQ4Yy0uNzksMC0uOCwxLjM1LDAsMS4zNVMyMTkuOCw3LjQ4LDIxOSw3LjQ4WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTc4LjkzLDM3LjJjLS44LDAtLjgsMS4zNSwwLDEuMzVTMTc5LjczLDM3LjIsMTc4LjkzLDM3LjJaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yOTcuODcsMTAuMjVjLS43OSwwLS44LDEuMzQsMCwxLjM0UzI5OC42NywxMC4yNSwyOTcuODcsMTAuMjVaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yODksNTkuMzJjLS44LDAtLjgsMS4zNSwwLDEuMzVTMjg5Ljc3LDU5LjMyLDI4OSw1OS4zMloiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE2Ni44NSwyNTdjLS44LDAtLjgsMS4zNSwwLDEuMzVTMTY3LjY0LDI1NywxNjYuODUsMjU3WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTI4LjA1LDI0NC41N2MtLjgsMC0uOCwxLjM0LDAsMS4zNFMxMjguODUsMjQ0LjU3LDEyOC4wNSwyNDQuNTdaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zMTAuNTksMjY5LjQ1Yy0uNzksMC0uNzksMS4zNSwwLDEuMzVTMzExLjM5LDI2OS40NSwzMTAuNTksMjY5LjQ1WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMzA0Ljg3LDMxMS42MWMtLjgsMC0uOCwxLjM1LDAsMS4zNVMzMDUuNjcsMzExLjYxLDMwNC44NywzMTEuNjFaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMi45Miw4OC4zNWMtLjgsMC0uOCwxLjM1LDAsMS4zNVMxMy43Miw4OC4zNSwxMi45Miw4OC4zNVoiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTQyLjgyLDI5LjZjLS44LDAtLjgsMS4zNSwwLDEuMzVTNDMuNjEsMjkuNiw0Mi44MiwyOS42WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNODcuMzQsMjYzLjkyYy0uOCwwLS44LDEuMzUsMCwxLjM1Uzg4LjE0LDI2My45Miw4Ny4zNCwyNjMuOTJaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik03Ni41MywzMTMuNjljLS44LDAtLjgsMS4zNCwwLDEuMzRTNzcuMzIsMzEzLjY5LDc2LjUzLDMxMy42OVoiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTIwMS4yOSw3Ni44NGEuMjIuMjIsMCwwLDAsMCwuNDRDMjAxLjU1LDc3LjI4LDIwMS41NSw3Ni44NCwyMDEuMjksNzYuODRaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNjAsMS4xNWEuMjMuMjMsMCwwLDAsMCwuNDVDMjYwLjI4LDEuNiwyNjAuMjgsMS4xNSwyNjAsMS4xNVoiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI2My44NC4yYS4yMi4yMiwwLDAsMCwwLC40NEEuMjIuMjIsMCwwLDAsMjYzLjg0LjJaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNjMsNi45MWEuMjMuMjMsMCwwLDAsMCwuNDVDMjYzLjIyLDcuMzYsMjYzLjIyLDYuOTEsMjYzLDYuOTFaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNjYuMTksNWMtLjI2LDAtLjI2LjQ1LDAsLjQ1QS4yMy4yMywwLDAsMCwyNjYuMTksNVoiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI2OS4xMywxMy4zYy0uMjYsMC0uMjYuNDUsMCwuNDVBLjIzLjIzLDAsMCwwLDI2OS4xMywxMy4zWiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjc2Ljg4LDMuM2MtLjI2LDAtLjI2LjQ0LDAsLjQ0QS4yMi4yMiwwLDAsMCwyNzYuODgsMy4zWiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjY5LjMsMjM5Ljc4YS4yMy4yMywwLDAsMCwwLC40NUMyNjkuNTYsMjQwLjIzLDI2OS41NywyMzkuNzgsMjY5LjMsMjM5Ljc4WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjgwLjY3LDIyOS44OWMtLjI2LDAtLjI2LjQ1LDAsLjQ1QS4yMy4yMywwLDAsMCwyODAuNjcsMjI5Ljg5WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjgzLDIzNS42NmEuMjMuMjMsMCwwLDAsMCwuNDVDMjgzLjIxLDIzNi4xMSwyODMuMjEsMjM1LjY2LDI4MywyMzUuNjZaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yODAuNjcsMjQwLjYxYy0uMjYsMC0uMjYuNDUsMCwuNDVBLjIzLjIzLDAsMCwwLDI4MC42NywyNDAuNjFaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNzMuMDksMjQ5LjY3YS4yMy4yMywwLDAsMCwwLC40NUEuMjMuMjMsMCwwLDAsMjczLjA5LDI0OS42N1oiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI3My4wOSwyMzEuNTRhLjIzLjIzLDAsMCwwLDAsLjQ1QS4yMy4yMywwLDAsMCwyNzMuMDksMjMxLjU0WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjk3LjM1LDIxNS4wNmMtLjI2LDAtLjI2LjQ1LDAsLjQ1QS4yMy4yMywwLDAsMCwyOTcuMzUsMjE1LjA2WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNODcuNzIsMjE0LjI0Yy0uMjYsMC0uMjYuNDUsMCwuNDVBLjIzLjIzLDAsMCwwLDg3LjcyLDIxNC4yNFoiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTk5LjEsMjIyLjQ4YS4yMy4yMywwLDAsMCwwLC40NUM5OS4zNiwyMjIuOTMsOTkuMzYsMjIyLjQ4LDk5LjEsMjIyLjQ4WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTI2Ljg1LDIwNy42NWEuMjMuMjMsMCwwLDAsMCwuNDVDMTI3LjExLDIwOC4xLDEyNy4xMSwyMDcuNjUsMTI2Ljg1LDIwNy42NVoiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTg5LjI0LDE5MmEuMjMuMjMsMCwwLDAsMCwuNDVBLjIzLjIzLDAsMCwwLDg5LjI0LDE5MloiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTk2LjgyLDIxNS4wNmMtLjI2LDAtLjI2LjQ1LDAsLjQ1QS4yMy4yMywwLDAsMCw5Ni44MiwyMTUuMDZaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMTAuMDcsMjMyLjM3YS4yMy4yMywwLDAsMCwwLC40NUMxMTAuMzMsMjMyLjgyLDExMC4zMywyMzIuMzcsMTEwLjA3LDIzMi4zN1oiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTIyMi4yOSwzMDAuNzZhLjIzLjIzLDAsMCwwLDAsLjQ1QzIyMi41NSwzMDEuMjEsMjIyLjU1LDMwMC43NiwyMjIuMjksMzAwLjc2WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjEzLjE5LDMxOC4wNmEuMjMuMjMsMCwwLDAsMCwuNDVDMjEzLjQ1LDMxOC41MSwyMTMuNDYsMzE4LjA2LDIxMy4xOSwzMTguMDZaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yMjMuMDUsMjYzYS4yMy4yMywwLDAsMCwwLC40NUMyMjMuMzEsMjYzLjQxLDIyMy4zMSwyNjMsMjIzLjA1LDI2M1oiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE4NC41OCwxODAuNDNhLjIzLjIzLDAsMCwwLDAtLjQ1QzE4NC4zMiwxODAsMTg0LjMyLDE4MC40MywxODQuNTgsMTgwLjQzWiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjMxLjY1LDE2OC42OGEuMjMuMjMsMCwwLDAsMC0uNDVBLjIzLjIzLDAsMCwwLDIzMS42NSwxNjguNjhaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yMjQsMTk0LjQ4Yy41MywwLC41My0uOSwwLS45UzIyMy40OCwxOTQuNDgsMjI0LDE5NC40OFoiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE5OS4xMSwxNzguNmMuMjYsMCwuMjYtLjQ0LDAtLjQ0QS4yMi4yMiwwLDAsMCwxOTkuMTEsMTc4LjZaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yMDguMiwxNjEuM2EuMjMuMjMsMCwwLDAsMC0uNDVDMjA3Ljk0LDE2MC44NSwyMDcuOTQsMTYxLjMsMjA4LjIsMTYxLjNaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xOTguMzUsMTk1LjA4Yy4yNiwwLC4yNi0uNDQsMC0uNDRBLjIyLjIyLDAsMCwwLDE5OC4zNSwxOTUuMDhaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMjEuNDQsMzA1LjdjLS4yNiwwLS4yNy40NSwwLC40NUEuMjMuMjMsMCwwLDAsMTIxLjQ0LDMwNS43WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjUzLjM4LDEuNjVhLjIzLjIzLDAsMCwwLDAsLjQ1QzI1My42NCwyLjEsMjUzLjY0LDEuNjUsMjUzLjM4LDEuNjVaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yMzYuNjksMTQuODNjLS4yNiwwLS4yNi40NSwwLC40NUEuMjMuMjMsMCwwLDAsMjM2LjY5LDE0LjgzWiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjU0Ljg5LDMwLjQ5Yy0uMjYsMC0uMjYuNDUsMCwuNDVBLjIzLjIzLDAsMCwwLDI1NC44OSwzMC40OVoiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI1NS42NSwxNGEuMjMuMjMsMCwwLDAsMCwuNDVBLjIzLjIzLDAsMCwwLDI1NS42NSwxNFoiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI4NC40NiwyMC42Yy0uMjYsMC0uMjYuNDUsMCwuNDVBLjIzLjIzLDAsMCwwLDI4NC40NiwyMC42WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjk1LjA4LDQuMTJhLjIzLjIzLDAsMCwwLDAsLjQ1QS4yMy4yMywwLDAsMCwyOTUuMDgsNC4xMloiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI4OC4yNiwwYS4yMy4yMywwLDAsMCwwLC40NUMyODguNTIuNDUsMjg4LjUyLDAsMjg4LjI2LDBaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zMDguNzMsMy4zYS4yMi4yMiwwLDAsMCwwLC40NEMzMDksMy43NCwzMDksMy4zLDMwOC43MywzLjNaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zMTkuMzQsMTQuODNjLS4yNiwwLS4yNi40NSwwLC40NUEuMjMuMjMsMCwwLDAsMzE5LjM0LDE0LjgzWiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNjIuNTYsOTQuMDhhLjIzLjIzLDAsMCwwLDAsLjQ1QzYyLjgyLDk0LjUzLDYyLjgyLDk0LjA4LDYyLjU2LDk0LjA4WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNjMuNjEsMTAxLjY0Yy0uMjYsMC0uMjYuNDUsMCwuNDVBLjIzLjIzLDAsMCwwLDYzLjYxLDEwMS42NFoiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTU1LjI3LDEwOS4wNWEuMjMuMjMsMCwwLDAsMCwuNDVBLjIzLjIzLDAsMCwwLDU1LjI3LDEwOS4wNVoiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTEyMi4zNywyODcuNjhjLjMxLS4zNS0uMTgtLjg4LS41LS41NFMxMjIuMDUsMjg4LDEyMi4zNywyODcuNjhaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMTIuNzksMjgwYy4zMi0uMzUtLjE3LS44OS0uNDktLjU0UzExMi40OCwyODAuMzYsMTEyLjc5LDI4MFoiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTExNC42MSwyNjAuMzJjLjMxLS4zNC0uMTgtLjg4LS41LS41M1MxMTQuMjksMjYwLjY3LDExNC42MSwyNjAuMzJaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik05My43NywxMzAuNTJjLS4yNiwwLS4yNi40NSwwLC40NUEuMjMuMjMsMCwwLDAsOTMuNzcsMTMwLjUyWiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTQ0LjUxLDkzLjg1YS4yMy4yMywwLDAsMCwwLC40NUMxNDQuNzcsOTQuMywxNDQuNzcsOTMuODUsMTQ0LjUxLDkzLjg1WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTY5LjQzLDkyLjA4Yy4yLS4xOS0uMDctLjUyLS4yNy0uMzNTMTY5LjIzLDkyLjI3LDE2OS40Myw5Mi4wOFoiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE3MywxNDguMTZjLjItLjE5LS4wNy0uNTItLjI3LS4zM1MxNzIuODQsMTQ4LjM1LDE3MywxNDguMTZaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMjUuNjgsMTc3LjQ3Yy4yLS4xOS0uMDctLjUyLS4yNy0uMzNTMTI1LjQ4LDE3Ny42NiwxMjUuNjgsMTc3LjQ3WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTExLjc4LDEyMS40M2MuMi0uMTktLjA3LS41My0uMjctLjM0UzExMS41OCwxMjEuNjIsMTExLjc4LDEyMS40M1oiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTIwOCwxMjIuODRjLjQtLjM4LS4xNC0xLjA2LS41NC0uNjhTMjA3LjU2LDEyMy4yMiwyMDgsMTIyLjg0WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTIxLjY3LDE0Ny45Yy40LS4zOC0uMTQtMS4wNi0uNTQtLjY4UzEyMS4yNywxNDguMjgsMTIxLjY3LDE0Ny45WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTQ2LjY5LDE2OC41Yy42LS41Ny0uMjEtMS41OS0uODEtMVMxNDYuMDksMTY5LjA3LDE0Ni42OSwxNjguNVoiLz4KICA8L2c+Cjwvc3ZnPgo=");
+  }
