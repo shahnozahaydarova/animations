@@ -1,0 +1,249 @@
+body {
+    background: radial-gradient(#870000, #53346d);
+    font-family: "Comfortaa", sans-serif;
+  }
+  
+  .main-content {
+    max-width: 700px;
+    margin: 4em auto 0;
+    text-align: center;
+  }
+  
+  h1 {
+    margin: 2em 0;
+    color: #fff;
+  }
+  
+  svg {
+    display: inline-block;
+  }
+  
+  path, polygon, circle, rect {
+    transition: fill 1s ease;
+  }
+  
+  .window {
+    position: relative;
+    background: #fff;
+    margin: 0 auto 2em;
+    display: inline-block;
+    padding: 10px;
+  }
+  .window:before {
+    content: "";
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    height: 18px;
+    top: 100%;
+    width: 112%;
+    margin-left: -6%;
+    background: #f4c7c7;
+  }
+  
+  .cat {
+    position: absolute;
+    z-index: 10;
+    bottom: -5px;
+    right: -35px;
+  }
+  
+  .illustration {
+    position: relative;
+    align-self: end;
+    margin: auto;
+    width: 250px;
+    overflow: hidden;
+  }
+  
+  .mountain, .hill, .land, .trees, .sun, .clouds, .moon, .stars {
+    position: absolute;
+    left: 0;
+    margin: auto;
+    right: 0;
+  }
+  
+  .mountain {
+    bottom: 45px;
+  }
+  
+  .hill {
+    bottom: 45px;
+  }
+  
+  .trees {
+    bottom: 25px;
+  }
+  
+  .sun {
+    top: 120px;
+    margin-left: -20px;
+    transition: all 1s ease;
+    transform: scale(0.2);
+  }
+  
+  .moon, .stars {
+    top: 25px;
+    opacity: 0;
+  }
+  
+  .land {
+    bottom: 3px;
+  }
+  
+  .clouds {
+    top: 50px;
+    right: -500px;
+    transition: all 1s ease 0.1s;
+  }
+  
+  .day .sun {
+    top: 10px;
+    margin-left: 0;
+    transform: scale(1);
+  }
+  .day .clouds {
+    right: 0;
+  }
+  
+  .night .stars, .night .moon {
+    opacity: 1;
+    transition: all 1s ease 0.5s;
+  }
+  .night #sky {
+    fill: #17377f;
+  }
+  .night #mountain {
+    fill: #73addf;
+  }
+  .night #hill {
+    fill: #659fcd;
+  }
+  .night #land {
+    fill: #508bb5;
+  }
+  .night .trees {
+    fill: #1c2c3b;
+  }
+  .night .trunks {
+    fill: #3f3e3d;
+  }
+  
+  .sunset .sun {
+    top: 60px;
+    margin-left: -80px;
+    transform: scale(1);
+  }
+  .sunset #sun {
+    fill: #fff;
+  }
+  .sunset #sky {
+    fill: url(#sky_sunset);
+  }
+  .sunset #mountain {
+    fill: #efbb2b;
+  }
+  .sunset #hill {
+    fill: #e6ad28;
+  }
+  .sunset #land {
+    fill: #de9f26;
+  }
+  .sunset .trees {
+    fill: #747c0b;
+  }
+  .sunset .trunks {
+    fill: #3f3e3d;
+  }
+  
+  .dusk .sun {
+    top: 60px;
+    margin-left: 140px;
+    transform: scale(1);
+  }
+  .dusk #sun {
+    fill: #ffffda;
+  }
+  .dusk #sky {
+    fill: url(#sky_dusk);
+  }
+  .dusk #mountain {
+    fill: #f1a3a2;
+  }
+  .dusk #hill {
+    fill: #e09c9c;
+  }
+  .dusk #land {
+    fill: #c4918d;
+  }
+  .dusk .trees {
+    fill: #ce791c;
+  }
+  .dusk .trunks {
+    fill: #8c5f50;
+  }
+  
+  .option-wrapper {
+    display: flex;
+    margin: 3em auto;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 4px;
+    padding: 5px;
+    max-width: 300px;
+    font-size: 12px;
+    line-height: 1.2;
+  }
+  .option-wrapper .option {
+    transition: all 200ms ease;
+    padding: 10px 10px 8px;
+    width: 50%;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #fff;
+  }
+  .option-wrapper .option.active {
+    background: #fff;
+    color: #333;
+    pointer-events: none;
+  }
+  
+  aside.context {
+    text-align: center;
+    color: #fff;
+  }
+  aside.context a {
+    text-decoration: none;
+    color: #fff;
+    padding: 3px 0;
+    border-bottom: 1px dashed;
+  }
+  aside.context .explanation {
+    max-width: 700px;
+    margin: 4em auto;
+  }
+  
+  footer {
+    text-align: center;
+    margin: 8em auto;
+    width: 100%;
+  }
+  footer a {
+    text-decoration: none;
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px dashed #fff;
+    color: #fff;
+    margin: 5px;
+  }
+  footer a:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  footer a .icons {
+    margin-top: 12px;
+    display: inline-block;
+    font-size: 20px;
+  }
