@@ -1,0 +1,15 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+#welcomebeverage {
+  font-family: Open Sans, sans-serif;
+  text-align: center;
+}
+
+#welcomebeverage h1 {
+  font-weight: 400;
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+#welcomebeverage img {
+  max-width: 100%;
+}
