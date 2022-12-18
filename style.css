@@ -1,0 +1,196 @@
+.power-switch {
+    --color-invert: #ffffff;
+    --width: 150px;
+    --height: 150px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--width);
+    height: var(--height);
+  }
+  .power-switch .button {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .power-switch .button:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: radial-gradient(circle closest-side, var(--color-invert), transparent);
+    filter: blur(20px);
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+    transform: perspective(1px) translateZ(0);
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+  }
+  .power-switch .button .power-on,
+  .power-switch .button .power-off {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    fill: none;
+    stroke: var(--color-invert);
+    stroke-width: 8px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .power-switch .button .power-on .line,
+  .power-switch .button .power-off .line {
+    opacity: 0.2;
+  }
+  .power-switch .button .power-on .circle,
+  .power-switch .button .power-off .circle {
+    opacity: 0.2;
+    transform: rotate(-58deg);
+    transform-origin: center 80px;
+    stroke-dasharray: 220;
+    stroke-dashoffset: 40;
+  }
+  .power-switch .button .power-on {
+    filter: drop-shadow(0px 0px 6px rgba(255, 255, 255, 0.8));
+  }
+  .power-switch .button .power-on .line {
+    opacity: 0;
+    transition: opacity 0.3s ease 1s;
+  }
+  .power-switch .button .power-on .circle {
+    opacity: 1;
+    stroke-dashoffset: 220;
+    transition: transform 0s ease, stroke-dashoffset 1s ease 0s;
+  }
+  .power-switch input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    cursor: pointer;
+    opacity: 0;
+  }
+  .power-switch input:checked + .button:after {
+    opacity: 0.15;
+    transform: scale(2) perspective(1px) translateZ(0);
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .power-switch input:checked + .button .power-on,
+  .power-switch input:checked + .button .power-off {
+    -webkit-animation: click-animation 0.3s ease forwards;
+            animation: click-animation 0.3s ease forwards;
+    transform: scale(1);
+  }
+  .power-switch input:checked + .button .power-on .line,
+  .power-switch input:checked + .button .power-off .line {
+    -webkit-animation: line-animation 0.8s ease-in forwards;
+            animation: line-animation 0.8s ease-in forwards;
+  }
+  .power-switch input:checked + .button .power-on .circle,
+  .power-switch input:checked + .button .power-off .circle {
+    transform: rotate(302deg);
+  }
+  .power-switch input:checked + .button .power-on .line {
+    opacity: 1;
+    transition: opacity 0.05s ease-in 0.55s;
+  }
+  .power-switch input:checked + .button .power-on .circle {
+    transform: rotate(302deg);
+    stroke-dashoffset: 40;
+    transition: transform 0.4s ease 0.2s, stroke-dashoffset 0.4s ease 0.2s;
+  }
+  
+  @-webkit-keyframes line-animation {
+    0% {
+      transform: translateY(0);
+    }
+    10% {
+      transform: translateY(10px);
+    }
+    40% {
+      transform: translateY(-25px);
+    }
+    60% {
+      transform: translateY(-25px);
+    }
+    85% {
+      transform: translateY(10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  @keyframes line-animation {
+    0% {
+      transform: translateY(0);
+    }
+    10% {
+      transform: translateY(10px);
+    }
+    40% {
+      transform: translateY(-25px);
+    }
+    60% {
+      transform: translateY(-25px);
+    }
+    85% {
+      transform: translateY(10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  @-webkit-keyframes click-animation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes click-animation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  body {
+    background: #1B1A23;
+    height: 100vh;
+    font: 400 16px "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  body .socials {
+    position: fixed;
+    display: block;
+    left: 20px;
+    bottom: 20px;
+  }
+  body .socials > a {
+    display: block;
+    width: 30px;
+    opacity: 0.2;
+    transform: scale(var(--scale, 0.8));
+    transition: transform 0.3s cubic-bezier(0.38, -0.12, 0.24, 1.91);
+  }
+  body .socials > a:hover {
+    --scale: 1;
+  }
