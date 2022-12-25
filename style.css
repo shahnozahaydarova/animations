@@ -1,0 +1,252 @@
+
+/* FONT */
+
+@import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
+
+/* DEFAULT */
+body {
+  --th: 2200px;
+
+  margin: 0;
+  padding: 0;
+  height: var(--th);
+  font-family: "Redressed", cursive;
+  color: hsl(0, 0%, 100%);
+}
+
+a {
+  color: inherit;
+}
+
+/* SCENE */
+
+#scene {
+  width: 100%;
+  height: 100vh;
+  min-height: 635px;
+  position: fixed;
+  overflow: hidden;
+}
+
+/* TOP */
+.top {
+  height: 60%;
+  background-color: hsl(229, 20%, 16%);
+  background-image: linear-gradient(to bottom,
+    transparent,
+    hsl(39, 100%, 50%) 60%,
+    hsl(60, 100%, 50%),
+    hsl(180, 40%, 80%) 84%);
+  background-size: 100% var(--th);
+  background-position: 0 100%;
+  position: relative;
+}
+
+/* STARS */
+.stars {
+  opacity: 0;
+}
+
+.stars__svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 60%;
+}
+
+/* CLOUDS */
+.clouds-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.clouds {
+  position: inherit;
+  width: inherit;
+  height: inherit;
+}
+
+.cloud {
+  border-radius: 1000px;
+  position: absolute;
+  background: hsla(0 0% 100% / .4);
+}
+
+/* SUN & MOON */
+.sun-and-moon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(-400px);
+}
+
+.sun,
+.moon {
+  width: 140px;
+  height: 140px;
+  border-radius: 140px;
+}
+
+.moon {
+  background: radial-gradient(hsl(0, 0%, 100%), hsl(0, 0%, 100%), hsl(0, 0%, 100%), hsl(0, 0%, 80%));
+  box-shadow: 0 0 20px 2px hsl(0, 0%, 100%), 0 0 90px 40px hsla(0, 0%, 100%, .4);
+}
+
+.sun {
+  margin-top: 320px;
+  background: radial-gradient(hsl(50, 100%, 50%) 20%, hsl(39, 100%, 50%));
+  box-shadow: 0 0 20px 2px hsl(39, 100%, 80%), 0 0 90px 40px hsla(39, 100%, 90%, .4);
+}
+
+/* BOTTOM */
+/* -------------------------------------------------------- */
+.bottom {
+  height: 40%;
+  background: hsl(60, 58%, 10%);
+  position: relative;
+}
+
+/* MOUNTAINS */
+.mountains {
+  position: relative;
+}
+
+.mountains--1 {
+  --width: 220px;
+  --height: 130px;
+
+  height: var(--height);
+  transform: translateY(-100%);
+}
+
+.mountains--2 {
+  --width: 330px;
+  --height: 200px;
+
+  height: var(--height);
+  transform: translateY(-280px);
+}
+
+.mountains--3 {
+  --width: 270px;
+  --height: 160px;
+
+  height: var(--height);
+  transform: translateY(-360px);
+  z-index: 10;
+}
+
+.mountain {
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  position: absolute;
+  box-shadow: inset 10px -20px 30px hsla(0, 0%, 0%, .2);
+}
+
+.mountain--1 {
+  width: var(--width);
+  height: var(--height);
+  top: 1px;
+  background: hsl(200, 0%, 50%);
+  transform-origin: bottom center;
+}
+
+.mountain--2 {
+  width: var(--width);
+  height: var(--height);
+  background: hsl(240, 3%, 54%);
+}
+
+.mountain--3 {
+  width: var(--width);
+  height: var(--height);
+  background: hsl(244, 9%, 30%);
+  transform-origin: top center;
+}
+
+/* TREES */
+.trees-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.trees {
+  position: absolute;
+}
+
+.trees--1 {
+  z-index: 2;
+}
+
+.trees--1 {
+  z-index: 1;
+}
+
+.tree {
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  position: absolute;
+  background: hsl(130, 95%, 25%);
+  box-shadow: inset 10px -20px 20px hsla(136, 83%, 16%, .2);
+}
+
+.tree--1 {
+  width: 54px;
+  height: 80px;
+}
+
+.tree--2 {
+  width: 50px;
+  height: 64px;
+}
+
+.tree--3 {
+  width: 30px;
+  height: 44px;
+}
+
+/* INFO */
+/*  */
+.info {
+  position: fixed;
+  bottom: top;
+  left: 0;
+  box-sizing: border-box;
+  padding: 18px 30px 20px;
+  width: 100%;
+  height: 100%;
+  opacity: .8;
+}
+
+@media screen and (max-width: 768px) {
+  .info {
+    text-align: center;
+  }
+}
+
+.info__heading {
+  display: inline-block;
+  font-size: 32px;
+  margin: 0;
+  text-align: center;
+  font-weight: normal;
+}
+
+.info__heading small {
+  font-size: 18px;
+  transform: translateY(-6px);
+  display: inline-block;
+}
+
+.info__scroll {
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+}
