@@ -1,0 +1,95 @@
+body {
+    overflow: hidden;
+}
+
+body, html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #111;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #2c2b2b;
+}
+
+.container {
+    width: 224px;
+    perspective: 1000px;
+}
+
+.cube {
+    margin: auto;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    transition: transform 2s ease;
+}
+
+.cube:hover {
+    transform: rotateX(180deg) rotateY(720deg);
+}
+
+.side {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.side.back {
+    transform: translateZ(-100px) rotateX(180deg);
+}
+.side.left {
+    transform: translateX(-100px) rotateY(-90deg);
+}
+.side.right {
+    transform: translateX(100px) rotateY(90deg);
+}
+
+.side.front {
+    transform: translateZ(100px);
+}
+.side.top {
+    transform: translateY(-100px) rotateX(90deg);
+}
+.side.bottom {
+    transform:translateY(100px) rotateX(90deg);
+}
+
+.side .icon {
+    margin: 30% auto;
+    vertical-align: middle;
+    font-size: 84px;
+}
+
+.side.grey {
+    color: #777;
+    background-color: white;
+}
+
+.side.black {
+    color: white;
+    background-color: #ff0000;
+}
+
+.side.twitter {
+    color: white;
+    background-color: #0084b4;
+}
+.side.grey {
+    color: #777;
+    background-color: white;
+}
+
+.side.facebook {
+    color: white;
+    background-color: #3b5998;
+}
