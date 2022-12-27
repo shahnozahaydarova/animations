@@ -1,0 +1,125 @@
+* {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+:root {
+	font-size: calc(16px + (32 - 16) * (100vw - 320px) / (1280 - 320));
+}
+body {
+	color: #17181c;
+	font: 1em/1.5 serif;
+	height: 100vh;
+}
+.press, .sheet {
+	overflow: hidden;
+}
+.press {
+	background: #86a6f9;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.sheet, .sheet:before, .roll {
+	position: absolute;
+}
+.sheet, .roll {
+	top: 50%;
+	left: 50%;
+}
+.sheet {
+	width: 4em;
+	height: 6em;
+	transform: translate(-50%,-50%) rotateX(-45deg) rotateZ(-45deg);
+}
+.sheet:before {
+	animation: print 0.5s ease-in-out infinite;
+	background:
+		linear-gradient(#0000 5.2em,currentColor 5.2em 5.3em,#0000 5.3em 5.5em) 0.4em 0 / 3.2em 6em,
+		linear-gradient(#0000 5.5em,currentColor 5.5em 5.7em,#0000 5.7em) 0.6em 0 / 2.8em 6em,
+		linear-gradient(90deg,#e3e4e8 0.4em,#0000 0.4em 1.9em,#e3e4e8 1.9em 2.1em,#0000 2.1em 3.6em,#e3e4e8 3.6em) 0 0 / 4em 6em,
+		repeating-linear-gradient(#e3e4e8 0 0.4em,#0000 0.4em 5em,#e3e4e8 5em 6em,#0000 6em) 0 0 / 4em 6em,
+		linear-gradient(#0000 3.4em,currentColor 3.4em) 100% 0 / 50% 6em,
+		repeating-linear-gradient(currentColor 0 0.2em,#e3e4e8 0.2em 0.4em) 0 0 / 4em 6em;
+	background-repeat: repeat-y;
+	color: #17181c;
+	content: "";
+	display: block;
+	top: -6em;
+	left: 0;
+	width: 100%;
+	height: calc(100% + 6em);
+}
+.sheet:nth-child(1):before, .sheet:nth-child(5):before {
+	color: #c7cad1;
+}
+.sheet:nth-child(n + 7):nth-child(-n + 9) {
+	height: 0.4em;
+}
+.sheet:nth-child(1) {
+	height: 42em;
+	transform: translate(-50%,-50%) rotateX(-45deg) rotateZ(-45deg) translate(-17.4em,9.4em) rotateX(-90deg);
+}
+.sheet:nth-child(3) {
+	transform: translate(-50%,-50%) rotateX(-45deg) rotateZ(-45deg) translate(-2.5em,-2.5em);
+}
+.sheet:nth-child(5) {
+	transform: translate(-50%,-50%) rotateX(-45deg) rotateZ(-45deg) translate(-0.5em,-0.7em) rotateX(-75deg);
+}
+.sheet:nth-child(7) {
+	transform: translate(-50%,-50%) rotateX(-45deg) rotateZ(-45deg) translate(1.7em,-1.85em) rotateX(-15deg);
+}
+.sheet:nth-child(7):before {
+	background-position-y: 5.2em;
+}
+.sheet:nth-child(8) {
+	transform: translate(-50%,-50%) rotateX(-45deg) rotateZ(-45deg) translate(1.7em,-1.5em) rotateX(15deg);
+}
+.sheet:nth-child(8):before {
+	background-position-y: 4.8em;
+}
+.sheet:nth-child(9) {
+	transform: translate(-50%,-50%) rotateX(-45deg) rotateZ(-45deg) translate(1.6em,-1.05em) rotateX(45deg);
+}
+.sheet:nth-child(9):before {
+	background-position-y: 4.4em;
+}
+.sheet:nth-child(10):before, .sheet:nth-child(11):before {
+	background-position-y: 4em;
+}
+.sheet:nth-child(10) {
+	transform: translate(-50%,-50%) rotateX(-45deg) rotateZ(-45deg) translate(-0.5em,1.95em) rotateX(75deg);
+}
+.sheet:nth-child(11) {
+	height: 29em;
+	transform: translate(-50%,-50%) rotateX(-45deg) rotateZ(-45deg) translate(-2.5em,19.25em);
+}
+.roll {
+	background-color: #2e3138;
+	background-image: radial-gradient(1em 2em at 0.5em 50%,#17181c 49%,#17181c00 50%);
+	border-radius: 0.5em 0.5em 0.5em 0.5em / 1em 1em 1em 1em;
+	width: 8em;
+	height: 2em;
+}
+.roll:nth-child(2) {
+	transform: translate(-50%,-50%) rotateX(-45deg) rotateZ(-45deg) translate(-3em,-4.5em) skewX(-22.5deg);
+}
+.roll:nth-child(4) {
+	transform: translate(-50%,-50%) rotateX(-45deg) rotateZ(-45deg) translate(-2em,-0.5em) skewX(-22.5deg);
+}
+.roll:nth-child(6) {
+	transform: translate(-50%,-50%) rotateX(-45deg) rotateZ(-45deg) translate(1em,-1em) skewX(-22.5deg);
+}
+.roll:nth-child(12) {
+	transform: translate(-50%,-50%) rotateX(-45deg) rotateZ(-45deg) translate(-2em,4.45em) skewX(-22.5deg);
+}
+/* Animations */
+@keyframes print {
+	from {
+		transform: translateY(0);
+	}
+	to {
+		transform: translateY(6em);
+	}
+}
