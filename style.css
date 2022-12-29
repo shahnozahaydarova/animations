@@ -1,0 +1,29 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    color: red;
+    margin: 0;
+    padding: 0;
+  }
+  
+  div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .back {
+    background-image: url('https://images.unsplash.com/photo-1666878093953-18a02f217e9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
+  }
+  
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    mix-blend-mode: multiply;
+    height: 100vh;
+    width: 100vw;
+  }
