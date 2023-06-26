@@ -1,0 +1,250 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins&display=swap);
+
+:root {
+	/* VARIABLES FOR COLOR-CALCULATION */
+	--base-hue: 240;
+	--saturation: 85%;
+	--lightness: 60%;
+	/* steps in degree on the color-wheel 
+	to the next hue-value */
+	--rotation: 40;
+
+	/* APPEARANCE */
+	--main: hsl(var(--base-hue), var(--saturation), var(--lightness));
+	--shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.base-color {
+	/* COLOR CALCULATION */
+	--hue: var(--base-hue);
+	/* generate the color with the given 
+	value of --hue */
+	background-color: hsl(var(--hue), var(--saturation), var(--lightness));
+
+	/* APPEARANCE */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 135px;
+	width: 10vw;
+	min-height: 75px;
+	height: 4vw;
+	box-shadow: var(--shadow);
+}
+.base-color:hover {
+	transform: scale(1.1);
+}
+/* INDIVIDUAL --hue-VALUES 
+by applying multiples of --rotation */
+.color2 {
+	--hue: calc(var(--base-hue) + var(--rotation) * 2);
+}
+.color3 {
+	--hue: calc(var(--base-hue) + var(--rotation) * 3);
+}
+.color4 {
+	--hue: calc(var(--base-hue) + var(--rotation) * 4);
+}
+.color5 {
+	--hue: calc(var(--base-hue) + var(--rotation) * 5);
+}
+
+/* LAYOUT */
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: 0;
+	box-sizing: border-box;
+	text-align: center;
+}
+body {
+	background: #0c0c0c;
+	color: #f9f7f2;
+	font-family: Montserrat;
+	overflow-x: hidden;
+}
+#bg {
+	width: 100vw;
+	margin-top: 0;
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+}
+#bg img {
+	position: absolute;
+	right: 0;
+	z-index: -1;
+	width: max(30vh, 50vw);
+	aspect-ratio: 1/1;
+	opacity: 0.2;
+	transform: translate(10vw, 0);
+	overflow: hidden;
+}
+#main {
+	padding: 5px 5px;
+	display: flex;
+	flex-direction: column;
+	background: #eeeeee1e;
+	width: fit-content;
+	margin: auto;
+	margin-top: 10vh;
+	margin-bottom: 5vh;
+	border-radius: 6px;
+	border: 2px solid #eeeeee2d;
+}
+
+h1 {
+	font-family: Montserrat;
+	font-size: 4vw;
+	font-weight: bolder;
+	width: fit-content;
+	margin: 5vh auto;
+}
+li {
+	border-radius: 5px;
+}
+.colors {
+	list-style-type: none;
+	display: flex;
+	flex-direction: row;
+	gap: 3px;
+	width: fit-content;
+	margin: auto;
+	font-size: max(0.9em, 1vw);
+	font-weight: bold;
+	line-height: 1.5;
+	color: #fff;
+	align-items: center;
+	/*-webkit-text-stroke: 0.2px black;*/
+	text-shadow: var(--shadow);
+	margin-bottom: 20px;
+	cursor: copy;
+}
+.inputs-container {
+	display: flex;
+	width: fit-content;
+	margin: auto;
+	font-size: max(1em, 1vw);
+}
+.input-group {
+	left: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+	margin: 20px;
+}
+.input-group input[type="number"] {
+	margin-top: 20px;
+	padding-left: 5px;
+	border: none;
+	box-shadow: var(--shadow);
+}
+.input-group input[type="number"]::-webkit-inner-spin-button {
+	opacity: 1;
+}
+input[type="range"] {
+	-webkit-appearance: none;
+	border-radius: 2px;
+	border: 1px solid #d3d3d3;
+	height: 5px;
+	margin-top: 20px;
+	box-shadow: var(--shadow);
+}
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	height: max(25px, 1.2vw);
+	width: 15px;
+	border-radius: 2px;
+	background: var(--main);
+	cursor: ew-resize;
+	box-shadow: var(--shadow);
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+	transform: scale(1.7, 1);
+}
+#saveButton {
+	margin: 1vh auto;
+	width: max(15vw, 200px);
+	height: max(2vw, 30px);
+	border-radius: 5px;
+	background: #eeeeee1e;
+	border: 1px solid #eeeeee2d;
+	font-size: max(0.9em, 1vw);
+	line-height: 1.5;
+	color: #fff;
+	text-shadow: var(--shadow);
+}
+#saveButton:hover {
+	transform: scale(1.1);
+	cursor: grab;
+}
+@media only screen and (max-width: 750px) {
+	.colors,
+	.inputs-container {
+		flex-direction: column;
+	}
+	/* new */
+	.colors {
+		transform: translate(0, -25px);
+	}
+	#main {
+		flex-direction: row;
+		margin: auto;
+		padding: 10px;
+		align-items: center;
+	}
+	#save-button: {
+		margin: auto;
+	}
+
+	.inputs-container {
+		margin-left: 5px;
+	}
+	h4 {
+		margin-bottom: -10vh;
+	}
+	h1 {
+		font-size: 2.5rem;
+		-webkit-text-fill-color: transparent;
+		background-image: linear-gradient(
+			to left,
+			#d22dcd,
+			violet,
+			#7367f7,
+			#363cf7,
+			#2afc35,
+			#ff0,
+			orange,
+			#fc4520,
+			#d22dcd
+		);
+		background-repeat: no-repeat;
+		-webkit-background-clip: text;
+	}
+}
+@media only screen and (max-width: 500px) {
+	h1 {
+		font-size: 2rem;
+		margin-top: 0.8em;
+	}
+	#main {
+		margin: auto;
+		align-items: stretch;
+		justify-items: center;
+	}
+	.colors {
+		transform: translate(0, -35px);
+		align-content: center;
+	}
+	.base-color {
+		width: 135px;
+	}
+	.input-group {
+		margin-left: 0;
+	}
+	#save-button: {
+		margin: auto;
+	}
+}
