@@ -1,0 +1,341 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap");
+* {
+  box-sizing: border-box;
+  cursor: none;
+}
+
+html,
+body {
+  background: #efefef;
+  color: #212121;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  height: 100%;
+}
+
+::selection {
+  background: #efefef;
+  color: #212121;
+  mix-blend-mode: difference;
+}
+
+::-moz-selection {
+  background: #efefef;
+  color: #212121;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 900;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+.hero-title {
+  font-size: 8vw;
+  line-height: 1em;
+  font-weight: 900;
+}
+
+.nav-title {
+  font-size: 4em;
+}
+
+a {
+  transition: all 0.25s ease-in-out;
+}
+
+.white, a.white {
+  color: #efefef;
+}
+
+.black {
+  color: #212121;
+}
+
+.pearl, a.pearl {
+  color: #fff;
+}
+
+.green, a.green {
+  color: #00BCD4;
+}
+
+.pink {
+  color: #b73b3b;
+}
+
+.blend {
+  mix-blend-mode: difference !important;
+  color: #efefef;
+  position: relative;
+  z-index: 2;
+}
+
+.bg-black {
+  background-color: #212121;
+}
+
+.bg-green {
+  background-color: #00BCD4;
+}
+
+.bg-topographic {
+  background-image: url(https://assets.codepen.io/319606/bg-topographic.svg);
+  background-size: 5000px;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.custom-cursor {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #00BCD4;
+  transition: transform 350ms ease;
+  transform: translate(-50%, -50%) scale(0.3);
+  z-index: 1000;
+}
+
+.custom-cursor--link {
+  transform: translate(-50%, -50%) scale(1.25);
+}
+
+.swoosh {
+  background-image: url("https://assets.codepen.io/319606/2023-logo-swoosh.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  top: 20px;
+  left: 18px;
+  width: 230px;
+  height: 45px;
+  z-index: 1000;
+  background-position: left;
+}
+
+.sticky-nav {
+  top: 20px;
+  left: 20px;
+  position: fixed;
+  width: calc(100% - 40px);
+  z-index: 999;
+}
+.sticky-nav.difference {
+  background-repeat: no-repeat;
+  background-size: contain;
+  mix-blend-mode: difference;
+}
+.sticky-nav.difference #nav-btn {
+  filter: invert(0);
+}
+.sticky-nav .logo {
+  width: 220px;
+  height: 45px;
+  background-image: url(https://assets.codepen.io/319606/2023-logo-white.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: left;
+  z-index: 998;
+}
+.sticky-nav #nav-btn {
+  width: 60px;
+  z-index: 999;
+  filter: invert(1);
+}
+.sticky-nav #nav-btn .icon {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #fff;
+}
+
+#takeover-nav {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  left: 0;
+  top: -200%;
+  transition: all 0.5s ease-in-out;
+  z-index: 996;
+}
+#takeover-nav.shown {
+  top: 0;
+}
+#takeover-nav .nav-col {
+  min-height: 100vh;
+}
+#takeover-nav .nav-col a {
+  color: #efefef;
+}
+#takeover-nav .nav-col a:hover {
+  color: #212121;
+}
+#takeover-nav .nav-contact .content {
+  max-width: 700px;
+}
+#takeover-nav .nav-items {
+  font-size: 2.5em;
+  font-weight: 700;
+}
+#takeover-nav .contact-items {
+  font-size: 1.25em;
+  font-weight: 700;
+}
+#takeover-nav .contact-items a:hover {
+  color: #00BCD4;
+}
+#takeover-nav .social {
+  font-size: 0.75em;
+}
+#takeover-nav .social a {
+  color: #00BCD4;
+}
+#takeover-nav .social a:hover {
+  color: #efefef;
+}
+
+.gradient-overlay {
+  bottom: 0;
+  height: 50%;
+  background: -moz-linear-gradient(top, rgba(33, 33, 33, 0) 0%, #212121 50%);
+  background: -webkit-linear-gradient(top, rgba(33, 33, 33, 0) 0%, #212121 50%);
+  background: linear-gradient(to bottom, rgba(33, 33, 33, 0) 0%, #212121 50%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#00212121", endColorstr="#212121",GradientType=0 );
+  z-index: 1;
+  border-bottom-right-radius: 15vw;
+  pointer-events: none;
+}
+
+.video-wrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-bottom-right-radius: 15vw;
+  pointer-events: none;
+}
+
+#video-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  background-position: center center;
+  background-size: cover;
+  object-fit: cover;
+  transform: rotate(180deg);
+}
+
+section {
+  min-height: 800px;
+  height: 800px;
+  width: 100%;
+}
+section.hero {
+  background-color: #212121;
+  border-bottom-right-radius: 15vw;
+  position: relative;
+}
+section.hero:before {
+  content: "";
+  background-color: #212121;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 15vw;
+  height: 15vw;
+}
+section.hero:after {
+  content: "";
+  background-color: #efefef;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 15vw;
+  height: 15vw;
+  border-top-left-radius: 15vw;
+}
+section.two {
+  background-color: #efefef;
+}
+section.three {
+  background-color: #e8d1f6;
+}
+section.four {
+  background-color: #00BCD4;
+}
+section.five {
+  background-color: #29639c;
+}
+
+@media screen and (min-width: 1200px) {
+  .hero {
+    height: 75vh;
+  }
+  .hero #video-bg {
+    object-position: 0 5vw;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .hero #video-bg {
+    object-position: 0 15vw;
+  }
+}
+@media screen and (max-width: 767px) {
+  #takeover-nav .nav-menu {
+    min-height: 500px;
+  }
+  #takeover-nav .nav-menu a {
+    color: #212121;
+  }
+  #takeover-nav .nav-menu a:hover {
+    color: #efefef;
+  }
+  #takeover-nav .nav-contact {
+    min-height: 600px;
+  }
+  #takeover-nav .nav-contact .nav-title {
+    font-size: 2.5em;
+  }
+}
+@media screen and (max-width: 575px) {
+  header .swoosh {
+    width: 165px;
+    height: 35px;
+    top: 10px;
+  }
+  header .sticky-nav {
+    top: 10px;
+  }
+  header .sticky-nav .logo {
+    width: 150px;
+    height: 35px;
+  }
+  header .sticky-nav #nav-btn {
+    width: 40px;
+  }
+  header #takeover-nav .contact-items {
+    font-size: 1em;
+  }
+
+  .hero {
+    min-height: 600px;
+    height: 600px;
+  }
+  .hero .hero-title {
+    font-size: 12vw;
+  }
+  .hero #video-bg {
+    object-position: 0 30vw;
+  }
+}
