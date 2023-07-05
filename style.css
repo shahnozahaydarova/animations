@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'gt_flexa_varregular';
+    src: url('https://assets.codepen.io/35984/GT_Flexa_VAR.woff2') format('woff2');
+		
+}
+
+body {
+ background-color: #030625;
+ overflow: hidden;
+	overflow: visible;
+}
+:root {
+	--wght: 900;
+	--wdth: 120;
+}
+body,
+html {
+ height: 100%;
+ width: 100%;
+ margin: 0;
+ padding: 0;
+
+}
+#logoContainer {
+	width: 100%;
+	height: 100%;
+	display: grid;
+	align-items: center;
+	justify-content: center;
+}
+#logoWrapper {
+	width: 100%;
+ grid-row-start: 1;
+ grid-column-start: 1;	
+}
+.logo{
+	font-family:'gt_flexa_varregular';
+	color: #F8EFE8;
+	font-size: 90px;
+	width: 560px;
+}
+ .logo div {
+	font-variation-settings:  'wght' var(--wght), 'wdth' var(--wdth); 
+ } 
+
+#logoWrapper .logo {
+	text-align: left;
+	padding: 0;
+	line-height: 0.85;
+}
