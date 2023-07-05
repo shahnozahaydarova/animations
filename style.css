@@ -1,0 +1,363 @@
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gluten:wght@500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;800&display=swap");
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h1,
+h2 {
+  font-family: "Lilita One", cursive;
+  font-size: 15vmin;
+  letter-spacing: 0.2rem;
+  transform-style: preserve-3d;
+}
+h1 span,
+h2 span {
+  position: relative;
+  z-index: 2;
+}
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.background {
+  z-index: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+section {
+  perspective: 1500px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+  will-change: transform;
+  overflow: hidden;
+}
+
+.word {
+  --layers: 5;
+  --depth: 30;
+  --increment: 0.1vmin;
+  --color: darkred;
+  --color-front: red;
+  --color-back: var(--color);
+  z-index: 1;
+  transform-style: preserve-3d;
+  position: relative;
+  transform: rotatey(0deg);
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+.safari .word {
+  --increment: 0.04vmin;
+}
+.word .letter {
+  --layer-space: calc(var(--depth) / var(--layers));
+  --zStack: calc((var(--layer) * var(--layer-space)) * var(--increment));
+  --xPositionOffset: 50%;
+  --yPositionOffset: 50%;
+  --zPositionOffset: calc(var(--increment) * ((var(--depth) * 0.5) * var(--centerOffset)));
+  transform-style: preserve-3d;
+  position: relative;
+  color: var(--color);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transform: translateX(calc((var(--x, 0) + var(--xOffset, 0)) * var(--increment))) translateY(calc(var(--y, 0) * var(--increment))) translateZ(calc(((var(--z, 0) - (var(--depth) * 0.5)) * var(--increment)) + var(--zStack))) rotateZ(calc(var(--rotateZ, 0) * 1deg)) rotateY(calc(var(--rotateY, 0) * 1deg)) rotateX(calc(var(--rotateX, 0) * 1deg));
+  transform-origin: var(--xPositionOffset) var(--yPositionOffset) var(--zPositionOffset);
+}
+.word .letter.front {
+  color: var(--color-front);
+  display: inline-block;
+}
+.word .letter.under {
+  position: absolute;
+  top: 0;
+  left: calc(var(--xPos, 0) * 1px);
+  pointer-events: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  display: inline-block;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.word .letter.back {
+  color: var(--color-back);
+}
+
+.boing {
+  text-align: center;
+  perspective: 500px;
+}
+.boing .background {
+  background: #efefef;
+}
+.boing .background .sunburst {
+  position: absolute;
+  background: repeating-conic-gradient(#FFC2ED 0 15deg, #FFD6F3 15deg 30deg);
+  left: 50%;
+  top: 50%;
+  width: 200vmax;
+  height: 200vmax;
+  opacity: 0;
+  -webkit-animation: spin 40s infinite linear;
+          animation: spin 40s infinite linear;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+.boing .word {
+  --color: #444;
+  --color-front: #444;
+  --depth: 2;
+  --layers: 4;
+  display: block;
+}
+
+.intro {
+  font-family: "Dosis", sans-serif;
+  font-weight: 400;
+  color: #333;
+  text-align: center;
+}
+.intro h1 {
+  font-weight: 400;
+  font-size: max(5vmin, 30px);
+  font-family: "Dosis", sans-serif;
+}
+.intro .word {
+  --layers: 8;
+  --depth: 0;
+  --rotateAmount: 20deg;
+  font-weight: 800;
+  display: block;
+  font-size: 15vmin;
+  text-transform: uppercase;
+  transform: rotateX(calc(var(--mouseX) * var(--rotateAmount))) rotateY(calc(var(--mouseY) * var(--rotateAmount)));
+}
+.intro p {
+  font-size: 1.5em;
+}
+.intro .down-arrow {
+  margin-top: 3em;
+}
+
+.hulk {
+  overflow: unset;
+}
+.hulk .background {
+  width: 150%;
+  background: url('data:image/svg+xml,%3Csvg width="42" height="44" viewBox="0 0 42 44" xmlns="http://www.w3.org/2000/svg"%3E%3Cg id="Page-1" fill="none" fill-rule="evenodd"%3E%3Cg id="brick-wall" fill="%23893990" fill-opacity="0.4"%3E%3Cpath d="M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E'), #99549F;
+  background-size: 6em;
+  background-position: center;
+}
+.hulk .background .cracks {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+.hulk .background .cracks path {
+  display: none;
+}
+.hulk .background .cracks.smash-1 .crack-1 {
+  display: block;
+}
+.hulk .background .cracks.smash-2 .crack-2 {
+  display: block;
+}
+.hulk .background .cracks.smash-3 .crack-3 {
+  display: block;
+}
+.hulk .background svg {
+  width: 50em;
+  padding-bottom: 10vmin;
+}
+.hulk .word {
+  --color: #124B28;
+  --color-front: #2D8950;
+  --color-back: #45254B;
+  --depth: 100;
+  --layers: 6;
+  text-transform: uppercase;
+}
+.hulk .word .back {
+  opacity: 0.5;
+}
+
+.slide .word {
+  --color: #fff;
+  --color-front: #eee;
+  --depth: 1;
+  --layers: 6;
+  transform: rotatey(-20deg) rotatex(15deg);
+  text-transform: uppercase;
+}
+
+.oreo {
+  perspective: 2000px;
+}
+.oreo .background {
+  background: radial-gradient(#66A3DB, #2E4A9B);
+}
+.oreo .word {
+  --depth: 60;
+  --layers: 7;
+  --color: #CED3D1;
+  --color-front: #362E2D;
+  --color-back: #00000044;
+  text-transform: uppercase;
+  font-size: 25vmin;
+  letter-spacing: 0em;
+}
+.oreo .word [data-depth="6"] {
+  --rotateY: 0 !important;
+  --y: 1 !important;
+  --z: 1 !important;
+}
+.oreo .word [data-depth="1"],
+.oreo .word [data-depth="4"],
+.oreo .word [data-depth="5"] {
+  --color: var(--color-front);
+}
+
+.donut {
+  perspective: 600px;
+}
+.donut .background {
+  background: repeating-linear-gradient(-45deg, #606dbc00, #606dbc00 100px, #46529816 100px, #46529816 200px), radial-gradient(#BBE9F0, #3FACB9);
+}
+.donut .word {
+  --layers: 7;
+  --depth: 70;
+  --color-front: #FFF4F7;
+  --color-back: #3FACB9;
+  --color: #F9AB59;
+  font-size: 18vmin;
+  font-family: "Gluten", cursive;
+  text-transform: uppercase;
+  font-weight: 900;
+  transform: rotatex(35deg);
+}
+.donut .word .back {
+  opacity: 0.3;
+}
+.donut .word [data-depth="0"],
+.donut .word [data-depth="5"] {
+  font-weight: 500;
+  --xOffset: 5;
+}
+.donut .word [data-depth="1"],
+.donut .word [data-depth="4"] {
+  font-weight: 700;
+  --xOffset: 2;
+}
+.donut .word [data-depth="2"],
+.donut .word [data-depth="3"] {
+  font-weight: 900;
+}
+.donut .word [data-depth="2"],
+.donut .word [data-depth="4"] {
+  --color: #F8C58E;
+}
+.donut .word [data-depth="3"] {
+  --color: #FED89A;
+}
+.donut .word [data-index="0"] {
+  --rotateZ: 20;
+}
+.donut .word [data-index="1"] {
+  --y: 100;
+}
+.donut .word [data-index="2"] {
+  --y: 10;
+  --rotateZ: -15;
+  --x: -15;
+}
+.donut .word [data-index="3"] {
+  --y: 60;
+}
+.donut .word [data-index="5"] {
+  --y: 60;
+}
+.donut .word .front[data-index="0"] {
+  background: linear-gradient(25deg, transparent 0.2em, red 0.1em, red 0.23em, transparent 0.1em) 0.35em 0.09em/0.1em 0.29em no-repeat, linear-gradient(-25deg, transparent 0.2em, purple 0.1em, purple 0.23em, transparent 0.1em) 0.1em 0.09em/0.07em 0.29em no-repeat, linear-gradient(40deg, transparent 0.2em, orange 0.1em, orange 0.23em, transparent 0.1em) 0.1em 0.4em/0.07em 0.29em no-repeat, linear-gradient(-10deg, transparent 0.2em, red 0.1em, red 0.23em, transparent 0.1em) 0.15em 0.5em/0.06em 0.26em no-repeat, linear-gradient(20deg, transparent 0.2em, purple 0.1em, purple 0.22em, transparent 0.1em) 0.3em 0.5em/0.08em 0.26em no-repeat, linear-gradient(-40deg, transparent 0.2em, orange 0.1em, orange 0.22em, transparent 0.1em) 0.44em 0.45em/0.08em 0.26em no-repeat, linear-gradient(15deg, transparent 0.2em, red 0.1em, red 0.22em, transparent 0.1em) 0.54em 0.3em/0.08em 0.26em no-repeat, white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.donut .word .front[data-index="0"]::after {
+  content: "";
+  position: absolute;
+  width: 0.12em;
+  height: 0.13em;
+  background-color: white;
+  top: 67%;
+  left: 30%;
+  border-radius: 0 0 1em 1em;
+  transform-origin: top center;
+  transform: rotatex(-41deg) rotatey(5deg);
+}
+.donut .word .front[data-index="1"] {
+  color: hotpink;
+}
+.donut .word .front[data-index="2"] {
+  color: chocolate;
+}
+.donut .word .front[data-index="3"] {
+  background: linear-gradient(25deg, transparent 0.2em, brown 0.1em, brown 0.23em, transparent 0.1em) 0.1em 0.13em/0.04em 0.29em no-repeat, linear-gradient(-25deg, transparent 0.2em, brown 0.1em, brown 0.23em, transparent 0.1em) 0.1em 0.09em/0.04em 0.26em no-repeat, linear-gradient(40deg, transparent 0.2em, brown 0.1em, brown 0.23em, transparent 0.1em) 0.1em 0.4em/0.04em 0.29em no-repeat, linear-gradient(-10deg, transparent 0.2em, brown 0.1em, brown 0.23em, transparent 0.1em) 0.15em 0.5em/0.04em 0.26em no-repeat, linear-gradient(20deg, transparent 0.2em, brown 0.1em, brown 0.22em, transparent 0.1em) 0.3em 0.5em/0.04em 0.26em no-repeat, linear-gradient(-40deg, transparent 0.2em, brown 0.1em, brown 0.22em, transparent 0.1em) 0.44em 0.45em/0.04em 0.26em no-repeat, linear-gradient(15deg, transparent 0.2em, brown 0.1em, brown 0.22em, transparent 0.1em) 0.54em 0.3em/0.04em 0.26em no-repeat, linear-gradient(-23deg, transparent 0.2em, brown 0.1em, brown 0.22em, transparent 0.1em) 0.54em 0.15em/0.04em 0.26em no-repeat, linear-gradient(-23deg, transparent 0.2em, brown 0.1em, brown 0.22em, transparent 0.1em) 0.54em 0.45em/0.04em 0.26em no-repeat, linear-gradient(-7deg, transparent 0.2em, brown 0.1em, brown 0.22em, transparent 0.1em) 0.42em 0.52em/0.04em 0.26em no-repeat, pink;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.donut .word .front[data-index="4"] {
+  background: repeating-radial-gradient(white, white 0.1em, chocolate 0.101em, chocolate 0.125em), white;
+  background-position: 9.45em 2.2em;
+  background-size: 1.5em 1.5em;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.donut .word [data-index="2"][data-depth="1"], .donut .word [data-index="2"][data-depth="4"] {
+  --xOffset: 6;
+}
+.donut .word [data-index="2"].front, .donut .word [data-index="2"][data-depth="5"] {
+  --xOffset: 10;
+}
+.donut .word [data-index="3"][data-depth="1"], .donut .word [data-index="3"][data-depth="5"] {
+  --xOffset: 6;
+}
+.donut .word [data-index="3"].front, .donut .word [data-index="3"][data-depth="5"] {
+  --xOffset: 10;
+}
+.donut .word.bite [data-index="1"] {
+  -webkit-clip-path: path("M100 0H0v100h42.2a18.865 18.865 0 0 1-.642-4.895c0-8.755 5.972-16.116 14.065-18.23a18.935 18.935 0 0 1-.362-3.694c0-10.406 8.436-18.842 18.842-18.842 3.436 0 6.658.92 9.432 2.528C86.991 52.673 92.225 50 98.083 50c.647 0 1.287.033 1.917.096V0Z");
+          clip-path: path("M100 0H0v100h42.2a18.865 18.865 0 0 1-.642-4.895c0-8.755 5.972-16.116 14.065-18.23a18.935 18.935 0 0 1-.362-3.694c0-10.406 8.436-18.842 18.842-18.842 3.436 0 6.658.92 9.432 2.528C86.991 52.673 92.225 50 98.083 50c.647 0 1.287.033 1.917.096V0Z");
+}
+
+@-webkit-keyframes spin {
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
