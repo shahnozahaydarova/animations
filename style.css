@@ -1,0 +1,17 @@
+html, body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  canvas {
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.05);
+  }
