@@ -1,0 +1,33 @@
+@font-face {
+	font-family: "Gridlite";
+	src: url("https://assets.codepen.io/35984/GridlitePEVFWeb-All.woff2")  format('woff2');
+}
+
+body {
+ background-color: #14213D;
+ overflow: hidden;
+ text-align:center;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+:root {
+	--wght: 100;
+	--BACK: 1;
+	--ESHP: 4;
+}
+body,
+html {
+ height: 100%;
+ width: 100%;
+}
+
+
+#msg{
+	font-family:'Gridlite';
+	color: #FCA311;
+	font-size: 20vh;
+}
+ #msg div {
+	font-variation-settings:  'wght' var(--wght), "BACK"  var(--BACK), "ESHP" var(--ESHP);
+} 
