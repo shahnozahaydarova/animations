@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="https://images.unsplash.com/photo-1500043357865-c6b8827edf10?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"/>
+    <svg>
+    <filter id="displacementFilter">
+        <feTurbulence type="turbulence" baseFrequency="0.05"
+            numOctaves="2" result="turbulence"/>
+        <feDisplacementMap in2="turbulence" in="SourceGraphic"
+            scale="50" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="lightMe1">
+        <feDiffuseLighting in="SourceGraphic" result="light"
+            lighting-color="white">
+        <fePointLight x="150" y="120" z="5" />
+        </feDiffuseLighting>
+        <feComposite in="SourceGraphic" in2="light"
+                    operator="arithmetic" k1="1" k2="0" k3="0" k4="0"/>
+    </filter>
+    </svg>
+
+    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
