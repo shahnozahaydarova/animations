@@ -1,0 +1,177 @@
+body {
+    display: grid;
+    place-content: center;
+    min-height: 100dvh;
+    overflow: hidden;
+  }
+  body .left,
+  body .right {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 30%;
+  }
+  body .left {
+    left: 0;
+  }
+  body .left:hover~#stage {
+    transform: rotateY(20deg);
+  }
+  body .right {
+    right: 0;
+  }
+  body .right:hover~#stage {
+    transform: rotateY(-20deg);
+  }
+  body #stage {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    width: 800px;
+    height: 600px;
+    transition: transform 1.5s;
+    -webkit-animation: 2.5s initial_in;
+            animation: 2.5s initial_in;
+  }
+  body #stage .piece {
+    --rotation: 0deg;
+  }
+  body #stage .piece:not(.seven_vertical),
+  body #stage .piece.seven_vertical .shape {
+    position: absolute;
+    background: #d8334a;
+    border-radius: 100px;
+    box-shadow: inset 10px 10px 10px -10px rgba(255,204,204,0.533), inset -10px -10px 10px -10px rgba(68,0,0,0.533);
+  }
+  body #stage .piece.seven_vertical .shape {
+    width: 100%;
+    height: 100%;
+  }
+  body #stage .piece:before,
+  body #stage .piece.seven_vertical:after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    width: 1px;
+    height: 100vh;
+    background: rgba(0,0,0,0.133);
+  }
+  body #stage .seven_vertical {
+    width: 20px;
+    height: 160px;
+    transform: translate3d(208px, 280px, 116px);
+  }
+  body #stage .seven_vertical:before {
+    left: 33px;
+    bottom: calc(100% - 5px);
+  }
+  body #stage .seven_vertical.seven_vertical:after {
+    left: -20px;
+    bottom: 27px;
+  }
+  body #stage .seven_vertical .shape {
+    transform: rotateZ(20deg);
+  }
+  body #stage .seven_top {
+    width: 120px;
+    height: 24px;
+    transform: translate3d(120px, 121px, 50px) rotateY(20deg);
+  }
+  body #stage .seven_middle {
+    width: 68px;
+    height: 14px;
+    transform: translate3d(241px, 174px, 401px) rotateY(-20deg);
+  }
+  body #stage .five_top {
+    width: 143px;
+    height: 23px;
+    transform: translate3d(272px, 78px, 6px) rotateY(40deg);
+  }
+  body #stage .five_top_vertical {
+    width: 19px;
+    height: 89px;
+    transform: translate3d(298px, 85px, 131px) rotateY(0deg);
+  }
+  body #stage .five_middle {
+    width: 90px;
+    height: 18px;
+    transform: translate3d(307px, 152px, 206px) rotateY(10deg);
+  }
+  body #stage .five_bottom {
+    width: 128px;
+    height: 21px;
+    transform: translate3d(277px, 230px, 69px) rotateY(-30deg);
+  }
+  body #stage .five_bottom_vertical {
+    width: 26px;
+    height: 114px;
+    transform: translate3d(370px, 160px, -186px) rotateY(5deg);
+  }
+  body #stage .first_zero_top {
+    width: 120px;
+    height: 24px;
+    transform: translate3d(434px, 109px, 50px) rotateY(-10deg);
+  }
+  body #stage .first_zero_left {
+    width: 23px;
+    height: 192px;
+    transform: translate3d(434px, 109px, -50px) rotateY(-10deg);
+  }
+  body #stage .first_zero_right {
+    width: 16px;
+    height: 119px;
+    transform: translate3d(491px, 118px, 346px) rotateY(5deg);
+  }
+  body #stage .first_zero_bottom {
+    width: 102px;
+    height: 20px;
+    transform: translate3d(425px, 233px, 250px) rotateY(15deg);
+  }
+  body #stage .second_zero_top {
+    width: 129px;
+    height: 27px;
+    transform: translate3d(579px, 65px, -43px) rotateY(-30deg);
+  }
+  body #stage .second_zero_left {
+    width: 19px;
+    height: 137px;
+    transform: translate3d(533px, 87px, 237px) rotateY(-10deg);
+  }
+  body #stage .second_zero_right {
+    width: 38px;
+    height: 298px;
+    transform: translate3d(843px, 19px, -637px) rotateY(0deg);
+  }
+  body #stage .second_zero_bottom {
+    width: 129px;
+    height: 25px;
+    transform: translate3d(572px, 224px, 2px) rotateY(14deg);
+  }
+  body #stage .shadow {
+    position: absolute;
+    width: 1200px;
+    height: 600px;
+    background: rgba(0,0,0,0.1);
+    box-shadow: inset 0 10px 0 0 rgba(0,0,0,0.5);
+    opacity: 0.5;
+    filter: blur(40px);
+    transform: translate3d(-200px, 150px, 100px) rotateX(90deg);
+  }
+  @-webkit-keyframes initial_in {
+    0%, 20% {
+      transform: rotateY(20deg);
+    }
+    to {
+      transform: rotateY(0deg);
+    }
+  }
+  @keyframes initial_in {
+    0%, 20% {
+      transform: rotateY(20deg);
+    }
+    to {
+      transform: rotateY(0deg);
+    }
+  }
+  
