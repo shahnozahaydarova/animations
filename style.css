@@ -1,0 +1,78 @@
+html, body {
+    height: 100%;
+  }
+  
+  body {
+    display: grid;
+    place-items: center;
+    font: 400 100%/1 "Staatliches", sans-serif;
+    background-color: #2F3439;
+  }
+  
+  .menu__item:nth-child(even) span {
+    animation-direction: reverse;
+  }
+  .menu__link {
+    color: #F6D0B1;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex;
+    white-space: nowrap;
+    gap: 0.15em;
+    font-size: 14.5vmax;
+    padding: 0.65em 0;
+    line-height: 1;
+    position: relative;
+  }
+  .menu__link--primary {
+    background: #5B2E48;
+  }
+  .menu__link--secondary {
+    background: #585563;
+  }
+  .menu__link--tertiary {
+    background: #749C75;
+  }
+  .menu__link span {
+    display: block;
+    -webkit-animation: marquee 25s linear normal infinite;
+            animation: marquee 25s linear normal infinite;
+    position: relative;
+    z-index: 1;
+  }
+  .menu__link:hover span {
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+  }
+  .menu__link:hover .menu__background {
+    opacity: 0.75;
+  }
+  .menu__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+    mix-blend-mode: screen;
+    filter: saturate(0.5);
+  }
+  .menu__background video {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  
+  @-webkit-keyframes marquee {
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  @keyframes marquee {
+    to {
+      transform: translateX(-100%);
+    }
+  }
