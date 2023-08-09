@@ -1,0 +1,78 @@
+summary::-webkit-details-marker,
+summary::marker {
+  display: none;
+  content: "";
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  font-size: 1.8vmin;
+}
+
+.container {
+  height: 50vmin;
+  transform: rotate(-90deg);
+}
+
+.container > details {
+  transform: rotate(90deg);
+}
+
+/* 1- the --rotation could easily be calculated here in CSS */
+details {
+  position: relative;
+  width: max-content;
+  transform-origin: 33% center;
+  transform:
+    rotate(var(--rotation))
+    translate(20%);
+  transition: all .3s .2s;
+}
+
+/* 2- but to fix upside down text, I needed to keep track of all parent rotations in JS */
+summary {
+  transform: rotate(var(--fixed-rotation));
+}
+
+details:hover,
+details:focus-within {
+  scale: 1.05;
+}
+
+details[open]:hover,
+details[open]:focus-within {
+  z-index: 1;
+}
+
+.items {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform:
+    translate(50%, -50%)
+    scale(0.5);
+  opacity: calc(0.7 - var(--level) / 15);
+  filter: blur(1px) contrast(0);
+  transition: all .3s;
+}
+
+details[open] .items {
+  animation: items-appear forwards;
+  animation-duration: calc(300ms + var(--i) * 50ms);
+  animation-delay: calc(var(--i) * 30ms);
+}
+
+@keyframes items-appear {
+  to {
+    transform: translate(100%, -50%) scale(1);
+  }
+}
+
+details:hover > .items,
+details:focus-within > .items {
+  opacity: 1;
+  filter: none;
+}
