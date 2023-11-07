@@ -1,0 +1,1070 @@
+@property --time {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  @keyframes time {
+    0% {
+      --time: 0deg;
+    }
+    100% {
+      --time: 360deg;
+    }
+  }
+  body {
+    background: black;
+    color: white;
+  }
+  
+  #div {
+    position: fixed;
+    width: 960px;
+    height: 960px;
+    max-width: 100%;
+    max-height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  #div > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  span {
+    --time: 0deg;
+    animation: time linear 2s infinite;
+    font-size: 32px;
+    transition: font-size 0.3s;
+    user-select: none;
+  }
+  
+  #div > div:nth-child(16n+1) > span:nth-child(16n+1) {
+    transform: scale(calc( ( cos(22.5deg * 1 + var(--time)) + cos(22.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(22.5deg * 1 + var(--time) * -1) * 0.8 + cos(22.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 22.5deg + 22.5deg));
+  }
+  
+  #div > div:nth-child(16n+1) > span:nth-child(16n+2) {
+    transform: scale(calc( ( cos(45deg * 1 + var(--time)) + cos(45deg * 2.2 + var(--time) * -2) * 0.5 + cos(22.5deg * 1 + var(--time) * -1) * 0.8 + cos(22.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 45deg + 22.5deg));
+  }
+  
+  #div > div:nth-child(16n+1) > span:nth-child(16n+3) {
+    transform: scale(calc( ( cos(67.5deg * 1 + var(--time)) + cos(67.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(22.5deg * 1 + var(--time) * -1) * 0.8 + cos(22.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 67.5deg + 22.5deg));
+  }
+  
+  #div > div:nth-child(16n+1) > span:nth-child(16n+4) {
+    transform: scale(calc( ( cos(90deg * 1 + var(--time)) + cos(90deg * 2.2 + var(--time) * -2) * 0.5 + cos(22.5deg * 1 + var(--time) * -1) * 0.8 + cos(22.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 90deg + 22.5deg));
+  }
+  
+  #div > div:nth-child(16n+1) > span:nth-child(16n+5) {
+    transform: scale(calc( ( cos(112.5deg * 1 + var(--time)) + cos(112.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(22.5deg * 1 + var(--time) * -1) * 0.8 + cos(22.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 112.5deg + 22.5deg));
+  }
+  
+  #div > div:nth-child(16n+1) > span:nth-child(16n+6) {
+    transform: scale(calc( ( cos(135deg * 1 + var(--time)) + cos(135deg * 2.2 + var(--time) * -2) * 0.5 + cos(22.5deg * 1 + var(--time) * -1) * 0.8 + cos(22.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 135deg + 22.5deg));
+  }
+  
+  #div > div:nth-child(16n+1) > span:nth-child(16n+7) {
+    transform: scale(calc( ( cos(157.5deg * 1 + var(--time)) + cos(157.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(22.5deg * 1 + var(--time) * -1) * 0.8 + cos(22.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 157.5deg + 22.5deg));
+  }
+  
+  #div > div:nth-child(16n+1) > span:nth-child(16n+8) {
+    transform: scale(calc( ( cos(180deg * 1 + var(--time)) + cos(180deg * 2.2 + var(--time) * -2) * 0.5 + cos(22.5deg * 1 + var(--time) * -1) * 0.8 + cos(22.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 180deg + 22.5deg));
+  }
+  
+  #div > div:nth-child(16n+1) > span:nth-child(16n+9) {
+    transform: scale(calc( ( cos(202.5deg * 1 + var(--time)) + cos(202.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(22.5deg * 1 + var(--time) * -1) * 0.8 + cos(22.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 202.5deg + 22.5deg));
+  }
+  
+  #div > div:nth-child(16n+1) > span:nth-child(16n+10) {
+    transform: scale(calc( ( cos(225deg * 1 + var(--time)) + cos(225deg * 2.2 + var(--time) * -2) * 0.5 + cos(22.5deg * 1 + var(--time) * -1) * 0.8 + cos(22.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 225deg + 22.5deg));
+  }
+  
+  #div > div:nth-child(16n+1) > span:nth-child(16n+11) {
+    transform: scale(calc( ( cos(247.5deg * 1 + var(--time)) + cos(247.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(22.5deg * 1 + var(--time) * -1) * 0.8 + cos(22.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 247.5deg + 22.5deg));
+  }
+  
+  #div > div:nth-child(16n+1) > span:nth-child(16n+12) {
+    transform: scale(calc( ( cos(270deg * 1 + var(--time)) + cos(270deg * 2.2 + var(--time) * -2) * 0.5 + cos(22.5deg * 1 + var(--time) * -1) * 0.8 + cos(22.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 270deg + 22.5deg));
+  }
+  
+  #div > div:nth-child(16n+1) > span:nth-child(16n+13) {
+    transform: scale(calc( ( cos(292.5deg * 1 + var(--time)) + cos(292.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(22.5deg * 1 + var(--time) * -1) * 0.8 + cos(22.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 292.5deg + 22.5deg));
+  }
+  
+  #div > div:nth-child(16n+1) > span:nth-child(16n+14) {
+    transform: scale(calc( ( cos(315deg * 1 + var(--time)) + cos(315deg * 2.2 + var(--time) * -2) * 0.5 + cos(22.5deg * 1 + var(--time) * -1) * 0.8 + cos(22.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 315deg + 22.5deg));
+  }
+  
+  #div > div:nth-child(16n+1) > span:nth-child(16n+15) {
+    transform: scale(calc( ( cos(337.5deg * 1 + var(--time)) + cos(337.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(22.5deg * 1 + var(--time) * -1) * 0.8 + cos(22.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 337.5deg + 22.5deg));
+  }
+  
+  #div > div:nth-child(16n+1) > span:nth-child(16n+16) {
+    transform: scale(calc( ( cos(360deg * 1 + var(--time)) + cos(360deg * 2.2 + var(--time) * -2) * 0.5 + cos(22.5deg * 1 + var(--time) * -1) * 0.8 + cos(22.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 360deg + 22.5deg));
+  }
+  
+  #div > div:nth-child(16n+2) > span:nth-child(16n+1) {
+    transform: scale(calc( ( cos(22.5deg * 1 + var(--time)) + cos(22.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(45deg * 1 + var(--time) * -1) * 0.8 + cos(45deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 22.5deg + 45deg));
+  }
+  
+  #div > div:nth-child(16n+2) > span:nth-child(16n+2) {
+    transform: scale(calc( ( cos(45deg * 1 + var(--time)) + cos(45deg * 2.2 + var(--time) * -2) * 0.5 + cos(45deg * 1 + var(--time) * -1) * 0.8 + cos(45deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 45deg + 45deg));
+  }
+  
+  #div > div:nth-child(16n+2) > span:nth-child(16n+3) {
+    transform: scale(calc( ( cos(67.5deg * 1 + var(--time)) + cos(67.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(45deg * 1 + var(--time) * -1) * 0.8 + cos(45deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 67.5deg + 45deg));
+  }
+  
+  #div > div:nth-child(16n+2) > span:nth-child(16n+4) {
+    transform: scale(calc( ( cos(90deg * 1 + var(--time)) + cos(90deg * 2.2 + var(--time) * -2) * 0.5 + cos(45deg * 1 + var(--time) * -1) * 0.8 + cos(45deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 90deg + 45deg));
+  }
+  
+  #div > div:nth-child(16n+2) > span:nth-child(16n+5) {
+    transform: scale(calc( ( cos(112.5deg * 1 + var(--time)) + cos(112.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(45deg * 1 + var(--time) * -1) * 0.8 + cos(45deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 112.5deg + 45deg));
+  }
+  
+  #div > div:nth-child(16n+2) > span:nth-child(16n+6) {
+    transform: scale(calc( ( cos(135deg * 1 + var(--time)) + cos(135deg * 2.2 + var(--time) * -2) * 0.5 + cos(45deg * 1 + var(--time) * -1) * 0.8 + cos(45deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 135deg + 45deg));
+  }
+  
+  #div > div:nth-child(16n+2) > span:nth-child(16n+7) {
+    transform: scale(calc( ( cos(157.5deg * 1 + var(--time)) + cos(157.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(45deg * 1 + var(--time) * -1) * 0.8 + cos(45deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 157.5deg + 45deg));
+  }
+  
+  #div > div:nth-child(16n+2) > span:nth-child(16n+8) {
+    transform: scale(calc( ( cos(180deg * 1 + var(--time)) + cos(180deg * 2.2 + var(--time) * -2) * 0.5 + cos(45deg * 1 + var(--time) * -1) * 0.8 + cos(45deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 180deg + 45deg));
+  }
+  
+  #div > div:nth-child(16n+2) > span:nth-child(16n+9) {
+    transform: scale(calc( ( cos(202.5deg * 1 + var(--time)) + cos(202.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(45deg * 1 + var(--time) * -1) * 0.8 + cos(45deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 202.5deg + 45deg));
+  }
+  
+  #div > div:nth-child(16n+2) > span:nth-child(16n+10) {
+    transform: scale(calc( ( cos(225deg * 1 + var(--time)) + cos(225deg * 2.2 + var(--time) * -2) * 0.5 + cos(45deg * 1 + var(--time) * -1) * 0.8 + cos(45deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 225deg + 45deg));
+  }
+  
+  #div > div:nth-child(16n+2) > span:nth-child(16n+11) {
+    transform: scale(calc( ( cos(247.5deg * 1 + var(--time)) + cos(247.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(45deg * 1 + var(--time) * -1) * 0.8 + cos(45deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 247.5deg + 45deg));
+  }
+  
+  #div > div:nth-child(16n+2) > span:nth-child(16n+12) {
+    transform: scale(calc( ( cos(270deg * 1 + var(--time)) + cos(270deg * 2.2 + var(--time) * -2) * 0.5 + cos(45deg * 1 + var(--time) * -1) * 0.8 + cos(45deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 270deg + 45deg));
+  }
+  
+  #div > div:nth-child(16n+2) > span:nth-child(16n+13) {
+    transform: scale(calc( ( cos(292.5deg * 1 + var(--time)) + cos(292.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(45deg * 1 + var(--time) * -1) * 0.8 + cos(45deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 292.5deg + 45deg));
+  }
+  
+  #div > div:nth-child(16n+2) > span:nth-child(16n+14) {
+    transform: scale(calc( ( cos(315deg * 1 + var(--time)) + cos(315deg * 2.2 + var(--time) * -2) * 0.5 + cos(45deg * 1 + var(--time) * -1) * 0.8 + cos(45deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 315deg + 45deg));
+  }
+  
+  #div > div:nth-child(16n+2) > span:nth-child(16n+15) {
+    transform: scale(calc( ( cos(337.5deg * 1 + var(--time)) + cos(337.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(45deg * 1 + var(--time) * -1) * 0.8 + cos(45deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 337.5deg + 45deg));
+  }
+  
+  #div > div:nth-child(16n+2) > span:nth-child(16n+16) {
+    transform: scale(calc( ( cos(360deg * 1 + var(--time)) + cos(360deg * 2.2 + var(--time) * -2) * 0.5 + cos(45deg * 1 + var(--time) * -1) * 0.8 + cos(45deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 360deg + 45deg));
+  }
+  
+  #div > div:nth-child(16n+3) > span:nth-child(16n+1) {
+    transform: scale(calc( ( cos(22.5deg * 1 + var(--time)) + cos(22.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(67.5deg * 1 + var(--time) * -1) * 0.8 + cos(67.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 22.5deg + 67.5deg));
+  }
+  
+  #div > div:nth-child(16n+3) > span:nth-child(16n+2) {
+    transform: scale(calc( ( cos(45deg * 1 + var(--time)) + cos(45deg * 2.2 + var(--time) * -2) * 0.5 + cos(67.5deg * 1 + var(--time) * -1) * 0.8 + cos(67.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 45deg + 67.5deg));
+  }
+  
+  #div > div:nth-child(16n+3) > span:nth-child(16n+3) {
+    transform: scale(calc( ( cos(67.5deg * 1 + var(--time)) + cos(67.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(67.5deg * 1 + var(--time) * -1) * 0.8 + cos(67.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 67.5deg + 67.5deg));
+  }
+  
+  #div > div:nth-child(16n+3) > span:nth-child(16n+4) {
+    transform: scale(calc( ( cos(90deg * 1 + var(--time)) + cos(90deg * 2.2 + var(--time) * -2) * 0.5 + cos(67.5deg * 1 + var(--time) * -1) * 0.8 + cos(67.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 90deg + 67.5deg));
+  }
+  
+  #div > div:nth-child(16n+3) > span:nth-child(16n+5) {
+    transform: scale(calc( ( cos(112.5deg * 1 + var(--time)) + cos(112.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(67.5deg * 1 + var(--time) * -1) * 0.8 + cos(67.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 112.5deg + 67.5deg));
+  }
+  
+  #div > div:nth-child(16n+3) > span:nth-child(16n+6) {
+    transform: scale(calc( ( cos(135deg * 1 + var(--time)) + cos(135deg * 2.2 + var(--time) * -2) * 0.5 + cos(67.5deg * 1 + var(--time) * -1) * 0.8 + cos(67.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 135deg + 67.5deg));
+  }
+  
+  #div > div:nth-child(16n+3) > span:nth-child(16n+7) {
+    transform: scale(calc( ( cos(157.5deg * 1 + var(--time)) + cos(157.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(67.5deg * 1 + var(--time) * -1) * 0.8 + cos(67.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 157.5deg + 67.5deg));
+  }
+  
+  #div > div:nth-child(16n+3) > span:nth-child(16n+8) {
+    transform: scale(calc( ( cos(180deg * 1 + var(--time)) + cos(180deg * 2.2 + var(--time) * -2) * 0.5 + cos(67.5deg * 1 + var(--time) * -1) * 0.8 + cos(67.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 180deg + 67.5deg));
+  }
+  
+  #div > div:nth-child(16n+3) > span:nth-child(16n+9) {
+    transform: scale(calc( ( cos(202.5deg * 1 + var(--time)) + cos(202.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(67.5deg * 1 + var(--time) * -1) * 0.8 + cos(67.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 202.5deg + 67.5deg));
+  }
+  
+  #div > div:nth-child(16n+3) > span:nth-child(16n+10) {
+    transform: scale(calc( ( cos(225deg * 1 + var(--time)) + cos(225deg * 2.2 + var(--time) * -2) * 0.5 + cos(67.5deg * 1 + var(--time) * -1) * 0.8 + cos(67.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 225deg + 67.5deg));
+  }
+  
+  #div > div:nth-child(16n+3) > span:nth-child(16n+11) {
+    transform: scale(calc( ( cos(247.5deg * 1 + var(--time)) + cos(247.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(67.5deg * 1 + var(--time) * -1) * 0.8 + cos(67.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 247.5deg + 67.5deg));
+  }
+  
+  #div > div:nth-child(16n+3) > span:nth-child(16n+12) {
+    transform: scale(calc( ( cos(270deg * 1 + var(--time)) + cos(270deg * 2.2 + var(--time) * -2) * 0.5 + cos(67.5deg * 1 + var(--time) * -1) * 0.8 + cos(67.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 270deg + 67.5deg));
+  }
+  
+  #div > div:nth-child(16n+3) > span:nth-child(16n+13) {
+    transform: scale(calc( ( cos(292.5deg * 1 + var(--time)) + cos(292.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(67.5deg * 1 + var(--time) * -1) * 0.8 + cos(67.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 292.5deg + 67.5deg));
+  }
+  
+  #div > div:nth-child(16n+3) > span:nth-child(16n+14) {
+    transform: scale(calc( ( cos(315deg * 1 + var(--time)) + cos(315deg * 2.2 + var(--time) * -2) * 0.5 + cos(67.5deg * 1 + var(--time) * -1) * 0.8 + cos(67.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 315deg + 67.5deg));
+  }
+  
+  #div > div:nth-child(16n+3) > span:nth-child(16n+15) {
+    transform: scale(calc( ( cos(337.5deg * 1 + var(--time)) + cos(337.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(67.5deg * 1 + var(--time) * -1) * 0.8 + cos(67.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 337.5deg + 67.5deg));
+  }
+  
+  #div > div:nth-child(16n+3) > span:nth-child(16n+16) {
+    transform: scale(calc( ( cos(360deg * 1 + var(--time)) + cos(360deg * 2.2 + var(--time) * -2) * 0.5 + cos(67.5deg * 1 + var(--time) * -1) * 0.8 + cos(67.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 360deg + 67.5deg));
+  }
+  
+  #div > div:nth-child(16n+4) > span:nth-child(16n+1) {
+    transform: scale(calc( ( cos(22.5deg * 1 + var(--time)) + cos(22.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(90deg * 1 + var(--time) * -1) * 0.8 + cos(90deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 22.5deg + 90deg));
+  }
+  
+  #div > div:nth-child(16n+4) > span:nth-child(16n+2) {
+    transform: scale(calc( ( cos(45deg * 1 + var(--time)) + cos(45deg * 2.2 + var(--time) * -2) * 0.5 + cos(90deg * 1 + var(--time) * -1) * 0.8 + cos(90deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 45deg + 90deg));
+  }
+  
+  #div > div:nth-child(16n+4) > span:nth-child(16n+3) {
+    transform: scale(calc( ( cos(67.5deg * 1 + var(--time)) + cos(67.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(90deg * 1 + var(--time) * -1) * 0.8 + cos(90deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 67.5deg + 90deg));
+  }
+  
+  #div > div:nth-child(16n+4) > span:nth-child(16n+4) {
+    transform: scale(calc( ( cos(90deg * 1 + var(--time)) + cos(90deg * 2.2 + var(--time) * -2) * 0.5 + cos(90deg * 1 + var(--time) * -1) * 0.8 + cos(90deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 90deg + 90deg));
+  }
+  
+  #div > div:nth-child(16n+4) > span:nth-child(16n+5) {
+    transform: scale(calc( ( cos(112.5deg * 1 + var(--time)) + cos(112.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(90deg * 1 + var(--time) * -1) * 0.8 + cos(90deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 112.5deg + 90deg));
+  }
+  
+  #div > div:nth-child(16n+4) > span:nth-child(16n+6) {
+    transform: scale(calc( ( cos(135deg * 1 + var(--time)) + cos(135deg * 2.2 + var(--time) * -2) * 0.5 + cos(90deg * 1 + var(--time) * -1) * 0.8 + cos(90deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 135deg + 90deg));
+  }
+  
+  #div > div:nth-child(16n+4) > span:nth-child(16n+7) {
+    transform: scale(calc( ( cos(157.5deg * 1 + var(--time)) + cos(157.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(90deg * 1 + var(--time) * -1) * 0.8 + cos(90deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 157.5deg + 90deg));
+  }
+  
+  #div > div:nth-child(16n+4) > span:nth-child(16n+8) {
+    transform: scale(calc( ( cos(180deg * 1 + var(--time)) + cos(180deg * 2.2 + var(--time) * -2) * 0.5 + cos(90deg * 1 + var(--time) * -1) * 0.8 + cos(90deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 180deg + 90deg));
+  }
+  
+  #div > div:nth-child(16n+4) > span:nth-child(16n+9) {
+    transform: scale(calc( ( cos(202.5deg * 1 + var(--time)) + cos(202.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(90deg * 1 + var(--time) * -1) * 0.8 + cos(90deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 202.5deg + 90deg));
+  }
+  
+  #div > div:nth-child(16n+4) > span:nth-child(16n+10) {
+    transform: scale(calc( ( cos(225deg * 1 + var(--time)) + cos(225deg * 2.2 + var(--time) * -2) * 0.5 + cos(90deg * 1 + var(--time) * -1) * 0.8 + cos(90deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 225deg + 90deg));
+  }
+  
+  #div > div:nth-child(16n+4) > span:nth-child(16n+11) {
+    transform: scale(calc( ( cos(247.5deg * 1 + var(--time)) + cos(247.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(90deg * 1 + var(--time) * -1) * 0.8 + cos(90deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 247.5deg + 90deg));
+  }
+  
+  #div > div:nth-child(16n+4) > span:nth-child(16n+12) {
+    transform: scale(calc( ( cos(270deg * 1 + var(--time)) + cos(270deg * 2.2 + var(--time) * -2) * 0.5 + cos(90deg * 1 + var(--time) * -1) * 0.8 + cos(90deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 270deg + 90deg));
+  }
+  
+  #div > div:nth-child(16n+4) > span:nth-child(16n+13) {
+    transform: scale(calc( ( cos(292.5deg * 1 + var(--time)) + cos(292.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(90deg * 1 + var(--time) * -1) * 0.8 + cos(90deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 292.5deg + 90deg));
+  }
+  
+  #div > div:nth-child(16n+4) > span:nth-child(16n+14) {
+    transform: scale(calc( ( cos(315deg * 1 + var(--time)) + cos(315deg * 2.2 + var(--time) * -2) * 0.5 + cos(90deg * 1 + var(--time) * -1) * 0.8 + cos(90deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 315deg + 90deg));
+  }
+  
+  #div > div:nth-child(16n+4) > span:nth-child(16n+15) {
+    transform: scale(calc( ( cos(337.5deg * 1 + var(--time)) + cos(337.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(90deg * 1 + var(--time) * -1) * 0.8 + cos(90deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 337.5deg + 90deg));
+  }
+  
+  #div > div:nth-child(16n+4) > span:nth-child(16n+16) {
+    transform: scale(calc( ( cos(360deg * 1 + var(--time)) + cos(360deg * 2.2 + var(--time) * -2) * 0.5 + cos(90deg * 1 + var(--time) * -1) * 0.8 + cos(90deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 360deg + 90deg));
+  }
+  
+  #div > div:nth-child(16n+5) > span:nth-child(16n+1) {
+    transform: scale(calc( ( cos(22.5deg * 1 + var(--time)) + cos(22.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(112.5deg * 1 + var(--time) * -1) * 0.8 + cos(112.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 22.5deg + 112.5deg));
+  }
+  
+  #div > div:nth-child(16n+5) > span:nth-child(16n+2) {
+    transform: scale(calc( ( cos(45deg * 1 + var(--time)) + cos(45deg * 2.2 + var(--time) * -2) * 0.5 + cos(112.5deg * 1 + var(--time) * -1) * 0.8 + cos(112.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 45deg + 112.5deg));
+  }
+  
+  #div > div:nth-child(16n+5) > span:nth-child(16n+3) {
+    transform: scale(calc( ( cos(67.5deg * 1 + var(--time)) + cos(67.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(112.5deg * 1 + var(--time) * -1) * 0.8 + cos(112.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 67.5deg + 112.5deg));
+  }
+  
+  #div > div:nth-child(16n+5) > span:nth-child(16n+4) {
+    transform: scale(calc( ( cos(90deg * 1 + var(--time)) + cos(90deg * 2.2 + var(--time) * -2) * 0.5 + cos(112.5deg * 1 + var(--time) * -1) * 0.8 + cos(112.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 90deg + 112.5deg));
+  }
+  
+  #div > div:nth-child(16n+5) > span:nth-child(16n+5) {
+    transform: scale(calc( ( cos(112.5deg * 1 + var(--time)) + cos(112.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(112.5deg * 1 + var(--time) * -1) * 0.8 + cos(112.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 112.5deg + 112.5deg));
+  }
+  
+  #div > div:nth-child(16n+5) > span:nth-child(16n+6) {
+    transform: scale(calc( ( cos(135deg * 1 + var(--time)) + cos(135deg * 2.2 + var(--time) * -2) * 0.5 + cos(112.5deg * 1 + var(--time) * -1) * 0.8 + cos(112.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 135deg + 112.5deg));
+  }
+  
+  #div > div:nth-child(16n+5) > span:nth-child(16n+7) {
+    transform: scale(calc( ( cos(157.5deg * 1 + var(--time)) + cos(157.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(112.5deg * 1 + var(--time) * -1) * 0.8 + cos(112.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 157.5deg + 112.5deg));
+  }
+  
+  #div > div:nth-child(16n+5) > span:nth-child(16n+8) {
+    transform: scale(calc( ( cos(180deg * 1 + var(--time)) + cos(180deg * 2.2 + var(--time) * -2) * 0.5 + cos(112.5deg * 1 + var(--time) * -1) * 0.8 + cos(112.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 180deg + 112.5deg));
+  }
+  
+  #div > div:nth-child(16n+5) > span:nth-child(16n+9) {
+    transform: scale(calc( ( cos(202.5deg * 1 + var(--time)) + cos(202.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(112.5deg * 1 + var(--time) * -1) * 0.8 + cos(112.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 202.5deg + 112.5deg));
+  }
+  
+  #div > div:nth-child(16n+5) > span:nth-child(16n+10) {
+    transform: scale(calc( ( cos(225deg * 1 + var(--time)) + cos(225deg * 2.2 + var(--time) * -2) * 0.5 + cos(112.5deg * 1 + var(--time) * -1) * 0.8 + cos(112.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 225deg + 112.5deg));
+  }
+  
+  #div > div:nth-child(16n+5) > span:nth-child(16n+11) {
+    transform: scale(calc( ( cos(247.5deg * 1 + var(--time)) + cos(247.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(112.5deg * 1 + var(--time) * -1) * 0.8 + cos(112.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 247.5deg + 112.5deg));
+  }
+  
+  #div > div:nth-child(16n+5) > span:nth-child(16n+12) {
+    transform: scale(calc( ( cos(270deg * 1 + var(--time)) + cos(270deg * 2.2 + var(--time) * -2) * 0.5 + cos(112.5deg * 1 + var(--time) * -1) * 0.8 + cos(112.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 270deg + 112.5deg));
+  }
+  
+  #div > div:nth-child(16n+5) > span:nth-child(16n+13) {
+    transform: scale(calc( ( cos(292.5deg * 1 + var(--time)) + cos(292.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(112.5deg * 1 + var(--time) * -1) * 0.8 + cos(112.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 292.5deg + 112.5deg));
+  }
+  
+  #div > div:nth-child(16n+5) > span:nth-child(16n+14) {
+    transform: scale(calc( ( cos(315deg * 1 + var(--time)) + cos(315deg * 2.2 + var(--time) * -2) * 0.5 + cos(112.5deg * 1 + var(--time) * -1) * 0.8 + cos(112.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 315deg + 112.5deg));
+  }
+  
+  #div > div:nth-child(16n+5) > span:nth-child(16n+15) {
+    transform: scale(calc( ( cos(337.5deg * 1 + var(--time)) + cos(337.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(112.5deg * 1 + var(--time) * -1) * 0.8 + cos(112.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 337.5deg + 112.5deg));
+  }
+  
+  #div > div:nth-child(16n+5) > span:nth-child(16n+16) {
+    transform: scale(calc( ( cos(360deg * 1 + var(--time)) + cos(360deg * 2.2 + var(--time) * -2) * 0.5 + cos(112.5deg * 1 + var(--time) * -1) * 0.8 + cos(112.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 360deg + 112.5deg));
+  }
+  
+  #div > div:nth-child(16n+6) > span:nth-child(16n+1) {
+    transform: scale(calc( ( cos(22.5deg * 1 + var(--time)) + cos(22.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(135deg * 1 + var(--time) * -1) * 0.8 + cos(135deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 22.5deg + 135deg));
+  }
+  
+  #div > div:nth-child(16n+6) > span:nth-child(16n+2) {
+    transform: scale(calc( ( cos(45deg * 1 + var(--time)) + cos(45deg * 2.2 + var(--time) * -2) * 0.5 + cos(135deg * 1 + var(--time) * -1) * 0.8 + cos(135deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 45deg + 135deg));
+  }
+  
+  #div > div:nth-child(16n+6) > span:nth-child(16n+3) {
+    transform: scale(calc( ( cos(67.5deg * 1 + var(--time)) + cos(67.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(135deg * 1 + var(--time) * -1) * 0.8 + cos(135deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 67.5deg + 135deg));
+  }
+  
+  #div > div:nth-child(16n+6) > span:nth-child(16n+4) {
+    transform: scale(calc( ( cos(90deg * 1 + var(--time)) + cos(90deg * 2.2 + var(--time) * -2) * 0.5 + cos(135deg * 1 + var(--time) * -1) * 0.8 + cos(135deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 90deg + 135deg));
+  }
+  
+  #div > div:nth-child(16n+6) > span:nth-child(16n+5) {
+    transform: scale(calc( ( cos(112.5deg * 1 + var(--time)) + cos(112.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(135deg * 1 + var(--time) * -1) * 0.8 + cos(135deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 112.5deg + 135deg));
+  }
+  
+  #div > div:nth-child(16n+6) > span:nth-child(16n+6) {
+    transform: scale(calc( ( cos(135deg * 1 + var(--time)) + cos(135deg * 2.2 + var(--time) * -2) * 0.5 + cos(135deg * 1 + var(--time) * -1) * 0.8 + cos(135deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 135deg + 135deg));
+  }
+  
+  #div > div:nth-child(16n+6) > span:nth-child(16n+7) {
+    transform: scale(calc( ( cos(157.5deg * 1 + var(--time)) + cos(157.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(135deg * 1 + var(--time) * -1) * 0.8 + cos(135deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 157.5deg + 135deg));
+  }
+  
+  #div > div:nth-child(16n+6) > span:nth-child(16n+8) {
+    transform: scale(calc( ( cos(180deg * 1 + var(--time)) + cos(180deg * 2.2 + var(--time) * -2) * 0.5 + cos(135deg * 1 + var(--time) * -1) * 0.8 + cos(135deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 180deg + 135deg));
+  }
+  
+  #div > div:nth-child(16n+6) > span:nth-child(16n+9) {
+    transform: scale(calc( ( cos(202.5deg * 1 + var(--time)) + cos(202.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(135deg * 1 + var(--time) * -1) * 0.8 + cos(135deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 202.5deg + 135deg));
+  }
+  
+  #div > div:nth-child(16n+6) > span:nth-child(16n+10) {
+    transform: scale(calc( ( cos(225deg * 1 + var(--time)) + cos(225deg * 2.2 + var(--time) * -2) * 0.5 + cos(135deg * 1 + var(--time) * -1) * 0.8 + cos(135deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 225deg + 135deg));
+  }
+  
+  #div > div:nth-child(16n+6) > span:nth-child(16n+11) {
+    transform: scale(calc( ( cos(247.5deg * 1 + var(--time)) + cos(247.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(135deg * 1 + var(--time) * -1) * 0.8 + cos(135deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 247.5deg + 135deg));
+  }
+  
+  #div > div:nth-child(16n+6) > span:nth-child(16n+12) {
+    transform: scale(calc( ( cos(270deg * 1 + var(--time)) + cos(270deg * 2.2 + var(--time) * -2) * 0.5 + cos(135deg * 1 + var(--time) * -1) * 0.8 + cos(135deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 270deg + 135deg));
+  }
+  
+  #div > div:nth-child(16n+6) > span:nth-child(16n+13) {
+    transform: scale(calc( ( cos(292.5deg * 1 + var(--time)) + cos(292.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(135deg * 1 + var(--time) * -1) * 0.8 + cos(135deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 292.5deg + 135deg));
+  }
+  
+  #div > div:nth-child(16n+6) > span:nth-child(16n+14) {
+    transform: scale(calc( ( cos(315deg * 1 + var(--time)) + cos(315deg * 2.2 + var(--time) * -2) * 0.5 + cos(135deg * 1 + var(--time) * -1) * 0.8 + cos(135deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 315deg + 135deg));
+  }
+  
+  #div > div:nth-child(16n+6) > span:nth-child(16n+15) {
+    transform: scale(calc( ( cos(337.5deg * 1 + var(--time)) + cos(337.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(135deg * 1 + var(--time) * -1) * 0.8 + cos(135deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 337.5deg + 135deg));
+  }
+  
+  #div > div:nth-child(16n+6) > span:nth-child(16n+16) {
+    transform: scale(calc( ( cos(360deg * 1 + var(--time)) + cos(360deg * 2.2 + var(--time) * -2) * 0.5 + cos(135deg * 1 + var(--time) * -1) * 0.8 + cos(135deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 360deg + 135deg));
+  }
+  
+  #div > div:nth-child(16n+7) > span:nth-child(16n+1) {
+    transform: scale(calc( ( cos(22.5deg * 1 + var(--time)) + cos(22.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(157.5deg * 1 + var(--time) * -1) * 0.8 + cos(157.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 22.5deg + 157.5deg));
+  }
+  
+  #div > div:nth-child(16n+7) > span:nth-child(16n+2) {
+    transform: scale(calc( ( cos(45deg * 1 + var(--time)) + cos(45deg * 2.2 + var(--time) * -2) * 0.5 + cos(157.5deg * 1 + var(--time) * -1) * 0.8 + cos(157.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 45deg + 157.5deg));
+  }
+  
+  #div > div:nth-child(16n+7) > span:nth-child(16n+3) {
+    transform: scale(calc( ( cos(67.5deg * 1 + var(--time)) + cos(67.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(157.5deg * 1 + var(--time) * -1) * 0.8 + cos(157.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 67.5deg + 157.5deg));
+  }
+  
+  #div > div:nth-child(16n+7) > span:nth-child(16n+4) {
+    transform: scale(calc( ( cos(90deg * 1 + var(--time)) + cos(90deg * 2.2 + var(--time) * -2) * 0.5 + cos(157.5deg * 1 + var(--time) * -1) * 0.8 + cos(157.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 90deg + 157.5deg));
+  }
+  
+  #div > div:nth-child(16n+7) > span:nth-child(16n+5) {
+    transform: scale(calc( ( cos(112.5deg * 1 + var(--time)) + cos(112.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(157.5deg * 1 + var(--time) * -1) * 0.8 + cos(157.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 112.5deg + 157.5deg));
+  }
+  
+  #div > div:nth-child(16n+7) > span:nth-child(16n+6) {
+    transform: scale(calc( ( cos(135deg * 1 + var(--time)) + cos(135deg * 2.2 + var(--time) * -2) * 0.5 + cos(157.5deg * 1 + var(--time) * -1) * 0.8 + cos(157.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 135deg + 157.5deg));
+  }
+  
+  #div > div:nth-child(16n+7) > span:nth-child(16n+7) {
+    transform: scale(calc( ( cos(157.5deg * 1 + var(--time)) + cos(157.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(157.5deg * 1 + var(--time) * -1) * 0.8 + cos(157.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 157.5deg + 157.5deg));
+  }
+  
+  #div > div:nth-child(16n+7) > span:nth-child(16n+8) {
+    transform: scale(calc( ( cos(180deg * 1 + var(--time)) + cos(180deg * 2.2 + var(--time) * -2) * 0.5 + cos(157.5deg * 1 + var(--time) * -1) * 0.8 + cos(157.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 180deg + 157.5deg));
+  }
+  
+  #div > div:nth-child(16n+7) > span:nth-child(16n+9) {
+    transform: scale(calc( ( cos(202.5deg * 1 + var(--time)) + cos(202.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(157.5deg * 1 + var(--time) * -1) * 0.8 + cos(157.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 202.5deg + 157.5deg));
+  }
+  
+  #div > div:nth-child(16n+7) > span:nth-child(16n+10) {
+    transform: scale(calc( ( cos(225deg * 1 + var(--time)) + cos(225deg * 2.2 + var(--time) * -2) * 0.5 + cos(157.5deg * 1 + var(--time) * -1) * 0.8 + cos(157.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 225deg + 157.5deg));
+  }
+  
+  #div > div:nth-child(16n+7) > span:nth-child(16n+11) {
+    transform: scale(calc( ( cos(247.5deg * 1 + var(--time)) + cos(247.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(157.5deg * 1 + var(--time) * -1) * 0.8 + cos(157.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 247.5deg + 157.5deg));
+  }
+  
+  #div > div:nth-child(16n+7) > span:nth-child(16n+12) {
+    transform: scale(calc( ( cos(270deg * 1 + var(--time)) + cos(270deg * 2.2 + var(--time) * -2) * 0.5 + cos(157.5deg * 1 + var(--time) * -1) * 0.8 + cos(157.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 270deg + 157.5deg));
+  }
+  
+  #div > div:nth-child(16n+7) > span:nth-child(16n+13) {
+    transform: scale(calc( ( cos(292.5deg * 1 + var(--time)) + cos(292.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(157.5deg * 1 + var(--time) * -1) * 0.8 + cos(157.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 292.5deg + 157.5deg));
+  }
+  
+  #div > div:nth-child(16n+7) > span:nth-child(16n+14) {
+    transform: scale(calc( ( cos(315deg * 1 + var(--time)) + cos(315deg * 2.2 + var(--time) * -2) * 0.5 + cos(157.5deg * 1 + var(--time) * -1) * 0.8 + cos(157.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 315deg + 157.5deg));
+  }
+  
+  #div > div:nth-child(16n+7) > span:nth-child(16n+15) {
+    transform: scale(calc( ( cos(337.5deg * 1 + var(--time)) + cos(337.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(157.5deg * 1 + var(--time) * -1) * 0.8 + cos(157.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 337.5deg + 157.5deg));
+  }
+  
+  #div > div:nth-child(16n+7) > span:nth-child(16n+16) {
+    transform: scale(calc( ( cos(360deg * 1 + var(--time)) + cos(360deg * 2.2 + var(--time) * -2) * 0.5 + cos(157.5deg * 1 + var(--time) * -1) * 0.8 + cos(157.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 360deg + 157.5deg));
+  }
+  
+  #div > div:nth-child(16n+8) > span:nth-child(16n+1) {
+    transform: scale(calc( ( cos(22.5deg * 1 + var(--time)) + cos(22.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(180deg * 1 + var(--time) * -1) * 0.8 + cos(180deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 22.5deg + 180deg));
+  }
+  
+  #div > div:nth-child(16n+8) > span:nth-child(16n+2) {
+    transform: scale(calc( ( cos(45deg * 1 + var(--time)) + cos(45deg * 2.2 + var(--time) * -2) * 0.5 + cos(180deg * 1 + var(--time) * -1) * 0.8 + cos(180deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 45deg + 180deg));
+  }
+  
+  #div > div:nth-child(16n+8) > span:nth-child(16n+3) {
+    transform: scale(calc( ( cos(67.5deg * 1 + var(--time)) + cos(67.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(180deg * 1 + var(--time) * -1) * 0.8 + cos(180deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 67.5deg + 180deg));
+  }
+  
+  #div > div:nth-child(16n+8) > span:nth-child(16n+4) {
+    transform: scale(calc( ( cos(90deg * 1 + var(--time)) + cos(90deg * 2.2 + var(--time) * -2) * 0.5 + cos(180deg * 1 + var(--time) * -1) * 0.8 + cos(180deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 90deg + 180deg));
+  }
+  
+  #div > div:nth-child(16n+8) > span:nth-child(16n+5) {
+    transform: scale(calc( ( cos(112.5deg * 1 + var(--time)) + cos(112.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(180deg * 1 + var(--time) * -1) * 0.8 + cos(180deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 112.5deg + 180deg));
+  }
+  
+  #div > div:nth-child(16n+8) > span:nth-child(16n+6) {
+    transform: scale(calc( ( cos(135deg * 1 + var(--time)) + cos(135deg * 2.2 + var(--time) * -2) * 0.5 + cos(180deg * 1 + var(--time) * -1) * 0.8 + cos(180deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 135deg + 180deg));
+  }
+  
+  #div > div:nth-child(16n+8) > span:nth-child(16n+7) {
+    transform: scale(calc( ( cos(157.5deg * 1 + var(--time)) + cos(157.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(180deg * 1 + var(--time) * -1) * 0.8 + cos(180deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 157.5deg + 180deg));
+  }
+  
+  #div > div:nth-child(16n+8) > span:nth-child(16n+8) {
+    transform: scale(calc( ( cos(180deg * 1 + var(--time)) + cos(180deg * 2.2 + var(--time) * -2) * 0.5 + cos(180deg * 1 + var(--time) * -1) * 0.8 + cos(180deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 180deg + 180deg));
+  }
+  
+  #div > div:nth-child(16n+8) > span:nth-child(16n+9) {
+    transform: scale(calc( ( cos(202.5deg * 1 + var(--time)) + cos(202.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(180deg * 1 + var(--time) * -1) * 0.8 + cos(180deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 202.5deg + 180deg));
+  }
+  
+  #div > div:nth-child(16n+8) > span:nth-child(16n+10) {
+    transform: scale(calc( ( cos(225deg * 1 + var(--time)) + cos(225deg * 2.2 + var(--time) * -2) * 0.5 + cos(180deg * 1 + var(--time) * -1) * 0.8 + cos(180deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 225deg + 180deg));
+  }
+  
+  #div > div:nth-child(16n+8) > span:nth-child(16n+11) {
+    transform: scale(calc( ( cos(247.5deg * 1 + var(--time)) + cos(247.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(180deg * 1 + var(--time) * -1) * 0.8 + cos(180deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 247.5deg + 180deg));
+  }
+  
+  #div > div:nth-child(16n+8) > span:nth-child(16n+12) {
+    transform: scale(calc( ( cos(270deg * 1 + var(--time)) + cos(270deg * 2.2 + var(--time) * -2) * 0.5 + cos(180deg * 1 + var(--time) * -1) * 0.8 + cos(180deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 270deg + 180deg));
+  }
+  
+  #div > div:nth-child(16n+8) > span:nth-child(16n+13) {
+    transform: scale(calc( ( cos(292.5deg * 1 + var(--time)) + cos(292.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(180deg * 1 + var(--time) * -1) * 0.8 + cos(180deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 292.5deg + 180deg));
+  }
+  
+  #div > div:nth-child(16n+8) > span:nth-child(16n+14) {
+    transform: scale(calc( ( cos(315deg * 1 + var(--time)) + cos(315deg * 2.2 + var(--time) * -2) * 0.5 + cos(180deg * 1 + var(--time) * -1) * 0.8 + cos(180deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 315deg + 180deg));
+  }
+  
+  #div > div:nth-child(16n+8) > span:nth-child(16n+15) {
+    transform: scale(calc( ( cos(337.5deg * 1 + var(--time)) + cos(337.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(180deg * 1 + var(--time) * -1) * 0.8 + cos(180deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 337.5deg + 180deg));
+  }
+  
+  #div > div:nth-child(16n+8) > span:nth-child(16n+16) {
+    transform: scale(calc( ( cos(360deg * 1 + var(--time)) + cos(360deg * 2.2 + var(--time) * -2) * 0.5 + cos(180deg * 1 + var(--time) * -1) * 0.8 + cos(180deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 360deg + 180deg));
+  }
+  
+  #div > div:nth-child(16n+9) > span:nth-child(16n+1) {
+    transform: scale(calc( ( cos(22.5deg * 1 + var(--time)) + cos(22.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(202.5deg * 1 + var(--time) * -1) * 0.8 + cos(202.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 22.5deg + 202.5deg));
+  }
+  
+  #div > div:nth-child(16n+9) > span:nth-child(16n+2) {
+    transform: scale(calc( ( cos(45deg * 1 + var(--time)) + cos(45deg * 2.2 + var(--time) * -2) * 0.5 + cos(202.5deg * 1 + var(--time) * -1) * 0.8 + cos(202.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 45deg + 202.5deg));
+  }
+  
+  #div > div:nth-child(16n+9) > span:nth-child(16n+3) {
+    transform: scale(calc( ( cos(67.5deg * 1 + var(--time)) + cos(67.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(202.5deg * 1 + var(--time) * -1) * 0.8 + cos(202.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 67.5deg + 202.5deg));
+  }
+  
+  #div > div:nth-child(16n+9) > span:nth-child(16n+4) {
+    transform: scale(calc( ( cos(90deg * 1 + var(--time)) + cos(90deg * 2.2 + var(--time) * -2) * 0.5 + cos(202.5deg * 1 + var(--time) * -1) * 0.8 + cos(202.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 90deg + 202.5deg));
+  }
+  
+  #div > div:nth-child(16n+9) > span:nth-child(16n+5) {
+    transform: scale(calc( ( cos(112.5deg * 1 + var(--time)) + cos(112.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(202.5deg * 1 + var(--time) * -1) * 0.8 + cos(202.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 112.5deg + 202.5deg));
+  }
+  
+  #div > div:nth-child(16n+9) > span:nth-child(16n+6) {
+    transform: scale(calc( ( cos(135deg * 1 + var(--time)) + cos(135deg * 2.2 + var(--time) * -2) * 0.5 + cos(202.5deg * 1 + var(--time) * -1) * 0.8 + cos(202.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 135deg + 202.5deg));
+  }
+  
+  #div > div:nth-child(16n+9) > span:nth-child(16n+7) {
+    transform: scale(calc( ( cos(157.5deg * 1 + var(--time)) + cos(157.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(202.5deg * 1 + var(--time) * -1) * 0.8 + cos(202.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 157.5deg + 202.5deg));
+  }
+  
+  #div > div:nth-child(16n+9) > span:nth-child(16n+8) {
+    transform: scale(calc( ( cos(180deg * 1 + var(--time)) + cos(180deg * 2.2 + var(--time) * -2) * 0.5 + cos(202.5deg * 1 + var(--time) * -1) * 0.8 + cos(202.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 180deg + 202.5deg));
+  }
+  
+  #div > div:nth-child(16n+9) > span:nth-child(16n+9) {
+    transform: scale(calc( ( cos(202.5deg * 1 + var(--time)) + cos(202.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(202.5deg * 1 + var(--time) * -1) * 0.8 + cos(202.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 202.5deg + 202.5deg));
+  }
+  
+  #div > div:nth-child(16n+9) > span:nth-child(16n+10) {
+    transform: scale(calc( ( cos(225deg * 1 + var(--time)) + cos(225deg * 2.2 + var(--time) * -2) * 0.5 + cos(202.5deg * 1 + var(--time) * -1) * 0.8 + cos(202.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 225deg + 202.5deg));
+  }
+  
+  #div > div:nth-child(16n+9) > span:nth-child(16n+11) {
+    transform: scale(calc( ( cos(247.5deg * 1 + var(--time)) + cos(247.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(202.5deg * 1 + var(--time) * -1) * 0.8 + cos(202.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 247.5deg + 202.5deg));
+  }
+  
+  #div > div:nth-child(16n+9) > span:nth-child(16n+12) {
+    transform: scale(calc( ( cos(270deg * 1 + var(--time)) + cos(270deg * 2.2 + var(--time) * -2) * 0.5 + cos(202.5deg * 1 + var(--time) * -1) * 0.8 + cos(202.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 270deg + 202.5deg));
+  }
+  
+  #div > div:nth-child(16n+9) > span:nth-child(16n+13) {
+    transform: scale(calc( ( cos(292.5deg * 1 + var(--time)) + cos(292.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(202.5deg * 1 + var(--time) * -1) * 0.8 + cos(202.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 292.5deg + 202.5deg));
+  }
+  
+  #div > div:nth-child(16n+9) > span:nth-child(16n+14) {
+    transform: scale(calc( ( cos(315deg * 1 + var(--time)) + cos(315deg * 2.2 + var(--time) * -2) * 0.5 + cos(202.5deg * 1 + var(--time) * -1) * 0.8 + cos(202.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 315deg + 202.5deg));
+  }
+  
+  #div > div:nth-child(16n+9) > span:nth-child(16n+15) {
+    transform: scale(calc( ( cos(337.5deg * 1 + var(--time)) + cos(337.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(202.5deg * 1 + var(--time) * -1) * 0.8 + cos(202.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 337.5deg + 202.5deg));
+  }
+  
+  #div > div:nth-child(16n+9) > span:nth-child(16n+16) {
+    transform: scale(calc( ( cos(360deg * 1 + var(--time)) + cos(360deg * 2.2 + var(--time) * -2) * 0.5 + cos(202.5deg * 1 + var(--time) * -1) * 0.8 + cos(202.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 360deg + 202.5deg));
+  }
+  
+  #div > div:nth-child(16n+10) > span:nth-child(16n+1) {
+    transform: scale(calc( ( cos(22.5deg * 1 + var(--time)) + cos(22.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(225deg * 1 + var(--time) * -1) * 0.8 + cos(225deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 22.5deg + 225deg));
+  }
+  
+  #div > div:nth-child(16n+10) > span:nth-child(16n+2) {
+    transform: scale(calc( ( cos(45deg * 1 + var(--time)) + cos(45deg * 2.2 + var(--time) * -2) * 0.5 + cos(225deg * 1 + var(--time) * -1) * 0.8 + cos(225deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 45deg + 225deg));
+  }
+  
+  #div > div:nth-child(16n+10) > span:nth-child(16n+3) {
+    transform: scale(calc( ( cos(67.5deg * 1 + var(--time)) + cos(67.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(225deg * 1 + var(--time) * -1) * 0.8 + cos(225deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 67.5deg + 225deg));
+  }
+  
+  #div > div:nth-child(16n+10) > span:nth-child(16n+4) {
+    transform: scale(calc( ( cos(90deg * 1 + var(--time)) + cos(90deg * 2.2 + var(--time) * -2) * 0.5 + cos(225deg * 1 + var(--time) * -1) * 0.8 + cos(225deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 90deg + 225deg));
+  }
+  
+  #div > div:nth-child(16n+10) > span:nth-child(16n+5) {
+    transform: scale(calc( ( cos(112.5deg * 1 + var(--time)) + cos(112.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(225deg * 1 + var(--time) * -1) * 0.8 + cos(225deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 112.5deg + 225deg));
+  }
+  
+  #div > div:nth-child(16n+10) > span:nth-child(16n+6) {
+    transform: scale(calc( ( cos(135deg * 1 + var(--time)) + cos(135deg * 2.2 + var(--time) * -2) * 0.5 + cos(225deg * 1 + var(--time) * -1) * 0.8 + cos(225deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 135deg + 225deg));
+  }
+  
+  #div > div:nth-child(16n+10) > span:nth-child(16n+7) {
+    transform: scale(calc( ( cos(157.5deg * 1 + var(--time)) + cos(157.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(225deg * 1 + var(--time) * -1) * 0.8 + cos(225deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 157.5deg + 225deg));
+  }
+  
+  #div > div:nth-child(16n+10) > span:nth-child(16n+8) {
+    transform: scale(calc( ( cos(180deg * 1 + var(--time)) + cos(180deg * 2.2 + var(--time) * -2) * 0.5 + cos(225deg * 1 + var(--time) * -1) * 0.8 + cos(225deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 180deg + 225deg));
+  }
+  
+  #div > div:nth-child(16n+10) > span:nth-child(16n+9) {
+    transform: scale(calc( ( cos(202.5deg * 1 + var(--time)) + cos(202.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(225deg * 1 + var(--time) * -1) * 0.8 + cos(225deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 202.5deg + 225deg));
+  }
+  
+  #div > div:nth-child(16n+10) > span:nth-child(16n+10) {
+    transform: scale(calc( ( cos(225deg * 1 + var(--time)) + cos(225deg * 2.2 + var(--time) * -2) * 0.5 + cos(225deg * 1 + var(--time) * -1) * 0.8 + cos(225deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 225deg + 225deg));
+  }
+  
+  #div > div:nth-child(16n+10) > span:nth-child(16n+11) {
+    transform: scale(calc( ( cos(247.5deg * 1 + var(--time)) + cos(247.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(225deg * 1 + var(--time) * -1) * 0.8 + cos(225deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 247.5deg + 225deg));
+  }
+  
+  #div > div:nth-child(16n+10) > span:nth-child(16n+12) {
+    transform: scale(calc( ( cos(270deg * 1 + var(--time)) + cos(270deg * 2.2 + var(--time) * -2) * 0.5 + cos(225deg * 1 + var(--time) * -1) * 0.8 + cos(225deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 270deg + 225deg));
+  }
+  
+  #div > div:nth-child(16n+10) > span:nth-child(16n+13) {
+    transform: scale(calc( ( cos(292.5deg * 1 + var(--time)) + cos(292.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(225deg * 1 + var(--time) * -1) * 0.8 + cos(225deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 292.5deg + 225deg));
+  }
+  
+  #div > div:nth-child(16n+10) > span:nth-child(16n+14) {
+    transform: scale(calc( ( cos(315deg * 1 + var(--time)) + cos(315deg * 2.2 + var(--time) * -2) * 0.5 + cos(225deg * 1 + var(--time) * -1) * 0.8 + cos(225deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 315deg + 225deg));
+  }
+  
+  #div > div:nth-child(16n+10) > span:nth-child(16n+15) {
+    transform: scale(calc( ( cos(337.5deg * 1 + var(--time)) + cos(337.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(225deg * 1 + var(--time) * -1) * 0.8 + cos(225deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 337.5deg + 225deg));
+  }
+  
+  #div > div:nth-child(16n+10) > span:nth-child(16n+16) {
+    transform: scale(calc( ( cos(360deg * 1 + var(--time)) + cos(360deg * 2.2 + var(--time) * -2) * 0.5 + cos(225deg * 1 + var(--time) * -1) * 0.8 + cos(225deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 360deg + 225deg));
+  }
+  
+  #div > div:nth-child(16n+11) > span:nth-child(16n+1) {
+    transform: scale(calc( ( cos(22.5deg * 1 + var(--time)) + cos(22.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(247.5deg * 1 + var(--time) * -1) * 0.8 + cos(247.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 22.5deg + 247.5deg));
+  }
+  
+  #div > div:nth-child(16n+11) > span:nth-child(16n+2) {
+    transform: scale(calc( ( cos(45deg * 1 + var(--time)) + cos(45deg * 2.2 + var(--time) * -2) * 0.5 + cos(247.5deg * 1 + var(--time) * -1) * 0.8 + cos(247.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 45deg + 247.5deg));
+  }
+  
+  #div > div:nth-child(16n+11) > span:nth-child(16n+3) {
+    transform: scale(calc( ( cos(67.5deg * 1 + var(--time)) + cos(67.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(247.5deg * 1 + var(--time) * -1) * 0.8 + cos(247.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 67.5deg + 247.5deg));
+  }
+  
+  #div > div:nth-child(16n+11) > span:nth-child(16n+4) {
+    transform: scale(calc( ( cos(90deg * 1 + var(--time)) + cos(90deg * 2.2 + var(--time) * -2) * 0.5 + cos(247.5deg * 1 + var(--time) * -1) * 0.8 + cos(247.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 90deg + 247.5deg));
+  }
+  
+  #div > div:nth-child(16n+11) > span:nth-child(16n+5) {
+    transform: scale(calc( ( cos(112.5deg * 1 + var(--time)) + cos(112.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(247.5deg * 1 + var(--time) * -1) * 0.8 + cos(247.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 112.5deg + 247.5deg));
+  }
+  
+  #div > div:nth-child(16n+11) > span:nth-child(16n+6) {
+    transform: scale(calc( ( cos(135deg * 1 + var(--time)) + cos(135deg * 2.2 + var(--time) * -2) * 0.5 + cos(247.5deg * 1 + var(--time) * -1) * 0.8 + cos(247.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 135deg + 247.5deg));
+  }
+  
+  #div > div:nth-child(16n+11) > span:nth-child(16n+7) {
+    transform: scale(calc( ( cos(157.5deg * 1 + var(--time)) + cos(157.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(247.5deg * 1 + var(--time) * -1) * 0.8 + cos(247.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 157.5deg + 247.5deg));
+  }
+  
+  #div > div:nth-child(16n+11) > span:nth-child(16n+8) {
+    transform: scale(calc( ( cos(180deg * 1 + var(--time)) + cos(180deg * 2.2 + var(--time) * -2) * 0.5 + cos(247.5deg * 1 + var(--time) * -1) * 0.8 + cos(247.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 180deg + 247.5deg));
+  }
+  
+  #div > div:nth-child(16n+11) > span:nth-child(16n+9) {
+    transform: scale(calc( ( cos(202.5deg * 1 + var(--time)) + cos(202.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(247.5deg * 1 + var(--time) * -1) * 0.8 + cos(247.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 202.5deg + 247.5deg));
+  }
+  
+  #div > div:nth-child(16n+11) > span:nth-child(16n+10) {
+    transform: scale(calc( ( cos(225deg * 1 + var(--time)) + cos(225deg * 2.2 + var(--time) * -2) * 0.5 + cos(247.5deg * 1 + var(--time) * -1) * 0.8 + cos(247.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 225deg + 247.5deg));
+  }
+  
+  #div > div:nth-child(16n+11) > span:nth-child(16n+11) {
+    transform: scale(calc( ( cos(247.5deg * 1 + var(--time)) + cos(247.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(247.5deg * 1 + var(--time) * -1) * 0.8 + cos(247.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 247.5deg + 247.5deg));
+  }
+  
+  #div > div:nth-child(16n+11) > span:nth-child(16n+12) {
+    transform: scale(calc( ( cos(270deg * 1 + var(--time)) + cos(270deg * 2.2 + var(--time) * -2) * 0.5 + cos(247.5deg * 1 + var(--time) * -1) * 0.8 + cos(247.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 270deg + 247.5deg));
+  }
+  
+  #div > div:nth-child(16n+11) > span:nth-child(16n+13) {
+    transform: scale(calc( ( cos(292.5deg * 1 + var(--time)) + cos(292.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(247.5deg * 1 + var(--time) * -1) * 0.8 + cos(247.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 292.5deg + 247.5deg));
+  }
+  
+  #div > div:nth-child(16n+11) > span:nth-child(16n+14) {
+    transform: scale(calc( ( cos(315deg * 1 + var(--time)) + cos(315deg * 2.2 + var(--time) * -2) * 0.5 + cos(247.5deg * 1 + var(--time) * -1) * 0.8 + cos(247.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 315deg + 247.5deg));
+  }
+  
+  #div > div:nth-child(16n+11) > span:nth-child(16n+15) {
+    transform: scale(calc( ( cos(337.5deg * 1 + var(--time)) + cos(337.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(247.5deg * 1 + var(--time) * -1) * 0.8 + cos(247.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 337.5deg + 247.5deg));
+  }
+  
+  #div > div:nth-child(16n+11) > span:nth-child(16n+16) {
+    transform: scale(calc( ( cos(360deg * 1 + var(--time)) + cos(360deg * 2.2 + var(--time) * -2) * 0.5 + cos(247.5deg * 1 + var(--time) * -1) * 0.8 + cos(247.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 360deg + 247.5deg));
+  }
+  
+  #div > div:nth-child(16n+12) > span:nth-child(16n+1) {
+    transform: scale(calc( ( cos(22.5deg * 1 + var(--time)) + cos(22.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(270deg * 1 + var(--time) * -1) * 0.8 + cos(270deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 22.5deg + 270deg));
+  }
+  
+  #div > div:nth-child(16n+12) > span:nth-child(16n+2) {
+    transform: scale(calc( ( cos(45deg * 1 + var(--time)) + cos(45deg * 2.2 + var(--time) * -2) * 0.5 + cos(270deg * 1 + var(--time) * -1) * 0.8 + cos(270deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 45deg + 270deg));
+  }
+  
+  #div > div:nth-child(16n+12) > span:nth-child(16n+3) {
+    transform: scale(calc( ( cos(67.5deg * 1 + var(--time)) + cos(67.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(270deg * 1 + var(--time) * -1) * 0.8 + cos(270deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 67.5deg + 270deg));
+  }
+  
+  #div > div:nth-child(16n+12) > span:nth-child(16n+4) {
+    transform: scale(calc( ( cos(90deg * 1 + var(--time)) + cos(90deg * 2.2 + var(--time) * -2) * 0.5 + cos(270deg * 1 + var(--time) * -1) * 0.8 + cos(270deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 90deg + 270deg));
+  }
+  
+  #div > div:nth-child(16n+12) > span:nth-child(16n+5) {
+    transform: scale(calc( ( cos(112.5deg * 1 + var(--time)) + cos(112.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(270deg * 1 + var(--time) * -1) * 0.8 + cos(270deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 112.5deg + 270deg));
+  }
+  
+  #div > div:nth-child(16n+12) > span:nth-child(16n+6) {
+    transform: scale(calc( ( cos(135deg * 1 + var(--time)) + cos(135deg * 2.2 + var(--time) * -2) * 0.5 + cos(270deg * 1 + var(--time) * -1) * 0.8 + cos(270deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 135deg + 270deg));
+  }
+  
+  #div > div:nth-child(16n+12) > span:nth-child(16n+7) {
+    transform: scale(calc( ( cos(157.5deg * 1 + var(--time)) + cos(157.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(270deg * 1 + var(--time) * -1) * 0.8 + cos(270deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 157.5deg + 270deg));
+  }
+  
+  #div > div:nth-child(16n+12) > span:nth-child(16n+8) {
+    transform: scale(calc( ( cos(180deg * 1 + var(--time)) + cos(180deg * 2.2 + var(--time) * -2) * 0.5 + cos(270deg * 1 + var(--time) * -1) * 0.8 + cos(270deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 180deg + 270deg));
+  }
+  
+  #div > div:nth-child(16n+12) > span:nth-child(16n+9) {
+    transform: scale(calc( ( cos(202.5deg * 1 + var(--time)) + cos(202.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(270deg * 1 + var(--time) * -1) * 0.8 + cos(270deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 202.5deg + 270deg));
+  }
+  
+  #div > div:nth-child(16n+12) > span:nth-child(16n+10) {
+    transform: scale(calc( ( cos(225deg * 1 + var(--time)) + cos(225deg * 2.2 + var(--time) * -2) * 0.5 + cos(270deg * 1 + var(--time) * -1) * 0.8 + cos(270deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 225deg + 270deg));
+  }
+  
+  #div > div:nth-child(16n+12) > span:nth-child(16n+11) {
+    transform: scale(calc( ( cos(247.5deg * 1 + var(--time)) + cos(247.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(270deg * 1 + var(--time) * -1) * 0.8 + cos(270deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 247.5deg + 270deg));
+  }
+  
+  #div > div:nth-child(16n+12) > span:nth-child(16n+12) {
+    transform: scale(calc( ( cos(270deg * 1 + var(--time)) + cos(270deg * 2.2 + var(--time) * -2) * 0.5 + cos(270deg * 1 + var(--time) * -1) * 0.8 + cos(270deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 270deg + 270deg));
+  }
+  
+  #div > div:nth-child(16n+12) > span:nth-child(16n+13) {
+    transform: scale(calc( ( cos(292.5deg * 1 + var(--time)) + cos(292.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(270deg * 1 + var(--time) * -1) * 0.8 + cos(270deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 292.5deg + 270deg));
+  }
+  
+  #div > div:nth-child(16n+12) > span:nth-child(16n+14) {
+    transform: scale(calc( ( cos(315deg * 1 + var(--time)) + cos(315deg * 2.2 + var(--time) * -2) * 0.5 + cos(270deg * 1 + var(--time) * -1) * 0.8 + cos(270deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 315deg + 270deg));
+  }
+  
+  #div > div:nth-child(16n+12) > span:nth-child(16n+15) {
+    transform: scale(calc( ( cos(337.5deg * 1 + var(--time)) + cos(337.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(270deg * 1 + var(--time) * -1) * 0.8 + cos(270deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 337.5deg + 270deg));
+  }
+  
+  #div > div:nth-child(16n+12) > span:nth-child(16n+16) {
+    transform: scale(calc( ( cos(360deg * 1 + var(--time)) + cos(360deg * 2.2 + var(--time) * -2) * 0.5 + cos(270deg * 1 + var(--time) * -1) * 0.8 + cos(270deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 360deg + 270deg));
+  }
+  
+  #div > div:nth-child(16n+13) > span:nth-child(16n+1) {
+    transform: scale(calc( ( cos(22.5deg * 1 + var(--time)) + cos(22.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(292.5deg * 1 + var(--time) * -1) * 0.8 + cos(292.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 22.5deg + 292.5deg));
+  }
+  
+  #div > div:nth-child(16n+13) > span:nth-child(16n+2) {
+    transform: scale(calc( ( cos(45deg * 1 + var(--time)) + cos(45deg * 2.2 + var(--time) * -2) * 0.5 + cos(292.5deg * 1 + var(--time) * -1) * 0.8 + cos(292.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 45deg + 292.5deg));
+  }
+  
+  #div > div:nth-child(16n+13) > span:nth-child(16n+3) {
+    transform: scale(calc( ( cos(67.5deg * 1 + var(--time)) + cos(67.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(292.5deg * 1 + var(--time) * -1) * 0.8 + cos(292.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 67.5deg + 292.5deg));
+  }
+  
+  #div > div:nth-child(16n+13) > span:nth-child(16n+4) {
+    transform: scale(calc( ( cos(90deg * 1 + var(--time)) + cos(90deg * 2.2 + var(--time) * -2) * 0.5 + cos(292.5deg * 1 + var(--time) * -1) * 0.8 + cos(292.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 90deg + 292.5deg));
+  }
+  
+  #div > div:nth-child(16n+13) > span:nth-child(16n+5) {
+    transform: scale(calc( ( cos(112.5deg * 1 + var(--time)) + cos(112.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(292.5deg * 1 + var(--time) * -1) * 0.8 + cos(292.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 112.5deg + 292.5deg));
+  }
+  
+  #div > div:nth-child(16n+13) > span:nth-child(16n+6) {
+    transform: scale(calc( ( cos(135deg * 1 + var(--time)) + cos(135deg * 2.2 + var(--time) * -2) * 0.5 + cos(292.5deg * 1 + var(--time) * -1) * 0.8 + cos(292.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 135deg + 292.5deg));
+  }
+  
+  #div > div:nth-child(16n+13) > span:nth-child(16n+7) {
+    transform: scale(calc( ( cos(157.5deg * 1 + var(--time)) + cos(157.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(292.5deg * 1 + var(--time) * -1) * 0.8 + cos(292.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 157.5deg + 292.5deg));
+  }
+  
+  #div > div:nth-child(16n+13) > span:nth-child(16n+8) {
+    transform: scale(calc( ( cos(180deg * 1 + var(--time)) + cos(180deg * 2.2 + var(--time) * -2) * 0.5 + cos(292.5deg * 1 + var(--time) * -1) * 0.8 + cos(292.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 180deg + 292.5deg));
+  }
+  
+  #div > div:nth-child(16n+13) > span:nth-child(16n+9) {
+    transform: scale(calc( ( cos(202.5deg * 1 + var(--time)) + cos(202.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(292.5deg * 1 + var(--time) * -1) * 0.8 + cos(292.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 202.5deg + 292.5deg));
+  }
+  
+  #div > div:nth-child(16n+13) > span:nth-child(16n+10) {
+    transform: scale(calc( ( cos(225deg * 1 + var(--time)) + cos(225deg * 2.2 + var(--time) * -2) * 0.5 + cos(292.5deg * 1 + var(--time) * -1) * 0.8 + cos(292.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 225deg + 292.5deg));
+  }
+  
+  #div > div:nth-child(16n+13) > span:nth-child(16n+11) {
+    transform: scale(calc( ( cos(247.5deg * 1 + var(--time)) + cos(247.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(292.5deg * 1 + var(--time) * -1) * 0.8 + cos(292.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 247.5deg + 292.5deg));
+  }
+  
+  #div > div:nth-child(16n+13) > span:nth-child(16n+12) {
+    transform: scale(calc( ( cos(270deg * 1 + var(--time)) + cos(270deg * 2.2 + var(--time) * -2) * 0.5 + cos(292.5deg * 1 + var(--time) * -1) * 0.8 + cos(292.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 270deg + 292.5deg));
+  }
+  
+  #div > div:nth-child(16n+13) > span:nth-child(16n+13) {
+    transform: scale(calc( ( cos(292.5deg * 1 + var(--time)) + cos(292.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(292.5deg * 1 + var(--time) * -1) * 0.8 + cos(292.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 292.5deg + 292.5deg));
+  }
+  
+  #div > div:nth-child(16n+13) > span:nth-child(16n+14) {
+    transform: scale(calc( ( cos(315deg * 1 + var(--time)) + cos(315deg * 2.2 + var(--time) * -2) * 0.5 + cos(292.5deg * 1 + var(--time) * -1) * 0.8 + cos(292.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 315deg + 292.5deg));
+  }
+  
+  #div > div:nth-child(16n+13) > span:nth-child(16n+15) {
+    transform: scale(calc( ( cos(337.5deg * 1 + var(--time)) + cos(337.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(292.5deg * 1 + var(--time) * -1) * 0.8 + cos(292.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 337.5deg + 292.5deg));
+  }
+  
+  #div > div:nth-child(16n+13) > span:nth-child(16n+16) {
+    transform: scale(calc( ( cos(360deg * 1 + var(--time)) + cos(360deg * 2.2 + var(--time) * -2) * 0.5 + cos(292.5deg * 1 + var(--time) * -1) * 0.8 + cos(292.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 360deg + 292.5deg));
+  }
+  
+  #div > div:nth-child(16n+14) > span:nth-child(16n+1) {
+    transform: scale(calc( ( cos(22.5deg * 1 + var(--time)) + cos(22.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(315deg * 1 + var(--time) * -1) * 0.8 + cos(315deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 22.5deg + 315deg));
+  }
+  
+  #div > div:nth-child(16n+14) > span:nth-child(16n+2) {
+    transform: scale(calc( ( cos(45deg * 1 + var(--time)) + cos(45deg * 2.2 + var(--time) * -2) * 0.5 + cos(315deg * 1 + var(--time) * -1) * 0.8 + cos(315deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 45deg + 315deg));
+  }
+  
+  #div > div:nth-child(16n+14) > span:nth-child(16n+3) {
+    transform: scale(calc( ( cos(67.5deg * 1 + var(--time)) + cos(67.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(315deg * 1 + var(--time) * -1) * 0.8 + cos(315deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 67.5deg + 315deg));
+  }
+  
+  #div > div:nth-child(16n+14) > span:nth-child(16n+4) {
+    transform: scale(calc( ( cos(90deg * 1 + var(--time)) + cos(90deg * 2.2 + var(--time) * -2) * 0.5 + cos(315deg * 1 + var(--time) * -1) * 0.8 + cos(315deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 90deg + 315deg));
+  }
+  
+  #div > div:nth-child(16n+14) > span:nth-child(16n+5) {
+    transform: scale(calc( ( cos(112.5deg * 1 + var(--time)) + cos(112.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(315deg * 1 + var(--time) * -1) * 0.8 + cos(315deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 112.5deg + 315deg));
+  }
+  
+  #div > div:nth-child(16n+14) > span:nth-child(16n+6) {
+    transform: scale(calc( ( cos(135deg * 1 + var(--time)) + cos(135deg * 2.2 + var(--time) * -2) * 0.5 + cos(315deg * 1 + var(--time) * -1) * 0.8 + cos(315deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 135deg + 315deg));
+  }
+  
+  #div > div:nth-child(16n+14) > span:nth-child(16n+7) {
+    transform: scale(calc( ( cos(157.5deg * 1 + var(--time)) + cos(157.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(315deg * 1 + var(--time) * -1) * 0.8 + cos(315deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 157.5deg + 315deg));
+  }
+  
+  #div > div:nth-child(16n+14) > span:nth-child(16n+8) {
+    transform: scale(calc( ( cos(180deg * 1 + var(--time)) + cos(180deg * 2.2 + var(--time) * -2) * 0.5 + cos(315deg * 1 + var(--time) * -1) * 0.8 + cos(315deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 180deg + 315deg));
+  }
+  
+  #div > div:nth-child(16n+14) > span:nth-child(16n+9) {
+    transform: scale(calc( ( cos(202.5deg * 1 + var(--time)) + cos(202.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(315deg * 1 + var(--time) * -1) * 0.8 + cos(315deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 202.5deg + 315deg));
+  }
+  
+  #div > div:nth-child(16n+14) > span:nth-child(16n+10) {
+    transform: scale(calc( ( cos(225deg * 1 + var(--time)) + cos(225deg * 2.2 + var(--time) * -2) * 0.5 + cos(315deg * 1 + var(--time) * -1) * 0.8 + cos(315deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 225deg + 315deg));
+  }
+  
+  #div > div:nth-child(16n+14) > span:nth-child(16n+11) {
+    transform: scale(calc( ( cos(247.5deg * 1 + var(--time)) + cos(247.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(315deg * 1 + var(--time) * -1) * 0.8 + cos(315deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 247.5deg + 315deg));
+  }
+  
+  #div > div:nth-child(16n+14) > span:nth-child(16n+12) {
+    transform: scale(calc( ( cos(270deg * 1 + var(--time)) + cos(270deg * 2.2 + var(--time) * -2) * 0.5 + cos(315deg * 1 + var(--time) * -1) * 0.8 + cos(315deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 270deg + 315deg));
+  }
+  
+  #div > div:nth-child(16n+14) > span:nth-child(16n+13) {
+    transform: scale(calc( ( cos(292.5deg * 1 + var(--time)) + cos(292.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(315deg * 1 + var(--time) * -1) * 0.8 + cos(315deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 292.5deg + 315deg));
+  }
+  
+  #div > div:nth-child(16n+14) > span:nth-child(16n+14) {
+    transform: scale(calc( ( cos(315deg * 1 + var(--time)) + cos(315deg * 2.2 + var(--time) * -2) * 0.5 + cos(315deg * 1 + var(--time) * -1) * 0.8 + cos(315deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 315deg + 315deg));
+  }
+  
+  #div > div:nth-child(16n+14) > span:nth-child(16n+15) {
+    transform: scale(calc( ( cos(337.5deg * 1 + var(--time)) + cos(337.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(315deg * 1 + var(--time) * -1) * 0.8 + cos(315deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 337.5deg + 315deg));
+  }
+  
+  #div > div:nth-child(16n+14) > span:nth-child(16n+16) {
+    transform: scale(calc( ( cos(360deg * 1 + var(--time)) + cos(360deg * 2.2 + var(--time) * -2) * 0.5 + cos(315deg * 1 + var(--time) * -1) * 0.8 + cos(315deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 360deg + 315deg));
+  }
+  
+  #div > div:nth-child(16n+15) > span:nth-child(16n+1) {
+    transform: scale(calc( ( cos(22.5deg * 1 + var(--time)) + cos(22.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(337.5deg * 1 + var(--time) * -1) * 0.8 + cos(337.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 22.5deg + 337.5deg));
+  }
+  
+  #div > div:nth-child(16n+15) > span:nth-child(16n+2) {
+    transform: scale(calc( ( cos(45deg * 1 + var(--time)) + cos(45deg * 2.2 + var(--time) * -2) * 0.5 + cos(337.5deg * 1 + var(--time) * -1) * 0.8 + cos(337.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 45deg + 337.5deg));
+  }
+  
+  #div > div:nth-child(16n+15) > span:nth-child(16n+3) {
+    transform: scale(calc( ( cos(67.5deg * 1 + var(--time)) + cos(67.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(337.5deg * 1 + var(--time) * -1) * 0.8 + cos(337.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 67.5deg + 337.5deg));
+  }
+  
+  #div > div:nth-child(16n+15) > span:nth-child(16n+4) {
+    transform: scale(calc( ( cos(90deg * 1 + var(--time)) + cos(90deg * 2.2 + var(--time) * -2) * 0.5 + cos(337.5deg * 1 + var(--time) * -1) * 0.8 + cos(337.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 90deg + 337.5deg));
+  }
+  
+  #div > div:nth-child(16n+15) > span:nth-child(16n+5) {
+    transform: scale(calc( ( cos(112.5deg * 1 + var(--time)) + cos(112.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(337.5deg * 1 + var(--time) * -1) * 0.8 + cos(337.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 112.5deg + 337.5deg));
+  }
+  
+  #div > div:nth-child(16n+15) > span:nth-child(16n+6) {
+    transform: scale(calc( ( cos(135deg * 1 + var(--time)) + cos(135deg * 2.2 + var(--time) * -2) * 0.5 + cos(337.5deg * 1 + var(--time) * -1) * 0.8 + cos(337.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 135deg + 337.5deg));
+  }
+  
+  #div > div:nth-child(16n+15) > span:nth-child(16n+7) {
+    transform: scale(calc( ( cos(157.5deg * 1 + var(--time)) + cos(157.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(337.5deg * 1 + var(--time) * -1) * 0.8 + cos(337.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 157.5deg + 337.5deg));
+  }
+  
+  #div > div:nth-child(16n+15) > span:nth-child(16n+8) {
+    transform: scale(calc( ( cos(180deg * 1 + var(--time)) + cos(180deg * 2.2 + var(--time) * -2) * 0.5 + cos(337.5deg * 1 + var(--time) * -1) * 0.8 + cos(337.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 180deg + 337.5deg));
+  }
+  
+  #div > div:nth-child(16n+15) > span:nth-child(16n+9) {
+    transform: scale(calc( ( cos(202.5deg * 1 + var(--time)) + cos(202.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(337.5deg * 1 + var(--time) * -1) * 0.8 + cos(337.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 202.5deg + 337.5deg));
+  }
+  
+  #div > div:nth-child(16n+15) > span:nth-child(16n+10) {
+    transform: scale(calc( ( cos(225deg * 1 + var(--time)) + cos(225deg * 2.2 + var(--time) * -2) * 0.5 + cos(337.5deg * 1 + var(--time) * -1) * 0.8 + cos(337.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 225deg + 337.5deg));
+  }
+  
+  #div > div:nth-child(16n+15) > span:nth-child(16n+11) {
+    transform: scale(calc( ( cos(247.5deg * 1 + var(--time)) + cos(247.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(337.5deg * 1 + var(--time) * -1) * 0.8 + cos(337.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 247.5deg + 337.5deg));
+  }
+  
+  #div > div:nth-child(16n+15) > span:nth-child(16n+12) {
+    transform: scale(calc( ( cos(270deg * 1 + var(--time)) + cos(270deg * 2.2 + var(--time) * -2) * 0.5 + cos(337.5deg * 1 + var(--time) * -1) * 0.8 + cos(337.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 270deg + 337.5deg));
+  }
+  
+  #div > div:nth-child(16n+15) > span:nth-child(16n+13) {
+    transform: scale(calc( ( cos(292.5deg * 1 + var(--time)) + cos(292.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(337.5deg * 1 + var(--time) * -1) * 0.8 + cos(337.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 292.5deg + 337.5deg));
+  }
+  
+  #div > div:nth-child(16n+15) > span:nth-child(16n+14) {
+    transform: scale(calc( ( cos(315deg * 1 + var(--time)) + cos(315deg * 2.2 + var(--time) * -2) * 0.5 + cos(337.5deg * 1 + var(--time) * -1) * 0.8 + cos(337.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 315deg + 337.5deg));
+  }
+  
+  #div > div:nth-child(16n+15) > span:nth-child(16n+15) {
+    transform: scale(calc( ( cos(337.5deg * 1 + var(--time)) + cos(337.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(337.5deg * 1 + var(--time) * -1) * 0.8 + cos(337.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 337.5deg + 337.5deg));
+  }
+  
+  #div > div:nth-child(16n+15) > span:nth-child(16n+16) {
+    transform: scale(calc( ( cos(360deg * 1 + var(--time)) + cos(360deg * 2.2 + var(--time) * -2) * 0.5 + cos(337.5deg * 1 + var(--time) * -1) * 0.8 + cos(337.5deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 360deg + 337.5deg));
+  }
+  
+  #div > div:nth-child(16n+16) > span:nth-child(16n+1) {
+    transform: scale(calc( ( cos(22.5deg * 1 + var(--time)) + cos(22.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(360deg * 1 + var(--time) * -1) * 0.8 + cos(360deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 22.5deg + 360deg));
+  }
+  
+  #div > div:nth-child(16n+16) > span:nth-child(16n+2) {
+    transform: scale(calc( ( cos(45deg * 1 + var(--time)) + cos(45deg * 2.2 + var(--time) * -2) * 0.5 + cos(360deg * 1 + var(--time) * -1) * 0.8 + cos(360deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 45deg + 360deg));
+  }
+  
+  #div > div:nth-child(16n+16) > span:nth-child(16n+3) {
+    transform: scale(calc( ( cos(67.5deg * 1 + var(--time)) + cos(67.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(360deg * 1 + var(--time) * -1) * 0.8 + cos(360deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 67.5deg + 360deg));
+  }
+  
+  #div > div:nth-child(16n+16) > span:nth-child(16n+4) {
+    transform: scale(calc( ( cos(90deg * 1 + var(--time)) + cos(90deg * 2.2 + var(--time) * -2) * 0.5 + cos(360deg * 1 + var(--time) * -1) * 0.8 + cos(360deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 90deg + 360deg));
+  }
+  
+  #div > div:nth-child(16n+16) > span:nth-child(16n+5) {
+    transform: scale(calc( ( cos(112.5deg * 1 + var(--time)) + cos(112.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(360deg * 1 + var(--time) * -1) * 0.8 + cos(360deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 112.5deg + 360deg));
+  }
+  
+  #div > div:nth-child(16n+16) > span:nth-child(16n+6) {
+    transform: scale(calc( ( cos(135deg * 1 + var(--time)) + cos(135deg * 2.2 + var(--time) * -2) * 0.5 + cos(360deg * 1 + var(--time) * -1) * 0.8 + cos(360deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 135deg + 360deg));
+  }
+  
+  #div > div:nth-child(16n+16) > span:nth-child(16n+7) {
+    transform: scale(calc( ( cos(157.5deg * 1 + var(--time)) + cos(157.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(360deg * 1 + var(--time) * -1) * 0.8 + cos(360deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 157.5deg + 360deg));
+  }
+  
+  #div > div:nth-child(16n+16) > span:nth-child(16n+8) {
+    transform: scale(calc( ( cos(180deg * 1 + var(--time)) + cos(180deg * 2.2 + var(--time) * -2) * 0.5 + cos(360deg * 1 + var(--time) * -1) * 0.8 + cos(360deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 180deg + 360deg));
+  }
+  
+  #div > div:nth-child(16n+16) > span:nth-child(16n+9) {
+    transform: scale(calc( ( cos(202.5deg * 1 + var(--time)) + cos(202.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(360deg * 1 + var(--time) * -1) * 0.8 + cos(360deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 202.5deg + 360deg));
+  }
+  
+  #div > div:nth-child(16n+16) > span:nth-child(16n+10) {
+    transform: scale(calc( ( cos(225deg * 1 + var(--time)) + cos(225deg * 2.2 + var(--time) * -2) * 0.5 + cos(360deg * 1 + var(--time) * -1) * 0.8 + cos(360deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 225deg + 360deg));
+  }
+  
+  #div > div:nth-child(16n+16) > span:nth-child(16n+11) {
+    transform: scale(calc( ( cos(247.5deg * 1 + var(--time)) + cos(247.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(360deg * 1 + var(--time) * -1) * 0.8 + cos(360deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 247.5deg + 360deg));
+  }
+  
+  #div > div:nth-child(16n+16) > span:nth-child(16n+12) {
+    transform: scale(calc( ( cos(270deg * 1 + var(--time)) + cos(270deg * 2.2 + var(--time) * -2) * 0.5 + cos(360deg * 1 + var(--time) * -1) * 0.8 + cos(360deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 270deg + 360deg));
+  }
+  
+  #div > div:nth-child(16n+16) > span:nth-child(16n+13) {
+    transform: scale(calc( ( cos(292.5deg * 1 + var(--time)) + cos(292.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(360deg * 1 + var(--time) * -1) * 0.8 + cos(360deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 292.5deg + 360deg));
+  }
+  
+  #div > div:nth-child(16n+16) > span:nth-child(16n+14) {
+    transform: scale(calc( ( cos(315deg * 1 + var(--time)) + cos(315deg * 2.2 + var(--time) * -2) * 0.5 + cos(360deg * 1 + var(--time) * -1) * 0.8 + cos(360deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 315deg + 360deg));
+  }
+  
+  #div > div:nth-child(16n+16) > span:nth-child(16n+15) {
+    transform: scale(calc( ( cos(337.5deg * 1 + var(--time)) + cos(337.5deg * 2.2 + var(--time) * -2) * 0.5 + cos(360deg * 1 + var(--time) * -1) * 0.8 + cos(360deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 337.5deg + 360deg));
+  }
+  
+  #div > div:nth-child(16n+16) > span:nth-child(16n+16) {
+    transform: scale(calc( ( cos(360deg * 1 + var(--time)) + cos(360deg * 2.2 + var(--time) * -2) * 0.5 + cos(360deg * 1 + var(--time) * -1) * 0.8 + cos(360deg * 2.3 + var(--time) * 1) * 0.4 ) * 1 + 2 )) rotate(calc(var(--time) + 360deg + 360deg));
+  }
