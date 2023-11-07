@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css?family=Nosifer");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  background: black;
+  overscroll-behavior-x: none;
+  overscroll-behavior-y: none;
+  overflow: hidden;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  font-family: "Nosifer", sans-serif;
+  font-size: 10vw;
+  color: rgba(255, 255, 255, 1);
+  opacity: 0.2;
+  /*
+  -webkit-text-stroke: 2px rgba(255, 0, 0, .8);
+  text-stroke: 2px rgba(255, 0, 0, .8);
+*/
+  pointer-events: none;
+}
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
